@@ -1,0 +1,2090 @@
+{
+  "A0A1S3V1V5.npy": {
+    "accession": "A0A1S3V1V5",
+    "sha256": "fc9bc60c71421cc74e471ee20f8f89cb68788b3c6066181ea8b4fb73e5d9800d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3V3C3.npy": {
+    "accession": "A0A1S3V3C3",
+    "sha256": "c404f254c6619c2f251209c508d67e9e2e067ba79b743e2f8ccdd0fb290ff538",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VLA2.npy": {
+    "accession": "A0A1S3VLA2",
+    "sha256": "1e755ed418e228ddce0a8601c77cf8a53621584bdc4593378c50713f052b6b21",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3TNY4.npy": {
+    "accession": "A0A1S3TNY4",
+    "sha256": "ef2be51c4b76d68ab2a73898d060d6c92cf29e6ba1c6a22049271111297a3dd7",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UHV3.npy": {
+    "accession": "A0A1S3UHV3",
+    "sha256": "483ffaeb2c04a905853cf1fec7620951a48bf7c2769331a79467417c33751797",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VL92.npy": {
+    "accession": "A0A1S3VL92",
+    "sha256": "a8250928540a780351938897e707c9c88b44431cb4abd8d7ff9d5a319a4415b7",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VM20.npy": {
+    "accession": "A0A1S3VM20",
+    "sha256": "7bd306982cf0f7bfb1ad04d2929ddbea3fe359c45e24bbc047c4a861cd85f4c5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UID3.npy": {
+    "accession": "A0A1S3UID3",
+    "sha256": "d4ff7dff4504cf1fcf6b65b94e42e4a39a373c3afd67776a60c2f6b0aa166db4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3THR8.npy": {
+    "accession": "A0A1S3THR8",
+    "sha256": "70f9366489926042957f49379e8368c53a0a9ba249eeeff1aef4cd6f87591c6c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q9FRT8.npy": {
+    "accession": "Q9FRT8",
+    "sha256": "260564508d50e753eb9c9b7f8dbda4ee68d099ca33dada29c5906997a935abe5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UQX9.npy": {
+    "accession": "A0A1S3UQX9",
+    "sha256": "806c430eb5061895f5860e782337fae570993212157b1bb68cea66dac06354c0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VIR8.npy": {
+    "accession": "A0A1S3VIR8",
+    "sha256": "318f8468edbbc05052bb1e93231d51825ebbf24bc7521c67e375f3c154b15c2c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3Q0EHQ4.npy": {
+    "accession": "A0A3Q0EHQ4",
+    "sha256": "0b9c37e582d5ef9c057507c9efb08b6eac1f4b343e0d8b4233c62b6cf23a4e33",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3TU89.npy": {
+    "accession": "A0A1S3TU89",
+    "sha256": "8ed1a207cd604df9564f033bb09e4de3aaef3762b9adb7595d80b5afa93e7279",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VUT8.npy": {
+    "accession": "A0A1S3VUT8",
+    "sha256": "43c4d06a20d0c4fce5432220f209c777f151b5df11d36aebbd2c3a220427a3ea",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VTQ0.npy": {
+    "accession": "A0A1S3VTQ0",
+    "sha256": "bae811d352e4d2022f88d4fae23e01795b9edc8caf80b7ece7e033cb855ee141",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3TIH2.npy": {
+    "accession": "A0A1S3TIH2",
+    "sha256": "40a16858e90d2f027e78c5757d4e7c61201603cdcebf1dc8854068ef8b7e8fc4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UJ02.npy": {
+    "accession": "A0A1S3UJ02",
+    "sha256": "3e394b7c8525e3e3fc126b3e23fdd69d55d444aa26bc522a1dacac57f1220206",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3TK67.npy": {
+    "accession": "A0A1S3TK67",
+    "sha256": "7affc45b4b2f0064570f492c00e006afa7dd0409bfad73091566cae5f31c06b2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3U2X4.npy": {
+    "accession": "A0A1S3U2X4",
+    "sha256": "ad30366d9bacd578175ed43d9af38c785b65d623e0461ad4dd2e107a8406130c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3Q0F4Q8.npy": {
+    "accession": "A0A3Q0F4Q8",
+    "sha256": "76db9aaf878714d26409794d3bae68958deb0a51afcc3daea576389c4ec28f47",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3Q0EUJ1.npy": {
+    "accession": "A0A3Q0EUJ1",
+    "sha256": "c37566b82856863d58f3b9907369e0d9c9f34863cae84e9add7e1c2ba835add5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VCX1.npy": {
+    "accession": "A0A1S3VCX1",
+    "sha256": "7ea3dd1c5f46d0ed5b45f26c5ce730dc336d288183ce1ab3be74a3e9438257c0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3Q0FHA8.npy": {
+    "accession": "A0A3Q0FHA8",
+    "sha256": "12b4161bc3d5e971a2dd6cc6a5f90d7d3167fba6f4fdb407e39318527a325817",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3T8V4.npy": {
+    "accession": "A0A1S3T8V4",
+    "sha256": "6b218618ee3fd3610422d8934da52a7e68e2cd76be8851138751e7d349c11af1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UMS3.npy": {
+    "accession": "A0A1S3UMS3",
+    "sha256": "0e14b4b73d56f9ab0ea654fcd81cd54831ecfe682e53f475fae91392ba0dede7",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VZX2.npy": {
+    "accession": "A0A1S3VZX2",
+    "sha256": "74d6ba024466291c0d8192c45c6381c093fcecea48bd6d44518f3e7cd737156e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3P9QN94.npy": {
+    "accession": "A0A3P9QN94",
+    "sha256": "93de63511c632d464e10edb7b46ebe77d361af77445d352700810447275defcf",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3P9QP39.npy": {
+    "accession": "A0A3P9QP39",
+    "sha256": "6ffeda70e54c3a7b92ef78878c1b0ef3b82b154706533c7149368b6044259fb5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3TFI4.npy": {
+    "accession": "A0A1S3TFI4",
+    "sha256": "8e4172cfd487246475a42d08a8f8f4dc0dff659564b80a945d13de40cc91d0ec",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VZW2.npy": {
+    "accession": "A0A1S3VZW2",
+    "sha256": "69673d6dbfe851a3ea7c3164636779ea788fe0464034ce93a74faf1ac91ed674",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3W032.npy": {
+    "accession": "A0A1S3W032",
+    "sha256": "cbe3f52c2b2ccd8b8f21c08f74541878d5ee5620eb5fcdbc8632523e39e1fed4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3Q0EQW6.npy": {
+    "accession": "A0A3Q0EQW6",
+    "sha256": "5099d6a33e043c0d8fe68cdc74ca4829f520de0fb203a4e7749ac0736aa10bf6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3P9QN33.npy": {
+    "accession": "A0A3P9QN33",
+    "sha256": "beff9c89edc8f8047b2441c64c91e1b819345881eebed6f78cb2063e694837ee",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UQA4.npy": {
+    "accession": "A0A1S3UQA4",
+    "sha256": "ba9c69afb2ed443dfbad0bbd7686964ac5171bb9e6ff38dd5151e85140591f55",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3TTX1.npy": {
+    "accession": "A0A1S3TTX1",
+    "sha256": "32cc66ccd54077b388f5f31b62ddcbe0afd5a63fcc8e570b8b750945bb0aaec8",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UQK0.npy": {
+    "accession": "A0A1S3UQK0",
+    "sha256": "2e123e40c826c652f832e77ddd06f858f061956b6d8351fc75836bdb6c6ba62b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VGZ3.npy": {
+    "accession": "A0A1S3VGZ3",
+    "sha256": "aba83905c404d8895087886ae70da36b7e5af0e6e6c6343e96e7f5d74901ec76",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VV30.npy": {
+    "accession": "A0A1S3VV30",
+    "sha256": "d88dcc96776e4973d0b3ae15df79e16f5b5983e6fd380419e85f6369b0d9a22d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3U264.npy": {
+    "accession": "A0A1S3U264",
+    "sha256": "3cd099e0e9e44de154c2764c8a186a999c1d6836ffb1a31e8e8c7e4cc5c97a35",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UQT8.npy": {
+    "accession": "A0A1S3UQT8",
+    "sha256": "46bc630ab132872e59444852edcb11420043134b7a7c3928ce11c2c01ca9d592",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A3Q0ESM2.npy": {
+    "accession": "A0A3Q0ESM2",
+    "sha256": "dc98f697ae9e377f78ade6724f86e31ecd6e2ee89a9c41008a4f4ab1fc8ca81e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VMC5.npy": {
+    "accession": "A0A1S3VMC5",
+    "sha256": "e31e85cb9e3975214884587aaeb1fd2056dba4dcbaf39ea5ce56ae4c8eda5f93",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3U2S5.npy": {
+    "accession": "A0A1S3U2S5",
+    "sha256": "09be5a977ef051b8ab5c3c3900a0908527950d4ae69ca4e01dda8eaee64a7f35",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3UR54.npy": {
+    "accession": "A0A1S3UR54",
+    "sha256": "8cb43e475b0a4a51f9f2cb922a016d54d3641627a91b0ad9aaada89ae9aca522",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3V3H9.npy": {
+    "accession": "A0A1S3V3H9",
+    "sha256": "a5d90d8e9461f2694d014605a2da43cf913b4bb0b6c8b63d893f0d033fd0dea5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VHZ1.npy": {
+    "accession": "A0A1S3VHZ1",
+    "sha256": "3012d43f5f8f1b1a94ea3e66a29a8eeff4d9505b21c1a15e6f3fd474746d2ab3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VTL9.npy": {
+    "accession": "A0A1S3VTL9",
+    "sha256": "b4d901fb2a6a5830a6348025134340b31fb61b0fca509c67d75cdddb44ca089f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3VUX9.npy": {
+    "accession": "A0A1S3VUX9",
+    "sha256": "cce1a8dec7ef4c7e7f601987f2f3c427bde1ff1a911ae3c6b2558d5fee1cd247",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A1S3TK70.npy": {
+    "accession": "A0A1S3TK70",
+    "sha256": "a17c7363c9194833f71cde0662e52abcade63e97c97047a97bb6c00e9c9ee20f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P11828.npy": {
+    "accession": "P11828",
+    "sha256": "a1f4a8752f5e509e9af7e8798eea416fb76e572de9f2022d496c55fe97fd22b2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P04776.npy": {
+    "accession": "P04776",
+    "sha256": "7b6bfb24333de6364363c77f5a937aab51291a404b3531ba48fefe514d56203e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P04405.npy": {
+    "accession": "P04405",
+    "sha256": "c208198e36606f98cd6e7a2d0ea3a8cc31ce3a394e0417f03fb1538f06484f3c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P02858.npy": {
+    "accession": "P02858",
+    "sha256": "1f0dd1573058d43f087cbb3b8bc2553745ed85c8824f5f52ea585ef1f37ebbcf",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P04347.npy": {
+    "accession": "P04347",
+    "sha256": "4e6c1c9eaa729b6b9ce6eb2159c36dc3b01445a9e6e995516346df6ba8b599d3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P25974.npy": {
+    "accession": "P25974",
+    "sha256": "579f04e7eac77847c7bde05bbeed487e0f6f062206cdca3303b656d4cd062101",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P11827.npy": {
+    "accession": "P11827",
+    "sha256": "e13cb0a709ebb213f5b14e05d672e19191bf499044db02046585b3782d080eae",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P0DO16.npy": {
+    "accession": "P0DO16",
+    "sha256": "cb98e33e558efc79dde81a34fef08dc40e339dc887c651c4cc69d96d3887f780",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P0DO15.npy": {
+    "accession": "P0DO15",
+    "sha256": "cb98e33e558efc79dde81a34fef08dc40e339dc887c651c4cc69d96d3887f780",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "F7J077.npy": {
+    "accession": "F7J077",
+    "sha256": "718d3cb32ad8429e59794cad9be387b2568a2ffc8bcb6d5d2f871e57e29ae6d4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P15490.npy": {
+    "accession": "P15490",
+    "sha256": "6fa1cfbf431b853c8b343ddf4e088a88887a9f4babe95b2c78605f5314b02574",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P10743.npy": {
+    "accession": "P10743",
+    "sha256": "b3e607ff9f3629c3ec93f664446c7bddb90c23f8aeab9c563ea177dcd2f06cb4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "I2E8E1.npy": {
+    "accession": "I2E8E1",
+    "sha256": "7471621b4604f6e3ae5380ab8472d597b258c242ec2d7ac5b1d0081def4d8184",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "I2E8D7.npy": {
+    "accession": "I2E8D7",
+    "sha256": "28bf8d99aa2f9aa25ed9818fa437694f9b9eb6217cdce83ec54f731fbd8b882a",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P13917.npy": {
+    "accession": "P13917",
+    "sha256": "e41a744baea8a6c4ac4ce7c8d748a2c255b96bd514d56ade0db4f88437a2f977",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P19594.npy": {
+    "accession": "P19594",
+    "sha256": "29737c399a8a09f00cad8b806f35f0e6dfa83a9ab5965985d34b64ecc41112de",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q948X9.npy": {
+    "accession": "Q948X9",
+    "sha256": "0ab49cc685d257ac4a7f2d094d4c17ddf177a4ad63182f247784d652730fdc4c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q93VL9.npy": {
+    "accession": "Q93VL9",
+    "sha256": "ecffde4095d6e368d28a440659af4b5ac8439324f741119d3c29cde5940a6a32",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q9FEC5.npy": {
+    "accession": "Q9FEC5",
+    "sha256": "80284b5709ff83f06716d106da0c12239a536cd832ee23b938f944f60222ba8c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A0R0KRW0.npy": {
+    "accession": "A0A0R0KRW0",
+    "sha256": "870aea43bdf448979852322f02cf8ac0effeeebfa779ad8395e3c41ef3d629d8",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A2K7FJ10.npy": {
+    "accession": "A0A2K7FJ10",
+    "sha256": "80284b5709ff83f06716d106da0c12239a536cd832ee23b938f944f60222ba8c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q3HW60.npy": {
+    "accession": "Q3HW60",
+    "sha256": "83c5471591f125ba7c6e537a990b241832997d9eb97bde2032cdfc1ee8357c4b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q0MUU5.npy": {
+    "accession": "Q0MUU5",
+    "sha256": "69935d561dd30cf3bd649c41775e8311d2f72a3a31116b13a52a4204b98c565f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A0R0KK84.npy": {
+    "accession": "A0A0R0KK84",
+    "sha256": "6cc5e9fd14a7f114fa2203e41e767e6ac0bac4c37ba01ff7ad8c70ba2af28cf2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q948Y0.npy": {
+    "accession": "Q948Y0",
+    "sha256": "4da82a328ecee4cbc7168190bafe32439943d60a4b6af9f7fadf93095f37bc01",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q50JD8.npy": {
+    "accession": "Q50JD8",
+    "sha256": "f02058d5433b8a8e4a06a72d0f256f41b2228cdc9c0795eb1712c863cdce6729",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q4LER5.npy": {
+    "accession": "Q4LER5",
+    "sha256": "d94fc7d34f1f2ec076279d89edf66bf98b4b717586460ed875ec58b85a748876",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P38417.npy": {
+    "accession": "P38417",
+    "sha256": "9e5bde7e2cd230b2a07f214012f6a186f5365acffa2ea1e7f34479f1ca4086ee",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "O22121.npy": {
+    "accession": "O22121",
+    "sha256": "b2148ad43bb41699ddf3daa7a868b32818adcfc5ff910c911c557e203eb6c9f1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q9FZP9.npy": {
+    "accession": "Q9FZP9",
+    "sha256": "af433e88657702cefbc3996eade18ea8c279e2258c6d4688015b67ca971ee7a5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "O22120.npy": {
+    "accession": "O22120",
+    "sha256": "3343a217f869dca6de77e332ed1a4d1830b4e56694f382de59f254fe81ff96f5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q39858.npy": {
+    "accession": "Q39858",
+    "sha256": "ef0db89926222fdd32ffa98aaeae0a16b0dcc96846ab2f8f72cf792866d0b25b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q84UB3.npy": {
+    "accession": "Q84UB3",
+    "sha256": "60cdeca9ea39d515a1ce6a1959195d5157dc2f87d03c90128d8f9dd604bdfbc4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "F8WQS1.npy": {
+    "accession": "F8WQS1",
+    "sha256": "cafd951849334a9409982fc3bfe0765c521c4d7435b4cd561e8dc0bff927ec8b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "I1NGH2.npy": {
+    "accession": "I1NGH2",
+    "sha256": "eb98a6dbbcffdc8c0a52a0c3dc114fa131629f9c9c9c18039d7255edad30e0f2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "F8WQS0.npy": {
+    "accession": "F8WQS0",
+    "sha256": "7db1435381a2dd902207c58d622c7915fac6b3e4cda324a316041cc77b80c7f9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "F7J075.npy": {
+    "accession": "F7J075",
+    "sha256": "cbac99113147445d5ca0c83988e77891d2e08286ab6cdb833b89cd4844a43db0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q8RVH5.npy": {
+    "accession": "Q8RVH5",
+    "sha256": "efd7f5018ee7c1da7b0aa86e27d251f9c76cba62a9ed1987d9d975bd9413b0e2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q39837.npy": {
+    "accession": "Q39837",
+    "sha256": "c35b9ad4c577f1325c155dca018c26476940746f31a8d8121b6d0fac1469307c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q3V5S6.npy": {
+    "accession": "Q3V5S6",
+    "sha256": "3d14fba1772a65fc0db98eb886fca0cdac37fce3a0e2af660f468f7604a7ee7e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P10742.npy": {
+    "accession": "P10742",
+    "sha256": "dd7e30b57198ca4e0df20bb38c763f0f9df1287121a95c71719566f28031692d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q39853.npy": {
+    "accession": "Q39853",
+    "sha256": "b556884e0461e5353c2e2c737b22f4ee6fa93f1784dcdad6052b079e84100f95",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q692Y3.npy": {
+    "accession": "Q692Y3",
+    "sha256": "d1ccc9ec42f3ffd9c83b53923573f6d49fbe50dde8bfc8b006971cd91945b1d6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q7M1N5.npy": {
+    "accession": "Q7M1N5",
+    "sha256": "1356428eeb5b20dccdcb741e345d7dabf0d553851cde7d5be57205ef269886ca",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A0R0GMV1.npy": {
+    "accession": "A0A0R0GMV1",
+    "sha256": "76e3a3da858b1f076f4679595924cd6868a71482b898a398b296bbd91c1f1d37",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "C6T9L1.npy": {
+    "accession": "C6T9L1",
+    "sha256": "4ac88aabbab48d85273c18c3232eef77b2eb99a330d421181dedc9a6797745be",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6LBP7.npy": {
+    "accession": "Q6LBP7",
+    "sha256": "af6f785e177e009e9913b410ca0726f6f24d7fe19922d56f365f7ff2cddc3cb3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q39816.npy": {
+    "accession": "Q39816",
+    "sha256": "12c2c7c6c6ffaabf6f73ebcf4e9f12d66b33acc9d3643c9976438e86bf067bce",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "C6TLL2.npy": {
+    "accession": "C6TLL2",
+    "sha256": "0e3dc54500acf56c7e6ce310a01307f135c0d9c0aa77cdc02821d469b372f87d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "K7N3H7.npy": {
+    "accession": "K7N3H7",
+    "sha256": "045ee4aeb0492bf3cad12a20be0de5584e1fb4969c0e11bcfb5fc81857375ef1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P15838.npy": {
+    "accession": "P15838",
+    "sha256": "79600e7df71de7f6d3f8ec6e94c7ea8446c26fa7114dc61f3628d6b5a87198ee",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P05693.npy": {
+    "accession": "P05693",
+    "sha256": "e37d6485d3fa74842ddab3d2c9188c70c4871788d81836c51da1c3ca0c893371",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P02857.npy": {
+    "accession": "P02857",
+    "sha256": "7cc2969578a93127ac4cbf56d1b79db5ca86a4564f6c0d5214cffe6107b4a100",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P05692.npy": {
+    "accession": "P05692",
+    "sha256": "63e0d302a76b060ba6ac3d6b33c972b17620e90ce4b90878ef5a954c7525d212",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P14594.npy": {
+    "accession": "P14594",
+    "sha256": "b473651dec30993c47a81345f244c8e97fd9ee5071f74866d4e915d176f6443b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P13918.npy": {
+    "accession": "P13918",
+    "sha256": "63190ac4c89d197eb504553408e04c09caaaee135eaf01a37401ed88ed924136",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P02856.npy": {
+    "accession": "P02856",
+    "sha256": "a022953998b53f58240e94363d9e7ccf522a07064e12f3efd56cca8ccc4e6190",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P02854.npy": {
+    "accession": "P02854",
+    "sha256": "d320bccb79d7f5e229c31bebbcf8db1382ad7526c9c41d1338a7901b4c3e1ca0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P13919.npy": {
+    "accession": "P13919",
+    "sha256": "a3b74752144308d2a6c41b7d41ecbebf570285c0931058838a2b2be6af16173e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P13915.npy": {
+    "accession": "P13915",
+    "sha256": "d3fc07007cf4a51b3f582efac5762cab2d1f18cb90ee23421e64837755d27609",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "O24294.npy": {
+    "accession": "O24294",
+    "sha256": "23a15ccc9ef1412451c00cb6a188f863db3839c9fb5f663ebdf3874076aaf3b5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D5AY78.npy": {
+    "accession": "A0A9D5AY78",
+    "sha256": "79600e7df71de7f6d3f8ec6e94c7ea8446c26fa7114dc61f3628d6b5a87198ee",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P62931.npy": {
+    "accession": "P62931",
+    "sha256": "a0449fbfb39adbe06ebac9861c4def1d547cbedfd464bc6844c7b287eb93a780",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P62928.npy": {
+    "accession": "P62928",
+    "sha256": "b9b15284e8df74f9a67c397bf853b7a8c6ea3e3e72d5ddb01a9cdcdf2e8f7db0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P62929.npy": {
+    "accession": "P62929",
+    "sha256": "20568f8a544bc15626e94ba37adcc74e5eb2eacbc877b9e5f19897e7968f71cc",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q41036.npy": {
+    "accession": "Q41036",
+    "sha256": "8b811c478792dbbedf17144f002b038ee54019966c9a7b97a925bd6cd3b4b2da",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "D3VND7.npy": {
+    "accession": "D3VND7",
+    "sha256": "d6c7c83c76b23b54f505f2ba72a5b47d2357b8040fb4cdd269f8ce0018d7f1ab",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "D3VND9.npy": {
+    "accession": "D3VND9",
+    "sha256": "e1a8d221a99dbfe69a31469ee29778817a6af71650ef406749e058651112e1a2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "D3VNE1.npy": {
+    "accession": "D3VNE1",
+    "sha256": "a3126df0c027dc477d9007d1ea31d6891cf298302cbb23d3c4304e6145b1f288",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "D3VNE0.npy": {
+    "accession": "D3VNE0",
+    "sha256": "7969b6e76405307d836be5e90598c1d6fe6aaaabea637e18eabb412b5cbbf374",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "D3VNE2.npy": {
+    "accession": "D3VNE2",
+    "sha256": "60a31341df056dec14d43ed0f81cc1138f0d271a371d47b984ea88d0a682f4d6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q43626.npy": {
+    "accession": "Q43626",
+    "sha256": "282ca971c8888988ad9283df67f82ffd529c4701076e3d9733b4f5109834bf75",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P02855.npy": {
+    "accession": "P02855",
+    "sha256": "282f3425afcfdf3ec898b547ff3802617317da5a5dff59df203bd59b6657b019",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P62930.npy": {
+    "accession": "P62930",
+    "sha256": "32c2dedc750300d609d24ad93f72a50d5017e30a4db31bfe39649d3e89d046e0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P62926.npy": {
+    "accession": "P62926",
+    "sha256": "0f163c989f9f21708449a77e99f43895cd230cae2f8e24013b5b1c45a4251edf",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P62927.npy": {
+    "accession": "P62927",
+    "sha256": "e18c37fc48078464dcee103a59401bba35b538d694ec80ad661af727a448827d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q702P1.npy": {
+    "accession": "Q702P1",
+    "sha256": "86f39be0521d762250b6d7c747161621c42a8886ef05038ba1488634a01388ac",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q9T0P5.npy": {
+    "accession": "Q9T0P5",
+    "sha256": "7ac480bfc5ed7dcb82e9204e8d0585cfc6970a66edf40646014e897bc544da56",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q7M1N3.npy": {
+    "accession": "Q7M1N3",
+    "sha256": "ea56cbdf266020303ca4c87405a68d3519748844391ae9b30478288d7451d844",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P08688.npy": {
+    "accession": "P08688",
+    "sha256": "23705bd587a9a7ee24aa191b39e469d0b73389eda072abdd0c364c7d278faa6e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4XXI3.npy": {
+    "accession": "A0A9D4XXI3",
+    "sha256": "b511de1650052d44e2a1c9754cc7011791baec2e3330948e68a1059fb873d9ab",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q702P0.npy": {
+    "accession": "Q702P0",
+    "sha256": "063487acb21b3eefae21840a3bef0c3f77a142baab4c317df094a3502ea95a10",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4XWP6.npy": {
+    "accession": "A0A9D4XWP6",
+    "sha256": "4b83848b9e492413516ba8bc5f690e9e6e75dae9e734dd6812978cac4443f0dd",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q94FS2.npy": {
+    "accession": "Q94FS2",
+    "sha256": "0444793d6d9208ac77f4764e48e44d03357ade949933a582224a6a2489559f4e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151U0J2.npy": {
+    "accession": "A0A151U0J2",
+    "sha256": "02e9ed912799086797e25a8335a13d154f83b0d37a1b832d8b5736639e54a94f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151U0Q4.npy": {
+    "accession": "A0A151U0Q4",
+    "sha256": "9afff458fe2dec214a20a26b8cf0f26381465744a787fc8a4e5aed7cdcfd44dc",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151STW8.npy": {
+    "accession": "A0A151STW8",
+    "sha256": "2e3b64b1bbc3538568473431179b66484e75164ffc102ce62081d1e805cd5bb5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151U5Z8.npy": {
+    "accession": "A0A151U5Z8",
+    "sha256": "e528002a230a632dadef7157229e19df918ddd2c0c8010b1fb0516088d9033c7",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151U0R9.npy": {
+    "accession": "A0A151U0R9",
+    "sha256": "f86ef155404ac36f2ebd9462a2d6b7aee7180fc40adc0a7122869f796d7e8481",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SLE6.npy": {
+    "accession": "A0A151SLE6",
+    "sha256": "d998405eec50dbf46a7bb8ab81f2fb26ecd2e5011aa557a1268ab749d9cb6c1b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TW66.npy": {
+    "accession": "A0A151TW66",
+    "sha256": "41321b7c1568b4a97ce14d69b244f98600ddb31a597591c6694a39ed4f535163",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151U0M6.npy": {
+    "accession": "A0A151U0M6",
+    "sha256": "1db81590b052c8c9379d74f859df247fd37b9519bd948a07eb805d50e92f4c58",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151STZ0.npy": {
+    "accession": "A0A151STZ0",
+    "sha256": "cce665829dd909ec8a3ec3e30abe5fee0934414b1adfb6376af17d5fd1d3e286",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TUN4.npy": {
+    "accession": "A0A151TUN4",
+    "sha256": "c6e726f4252f2bf62f7467fc8acbf6f8094655d65df0fed9ce116a5d0939f304",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TUL0.npy": {
+    "accession": "A0A151TUL0",
+    "sha256": "4fc8848d222a99afd296ae10c0855dc4c55ef7ade802df8d071e778a06ba2881",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TI51.npy": {
+    "accession": "A0A151TI51",
+    "sha256": "c8087bbe5e8fb4101a4de5eb887eb8742507e87e00c330449e9d81bc89ef57b2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TN63.npy": {
+    "accession": "A0A151TN63",
+    "sha256": "a44f791279a10882d70e6a20a4b68d15f5bb731cb71a48c8d516961d3dfbd1a9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SV05.npy": {
+    "accession": "A0A151SV05",
+    "sha256": "b05af5283344298049dbc284fb0668de300b1820db2d47119d3c2eb6c8fd18b6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TDP1.npy": {
+    "accession": "A0A151TDP1",
+    "sha256": "18f4c9a1278505501eac8f42e41a08701ac523bdc7eab1db13252ee3873e12d2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TIS3.npy": {
+    "accession": "A0A151TIS3",
+    "sha256": "10dfc153a46eef9ed6cf9ffe04adc376d45718b11873ae6cf7fa7d9546304016",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TIY5.npy": {
+    "accession": "A0A151TIY5",
+    "sha256": "fd9be7e83e86ae1c4c308138ddb96c71e94dc1d3f75375e5477bcacb3bd163fd",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151U6V8.npy": {
+    "accession": "A0A151U6V8",
+    "sha256": "fbf908ff728500ae967aeb630744e2ff9da2964040edb22d23c55981f6c2665c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151U6Q2.npy": {
+    "accession": "A0A151U6Q2",
+    "sha256": "98e3546129b7108864ff8bf452f4ddd872c9f278bfda44efc70a51b5e66a978b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151T731.npy": {
+    "accession": "A0A151T731",
+    "sha256": "da07a7cb2c25aad4e999eda497960228b8a8f03b401ea93647801b8d88c2b82d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151UBZ3.npy": {
+    "accession": "A0A151UBZ3",
+    "sha256": "8a0ea01d0f973ac520a1982ab671dba969958384c46071eee7bc1563106eb221",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151UC62.npy": {
+    "accession": "A0A151UC62",
+    "sha256": "45c2a02938542442735d113ed3c991b2b8f5e5bdcf9cfb559cdef2f4a87ac6b0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SUU8.npy": {
+    "accession": "A0A151SUU8",
+    "sha256": "b116ca230492db5ea7a4259b61af8e5b7c6e7062edf802e9dcf251564aeedf72",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151UBW6.npy": {
+    "accession": "A0A151UBW6",
+    "sha256": "2b19838e542710c1e56f8fb9d53c41640783429c332fe9554b2c56098c2c8e9f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TM61.npy": {
+    "accession": "A0A151TM61",
+    "sha256": "639fba8d50aa0437543e612e98e974830a6d0520136912f738eb78b1358c2e98",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SN09.npy": {
+    "accession": "A0A151SN09",
+    "sha256": "e6c6b9d76cc554a190494f759a33bd2a6d294752d000ee78a593ff2a9f7240e2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TMV5.npy": {
+    "accession": "A0A151TMV5",
+    "sha256": "b4cc70afd45a1528d3d6cf77eb458183805d38ec9bc56665e99e282ae7465a65",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TLW0.npy": {
+    "accession": "A0A151TLW0",
+    "sha256": "3d326db5945cc82b9133e4ecbcbf188793da2f7ba87021e23afcfd8ac3a7b123",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TH18.npy": {
+    "accession": "A0A151TH18",
+    "sha256": "b34f7f913e5638e782e8593eda5651681d2cf7a3b7fdae203d8fb1a68a365e11",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SH73.npy": {
+    "accession": "A0A151SH73",
+    "sha256": "e094e34137b4388457499e68cd157d26d5c673cc1ac7eff1804e67009c60c0e0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SH06.npy": {
+    "accession": "A0A151SH06",
+    "sha256": "90fda651aac0f8a2398b9e2bd63b29412299f0ee4f4865c6aa4f09d4ad8d4319",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SP28.npy": {
+    "accession": "A0A151SP28",
+    "sha256": "2c87405169f05459e148d5d1dcf2eb36b8863b34ecb187fb360fc811e2cccf71",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SH16.npy": {
+    "accession": "A0A151SH16",
+    "sha256": "1121866c6e000be593b01af651d2282c9f78bafd04e379bc833db07823d23d95",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SP78.npy": {
+    "accession": "A0A151SP78",
+    "sha256": "9cf785e63643a1e12d0d441f1374970adf057ac9ea9a2074f7ffc957fda9c705",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151T2U1.npy": {
+    "accession": "A0A151T2U1",
+    "sha256": "25b8b7cf5b4fe57ad3453c9ac364bc0314504ace26dac6ef2abd91d803d38bc3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151T5U3.npy": {
+    "accession": "A0A151T5U3",
+    "sha256": "8cc831593fa987cad556b923f825a2ca06ee813393981b7687e0bdc83833e20d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SH98.npy": {
+    "accession": "A0A151SH98",
+    "sha256": "20204de5dc4713202bd95ac3aa0dac1007a9da5c3186e7c2fa1f1b464d9ac5d8",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151UEZ0.npy": {
+    "accession": "A0A151UEZ0",
+    "sha256": "65e2918e1cd361e019d59ed7b31d733c53ef69a821c015dc26ee3b575cd8c576",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TE04.npy": {
+    "accession": "A0A151TE04",
+    "sha256": "1e4116b17fa9198f6089564c17cd9858a864a667065b269bbfd6fd8e57c1c139",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TE16.npy": {
+    "accession": "A0A151TE16",
+    "sha256": "780f8f0c721ec4b7eb5d6efc0ece2aa48f4c2c847cf226ad797587e24388eadd",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TVS0.npy": {
+    "accession": "A0A151TVS0",
+    "sha256": "954f729736848c3b218e9816c63a66047bfcea27d5a250caa03100aaf79fe200",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151TP18.npy": {
+    "accession": "A0A151TP18",
+    "sha256": "83c7d3d72710abf03094c76a6cd4bf6d5c84b8c027fee7237072e4f7064b34a2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A151SPW2.npy": {
+    "accession": "A0A151SPW2",
+    "sha256": "b7ac3cadb254f129605c2d7767ccdfb7cadb9a291654961f588b5a37e47e4c8f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6PSU2.npy": {
+    "accession": "Q6PSU2",
+    "sha256": "5352e15d9418c9f07e41dac4e122cfe8118ea13c38474b9f6a4fd857f74b69a0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647H2.npy": {
+    "accession": "Q647H2",
+    "sha256": "abeac5d193c6339486d84a7d5dc4fae37625fba8b5c34712b3d630ff2bf79254",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647H1.npy": {
+    "accession": "Q647H1",
+    "sha256": "106e840003992c97de99f5a7d0f9c7d3acf8e64700121f598c4b2c52d9f451c0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A1DZF0.npy": {
+    "accession": "A1DZF0",
+    "sha256": "0a50ccd6c642ba4d458b5c56b8ba2f0124aeb9929207e1c432ae5fb1a047a53c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647H4.npy": {
+    "accession": "Q647H4",
+    "sha256": "61a611a5159adb810997c2e70d753d31b4466948f812a23bd867a4e1a90730ed",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q5I6T2.npy": {
+    "accession": "Q5I6T2",
+    "sha256": "64c47dcc4289f49fcd28e5a646786fc31da87ddce6fdb74dd0a86a3760ffd07b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "B5TYU1.npy": {
+    "accession": "B5TYU1",
+    "sha256": "b28fa62bbebc2a2b44872088ada98b7d8de2ba95e21a9e976815d2374e73af7d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647H3.npy": {
+    "accession": "Q647H3",
+    "sha256": "f3811aa30b1a351cb647ee749eab3ecb9c48b958054502c99a200e557828fdca",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6T2T4.npy": {
+    "accession": "Q6T2T4",
+    "sha256": "f4d9df86f52a392e837826e679f6cbec395e94535906324a23fc1ccdb99d8e27",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P43238.npy": {
+    "accession": "P43238",
+    "sha256": "7ea96dc14d8bf8ac10001d1613d1d052d5b8426b754536a30605276a5c898e6f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647G9.npy": {
+    "accession": "Q647G9",
+    "sha256": "05bc3b5901d09c69e9d7d8e686f47940e322d5c073e97bc3345368299dabd4dc",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647G3.npy": {
+    "accession": "Q647G3",
+    "sha256": "92541c4acbd19212e43933c2332f9967f14f8c8df7c104a650ba319f0c7eaefe",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P20780.npy": {
+    "accession": "P20780",
+    "sha256": "69279139de867d8f06f67af69ed7f0208fb726e5785416a67f47e1f70820d6ac",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P04149.npy": {
+    "accession": "P04149",
+    "sha256": "6277ec9c30ca49c9c8d8ac66a9255c33fda53deb0222fe80a5aa82e2a6efd714",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "E9LFE8.npy": {
+    "accession": "E9LFE8",
+    "sha256": "6600667c2e40011f1cda3974d153a9543c57618070e741b2fe68ef6fae6199f1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6PSU6.npy": {
+    "accession": "Q6PSU6",
+    "sha256": "cb905e4486f2ce20e767551f55ecdab6fa1c3a36709a9503562441f1ff5e553b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647G4.npy": {
+    "accession": "Q647G4",
+    "sha256": "a4855481f960afd6a47ac8114400d1128a6769f63a9a8af484c5db6cf8cce2fe",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6PSU4.npy": {
+    "accession": "Q6PSU4",
+    "sha256": "09234e072f9202a3045507e4f22f93d3dd1fbd5af13d92775242abea15b53c90",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6PSU5.npy": {
+    "accession": "Q6PSU5",
+    "sha256": "893abf9118ed8ddabbc859143287880fb27687e871322bbf1864564501e523fe",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "E9LFE7.npy": {
+    "accession": "E9LFE7",
+    "sha256": "905dd6cd876bb7fd8c459eb3865814e0a8eed3c49d08997ac164953ad392b8a3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q647G5.npy": {
+    "accession": "Q647G5",
+    "sha256": "4ea3daa974c6064a186460a2cf2434ba4ba2f53b268b4811ef9140a642871beb",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "E9LFF0.npy": {
+    "accession": "E9LFF0",
+    "sha256": "83e5d140abbe315a9536b41df50cb10135878942958a2c5965b845afbbe909d9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "P43237.npy": {
+    "accession": "P43237",
+    "sha256": "6af4e76d9091e86f481d9d35b4eb83c5796317c34402827eb7fe179dd4cea514",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "E9LFE9.npy": {
+    "accession": "E9LFE9",
+    "sha256": "d8312c9b7331d674fd1fabd7ff991e0f7e60a243dd4b50f22fda9d8c96639f7c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A2R9ZPY0.npy": {
+    "accession": "A0A2R9ZPY0",
+    "sha256": "7cea9fcad80e60c4dc725f3c4a743f50addbd1f2e246d464f73bc7621b6adc1a",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A1DZF1.npy": {
+    "accession": "A1DZF1",
+    "sha256": "31b586de90ab83b7e5ed416cbbac96145ad83577dc60748839414eb1230c8902",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "G0Y6W7.npy": {
+    "accession": "G0Y6W7",
+    "sha256": "e91b88f7d9f0c075ac1b6dd60c4a247c862719e1155b7945903e34ce2b812286",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3QKJ7.npy": {
+    "accession": "A0ACH3QKJ7",
+    "sha256": "ec16bf4270af72cad2444d3e3cb52b148f28afb6dbb5d91c92fef236419dba59",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A445AI08.npy": {
+    "accession": "A0A445AI08",
+    "sha256": "ec16bf4270af72cad2444d3e3cb52b148f28afb6dbb5d91c92fef236419dba59",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3NPW9.npy": {
+    "accession": "A0ACH3NPW9",
+    "sha256": "d741b068d8287f7c9944296357eb149cd1b08b5217197c26ec671d9cf8fd322a",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3NPQ2.npy": {
+    "accession": "A0ACH3NPQ2",
+    "sha256": "413b3bdedc5e411aecb596661570a0fc97c009f02436b48fdbf32854066a3050",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A444YLR8.npy": {
+    "accession": "A0A444YLR8",
+    "sha256": "319ee4626269334649eba43ae919449349805a8dd74733e5da950eddb3b20982",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A445CPP8.npy": {
+    "accession": "A0A445CPP8",
+    "sha256": "b17f90c048797dd4d88691597684f191a5e130ec0a528e0990994dc1d5b9f278",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A444YLZ4.npy": {
+    "accession": "A0A444YLZ4",
+    "sha256": "413b3bdedc5e411aecb596661570a0fc97c009f02436b48fdbf32854066a3050",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A444YLS7.npy": {
+    "accession": "A0A444YLS7",
+    "sha256": "daa8f152b0bc2045b6fb575fee8d9c8ac57a3d53220e77553aeb1beee2231286",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A445CPR0.npy": {
+    "accession": "A0A445CPR0",
+    "sha256": "c657861376bff4a6728222afe4f57cb9cac1dfcf63a3b38cdd841fd44b93d379",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3NPJ3.npy": {
+    "accession": "A0ACH3NPJ3",
+    "sha256": "abeac5d193c6339486d84a7d5dc4fae37625fba8b5c34712b3d630ff2bf79254",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A444YLI2.npy": {
+    "accession": "A0A444YLI2",
+    "sha256": "4720538b8a6335330c08bb757acf7bc8fd6a7800b960f1f8011fe92b7ac45bbe",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3QIX2.npy": {
+    "accession": "A0ACH3QIX2",
+    "sha256": "bdaffa3462c003ac5f50d5bf646b7f6f27631f537115119a8f4c57a637139ed9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3TF40.npy": {
+    "accession": "A0ACH3TF40",
+    "sha256": "99987d7a6740d3c4d16395a46016764a3c2b474c87331edd73254ad409f630a6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3NNZ1.npy": {
+    "accession": "A0ACH3NNZ1",
+    "sha256": "0a50ccd6c642ba4d458b5c56b8ba2f0124aeb9929207e1c432ae5fb1a047a53c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q9SQH7.npy": {
+    "accession": "Q9SQH7",
+    "sha256": "1c32cefe82b5938d0ca434d961818d10a6e84ff91871283a0bb210cde875daad",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A444YLX0.npy": {
+    "accession": "A0A444YLX0",
+    "sha256": "c5956c2b78dd42a057e6b6ebd4b7f09c291ff7659b5de0268feccbf709871192",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A445AEY9.npy": {
+    "accession": "A0A445AEY9",
+    "sha256": "bdaffa3462c003ac5f50d5bf646b7f6f27631f537115119a8f4c57a637139ed9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A445CPR7.npy": {
+    "accession": "A0A445CPR7",
+    "sha256": "935811874a574753f6903c251c4153d220135243aa4dd9df47a07ba26e05e97e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A445CPS9.npy": {
+    "accession": "A0A445CPS9",
+    "sha256": "42e4c8f2f615e5060a16ebc156b4a2b0b17cd2764276c23fb39a419a86591222",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3NP65.npy": {
+    "accession": "A0ACH3NP65",
+    "sha256": "c7c3f1d13357e1daa567b1ee8a2861d41881fc5c5bcdf3655b59478bda3b886c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0ACH3NP83.npy": {
+    "accession": "A0ACH3NP83",
+    "sha256": "53ac418aa27cc71b27655ba73dc7716f732fdf315cada046a876efcfbbaa915a",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "O82580.npy": {
+    "accession": "O82580",
+    "sha256": "76f8f83b99ae29a3b5125ed8d12cfcb972ce1eec68178905e103592e3e64e4c0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q0GM57.npy": {
+    "accession": "Q0GM57",
+    "sha256": "55e52bd4fe3eb10cb44eaa03396e36afaa3918055f4e654d32cd5402dba0e2e5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N0G6.npy": {
+    "accession": "A0A4D6N0G6",
+    "sha256": "c214789a67f9f7b470e2d3c975cd9d40700ae0b8a4a449cb2b45a0600e6e3d3d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A2U9K6L4.npy": {
+    "accession": "A0A2U9K6L4",
+    "sha256": "cd7168a1a308b14898b0de30a5f7e72199637f819690136a3facfcd0e09450e1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A2U9K6K6.npy": {
+    "accession": "A0A2U9K6K6",
+    "sha256": "0a6c9e05f5edf329805b2415932fcc46ca2ec51d6ed190f422c9f61f308f704d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A2U9K6L2.npy": {
+    "accession": "A0A2U9K6L2",
+    "sha256": "7e231dde3648bbda199165d58044a6285f0ffb0002d6cc236a6b757bbaf404a8",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A2U9K6K8.npy": {
+    "accession": "A0A2U9K6K8",
+    "sha256": "2348d49eb1e3d8d2a8a86614549b30e96363a4472fa5ec06df813e2a0c23dd90",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A2U9K6K9.npy": {
+    "accession": "A0A2U9K6K9",
+    "sha256": "d6fdfc6be80237fefa704bb6be5d0620d1b0b8eb8c7364546043d440cfc9c60c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KM41.npy": {
+    "accession": "A0A4D6KM41",
+    "sha256": "917fb3ecd172c7c9fe42b27aa057da45196ecf07777c8f51dbac7ccbb08ee8da",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KKY8.npy": {
+    "accession": "A0A4D6KKY8",
+    "sha256": "328312fe78a274ed6cb3b7ca5ee68e15974c324604ee0b8759078870ef37b6ff",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6MA78.npy": {
+    "accession": "A0A4D6MA78",
+    "sha256": "6efb883eb5dac837a0174e3c13c7c4ae00ebd6af51f3b5efbd57e5c3e5e859a2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N4A9.npy": {
+    "accession": "A0A4D6N4A9",
+    "sha256": "9c397990c709a3236bfb1d5e2ef2aa7c6fbf58a2d29991eeae1592aabe9e9709",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N1A0.npy": {
+    "accession": "A0A4D6N1A0",
+    "sha256": "c57088c5371caaa2d1a037533ad99f1713cbc17d6fac3bee3ebc89327cacd949",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N0Y5.npy": {
+    "accession": "A0A4D6N0Y5",
+    "sha256": "3fc489e5eb319e900f405529b7e1546de58ab853c499a4ef749c390231efc8eb",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LB30.npy": {
+    "accession": "A0A4D6LB30",
+    "sha256": "5e449351b97ae647d87782bf05566e391b6c5e13305a2de0280eb2596c6c7e00",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LGM9.npy": {
+    "accession": "A0A4D6LGM9",
+    "sha256": "909fa5392557198dfb8211384f38931f7eb1a9bbbc46a9b411bfc6b9b6b2e096",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N8P3.npy": {
+    "accession": "A0A4D6N8P3",
+    "sha256": "6531a068e4fb33132be80c4ab39d5d86f0fe59a45ce9d18343d5ff6d6706f274",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N4W3.npy": {
+    "accession": "A0A4D6N4W3",
+    "sha256": "f39d1a4c62578ecf7bbc32034d8777fff6d28b487953d13a65ad085854c02fa9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6MTA9.npy": {
+    "accession": "A0A4D6MTA9",
+    "sha256": "cb9089e1b1bda87fc07b6795049ac5506c584011a6a3ac118ed417d3c34097c3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6MR86.npy": {
+    "accession": "A0A4D6MR86",
+    "sha256": "18bd52f119cdf20a24fd16d86fb7408a1520e3ee4fb90d14ae63dbb186d47c6d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LIH5.npy": {
+    "accession": "A0A4D6LIH5",
+    "sha256": "b5a7ae9bf64b2ebc014c5ac6a24a38211eeddb703d1cbbdae824eb742f6645de",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6L7U3.npy": {
+    "accession": "A0A4D6L7U3",
+    "sha256": "24fe9e119065b419b92f5a0bb674ecb3afd28811728b06f741401c384338407b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N8Z9.npy": {
+    "accession": "A0A4D6N8Z9",
+    "sha256": "3c5b12511bb606d1d80e284c01c1fdcfb087ae215a0a2a888448470387e0a34f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6NDA8.npy": {
+    "accession": "A0A4D6NDA8",
+    "sha256": "a2d672300e39647b0c7f4354c6535abc599f685452aa950631d7b203bbdf0cd0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LSH6.npy": {
+    "accession": "A0A4D6LSH6",
+    "sha256": "471a88efdcbbb8e1b9034d8e9dd957b12c397519eece9458869460dbb7812625",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KK90.npy": {
+    "accession": "A0A4D6KK90",
+    "sha256": "3ce568a2814c3681541b5f4d519c1cc5d170c533bd146f13fe2abfcc6531936c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KU27.npy": {
+    "accession": "A0A4D6KU27",
+    "sha256": "6bc639dad6be756a6e574108a9a00b2706886e5f664433a54ab1a491f12c8567",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LKW7.npy": {
+    "accession": "A0A4D6LKW7",
+    "sha256": "1a2abbf26d236a6a6f8a49789250504a07051e8573347f7644473cf3a52ade43",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N2D9.npy": {
+    "accession": "A0A4D6N2D9",
+    "sha256": "609b196c5f6bb6e7bdfcdae1a47523bbaf5f6cf021cb75e24364aa1e5019138b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6N9I6.npy": {
+    "accession": "A0A4D6N9I6",
+    "sha256": "17556b3cf8495afeb76ef3db1e86c6b31569c27ec933dcfd8571796710c15f51",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KUP3.npy": {
+    "accession": "A0A4D6KUP3",
+    "sha256": "7b39b8680ba66e53fba3c0d938ebf8913197a01a2cbe265d2070dd02c93f5347",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6L5Q8.npy": {
+    "accession": "A0A4D6L5Q8",
+    "sha256": "d998f2f84393e4d17acd7fa22798d05503425c2738688546e18ecdc2b093777a",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KKI2.npy": {
+    "accession": "A0A4D6KKI2",
+    "sha256": "6224f85768f9c43f9c9b02060c48e9fe20dd107536d0e1d727356ab28fd90e70",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KQZ7.npy": {
+    "accession": "A0A4D6KQZ7",
+    "sha256": "595cd25c75191041614a95f89b14b1d861e822f470842f8f66d03da749129c44",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KZU2.npy": {
+    "accession": "A0A4D6KZU2",
+    "sha256": "796305c72d9c9e4d120e0365001d6877c49374a9276d270b4840415e4ba2e180",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KTQ5.npy": {
+    "accession": "A0A4D6KTQ5",
+    "sha256": "cc0f92d583c722e0754796162fef009a5d18b90541d33baf9cc8141cc4e25088",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LJX3.npy": {
+    "accession": "A0A4D6LJX3",
+    "sha256": "bcfff16c11b3866f75cb99ca359611d99c4ac4274f302abc848550caa5ba892c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LB17.npy": {
+    "accession": "A0A4D6LB17",
+    "sha256": "99d0827f8e47dade52a388367c87721723928fee91443de8bb2c0cef7e8ee719",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6A1B9.npy": {
+    "accession": "Q6A1B9",
+    "sha256": "4b1aca62cf0732c0d05c9d571bc8f2ec4529c7ac02b799d0df415fddb5aad249",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LAS4.npy": {
+    "accession": "A0A4D6LAS4",
+    "sha256": "9e024f939058a358232f6f64f85c4ffd2e5a2edce860d1e268cf02e5fd6f6f2d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LBB9.npy": {
+    "accession": "A0A4D6LBB9",
+    "sha256": "45815954c04f0edcce60901a51a2e771ec57af58fea96f3ffe2bc75930e6b4f3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LSU9.npy": {
+    "accession": "A0A4D6LSU9",
+    "sha256": "8b44b87a1e4fedbfc179f0852ee436d9005a21212e37b25a29bfd6524364949f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6MVN4.npy": {
+    "accession": "A0A4D6MVN4",
+    "sha256": "b2d8f4aafee7c6935c39829b35317cd26b2b2091e9e60d8c932fc6c02475b004",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6MWZ1.npy": {
+    "accession": "A0A4D6MWZ1",
+    "sha256": "5afbd3dcc201e56d63a8097a80a2f660cb8a07d52f9881f316d1ce7f97a4b073",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6MLS5.npy": {
+    "accession": "A0A4D6MLS5",
+    "sha256": "bd8e6bfe7b4f3cf565df4937bad2a2dcfe519a8fdf3dea2acca8643690f5e08f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6MNG8.npy": {
+    "accession": "A0A4D6MNG8",
+    "sha256": "a32ef8938e6f6d00dc068819f83987171c9179812c63663b4bec76f0f6e6cddf",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KP56.npy": {
+    "accession": "A0A4D6KP56",
+    "sha256": "4d2cebbf642a00037afe73a2e79689a2e4d7f6058c2e00fcc69bb730b98948bc",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6KTE8.npy": {
+    "accession": "A0A4D6KTE8",
+    "sha256": "4e6a166db7099ed64b248274284889d1dc7ebcc81ceac04b1bebb8093bbfbd93",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6L983.npy": {
+    "accession": "A0A4D6L983",
+    "sha256": "b9f7f94e965bf8a7952b42347c6ffc08d41acb113ffcc69850687f2053c07141",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6LKU4.npy": {
+    "accession": "A0A4D6LKU4",
+    "sha256": "30279bf63be0271a238af5edf33360071e848852da7fb8a4d8375c53845aa4d6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6L4R3.npy": {
+    "accession": "A0A4D6L4R3",
+    "sha256": "f46b2b83d94315725f224b28014453d6a33d04fcc8157ba447b768bb257c1102",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A4D6NET0.npy": {
+    "accession": "A0A4D6NET0",
+    "sha256": "694cb5bb6912223680a1fd325c54966372956fd62e36b7eb02bbac457bef086a",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q9M3X6.npy": {
+    "accession": "Q9M3X6",
+    "sha256": "f66d54701ba309e7efabe991fbd1c34f15daad394be50d489b2e3e5656fc90a3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q41032.npy": {
+    "accession": "Q41032",
+    "sha256": "fcee4d4b791822ef54c8b981d3089df6cc854323641c626e4b03f78956c5cfc0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q7M1N4.npy": {
+    "accession": "Q7M1N4",
+    "sha256": "26cfff4f8494ef92bbbdbd2ca29f1962740ab8315def177a242007daf33ef5e1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q41068.npy": {
+    "accession": "Q41068",
+    "sha256": "fa8f2e8ab631a8464267ecd73b5d52eb9c1f9d341af0d6385b91e870fb3e6a59",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D5B3T3.npy": {
+    "accession": "A0A9D5B3T3",
+    "sha256": "282ca971c8888988ad9283df67f82ffd529c4701076e3d9733b4f5109834bf75",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D5AFY5.npy": {
+    "accession": "A0A9D5AFY5",
+    "sha256": "981090f7130566b48fa1042fe2c62fa98d6b1070f03f205d3e97b264f74b279c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WFW5.npy": {
+    "accession": "A0A9D4WFW5",
+    "sha256": "f66d54701ba309e7efabe991fbd1c34f15daad394be50d489b2e3e5656fc90a3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4XWZ2.npy": {
+    "accession": "A0A9D4XWZ2",
+    "sha256": "e1a8d221a99dbfe69a31469ee29778817a6af71650ef406749e058651112e1a2",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WJU6.npy": {
+    "accession": "A0A9D4WJU6",
+    "sha256": "9d46a18c36b378d95e4f3b40a5c18c4e384f4c55fe34a8448ca70050d04036e1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WHZ2.npy": {
+    "accession": "A0A9D4WHZ2",
+    "sha256": "897d93acb5d9fc243e6ee15b9eba76476d53bdb947456e2b2d0c130faf5aa150",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WZ10.npy": {
+    "accession": "A0A9D4WZ10",
+    "sha256": "60f0cdca9b3d57b3474b708c1532ec8bbd69667c70e974addbd0ffb79bd1cca7",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4X0V6.npy": {
+    "accession": "A0A9D4X0V6",
+    "sha256": "3b9cda25cf5e7454b4c0f95eb690abb22f47efe04acbf7e1dcf04ab38ed452e3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WY90.npy": {
+    "accession": "A0A9D4WY90",
+    "sha256": "c231e4cecc38dc3c5899de88d52e584d73dd6c8ee66417f75ff93170c2865c89",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WYA0.npy": {
+    "accession": "A0A9D4WYA0",
+    "sha256": "7fa462c8cf7b8c93a34705d03a54e799c9b42f8e9bbe8ed2459aa82cd9cdb369",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D5AZZ3.npy": {
+    "accession": "A0A9D5AZZ3",
+    "sha256": "c025e28a1a288ca2e516a66338cce4714b035d6030316906dc54e7deb1bf0430",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WKA7.npy": {
+    "accession": "A0A9D4WKA7",
+    "sha256": "38aa6612336ce22e5d1ff44b1df37ba5eb1ee1b3e352ea5f2ab5725a8b54f9e6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A9D4WYE1.npy": {
+    "accession": "A0A9D4WYE1",
+    "sha256": "c4d02723124fbf1720782d596f54b8591b6e48a06081616218b74568c7465343",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6PP79.npy": {
+    "accession": "Q6PP79",
+    "sha256": "5aa11a3f546bd1167de4fe74499821057e550fe52aed8c8bf7d6916a340df54f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "G8FLJ2.npy": {
+    "accession": "G8FLJ2",
+    "sha256": "5aa11a3f546bd1167de4fe74499821057e550fe52aed8c8bf7d6916a340df54f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0A218KAA6.npy": {
+    "accession": "A0A218KAA6",
+    "sha256": "6f5f533adb8293797811a65434729f328273c9b1c3d3178d9caa2310de2a12df",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "Q6A1C0.npy": {
+    "accession": "Q6A1C0",
+    "sha256": "79d865e7a320bfcef34ad6ae437304cf0d855d1dc12f9dd69ab97b898b9a7db6",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VRP6.npy": {
+    "accession": "A0AA86VRP6",
+    "sha256": "ad6077526ad2da8dfe256dc50ff306d746f8a54c8b60f98fba23c6d06a0185a1",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VZQ4.npy": {
+    "accession": "A0AA86VZQ4",
+    "sha256": "1360577bfb4ecf5426bf592cc96b2ef6dd28ad81fa8e5e23d78fd8e8b80fecf3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SJQ3.npy": {
+    "accession": "A0AA86SJQ3",
+    "sha256": "baf47163f68c337b981f25cafcb997a49be3da71c9ab83746c1f711445fe787f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VG86.npy": {
+    "accession": "A0AA86VG86",
+    "sha256": "f00cbcbfc2c66fc7c13d85f012cf43eb0b7c6c06185d862c7b126c3db73e1cb5",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VYF0.npy": {
+    "accession": "A0AA86VYF0",
+    "sha256": "e94597e15c2365a61edef42a33817c0d2ceaa0d7743899c617e4557136bcdde7",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VFB1.npy": {
+    "accession": "A0AA86VFB1",
+    "sha256": "9e13ea112da9718536b7e920dcab3d4f8fc30c5568edf4f9efeec7618624beae",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VNI5.npy": {
+    "accession": "A0AA86VNI5",
+    "sha256": "f1025ed7bf727bfa71fde7c089d6eefd5d186496c15a484664ab2d5659d325b7",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SIT3.npy": {
+    "accession": "A0AA86SIT3",
+    "sha256": "4a5209f9cc07c9f7bda8e74bba0722270d6067b3ac4184c03c20c7764d764b1b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SMV1.npy": {
+    "accession": "A0AA86SMV1",
+    "sha256": "f760b9a80632e78ce969657b9d8785ad46ec292ddef0bfb88d9778a26387499d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86RXM9.npy": {
+    "accession": "A0AA86RXM9",
+    "sha256": "61ce8c06f547e0a5c55d77039c5a6494c5b465fe177e2d00f01e1748d213e1bb",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA87B8R1.npy": {
+    "accession": "A0AA87B8R1",
+    "sha256": "bb4b5cae97427c42588d110ddbbc83768f7aee84d5335997fbe3ed05bc71a50d",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VD36.npy": {
+    "accession": "A0AA86VD36",
+    "sha256": "d8edd0ad07988a0727e16b42342780c384d9fd9f427fcf08af42f9c77f4ddd76",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VSB5.npy": {
+    "accession": "A0AA86VSB5",
+    "sha256": "1767b58f3be84f7e56236b51c58346e61f34fca16041f6c8ce4895c803ed3402",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA87B6N9.npy": {
+    "accession": "A0AA87B6N9",
+    "sha256": "7093f08e85bafc77e398af30fe1a88557fd3bfdf224fcca7973f8e620f9dd360",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SPQ3.npy": {
+    "accession": "A0AA86SPQ3",
+    "sha256": "a0a0d51cb48eb0a606b8a19aeaa0d58e87f9381ce9fbc8534fbb9be925618979",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86W2F3.npy": {
+    "accession": "A0AA86W2F3",
+    "sha256": "b19fdbc4aa2238876d20d3eabdf2399b9412d6658c92e2fa9e53be51a2acff1e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SVJ7.npy": {
+    "accession": "A0AA86SVJ7",
+    "sha256": "d0dad4c5357a50f3e6725175288a068b9274ea8e0776f21c8ac2d8490b61e69f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86S3E3.npy": {
+    "accession": "A0AA86S3E3",
+    "sha256": "c58b0c9227f3fcec8b6f2aa0ed66e8b8a49e4dccb291f85baeebd8baaaf6028b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SEW6.npy": {
+    "accession": "A0AA86SEW6",
+    "sha256": "db8b4e2887c70e0cc4788da43b24071cdddd26dc19ff5a8543758055589593fc",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SEP1.npy": {
+    "accession": "A0AA86SEP1",
+    "sha256": "64ccb66196b314a179ce3246948709f30fb9789d30a207739380887a44fa09ac",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86S719.npy": {
+    "accession": "A0AA86S719",
+    "sha256": "177a6f77b18890be4206b79d3cf4956dcfaa19dcc91dbb24af564331f979b55a",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86V824.npy": {
+    "accession": "A0AA86V824",
+    "sha256": "fde35b6cd91aa772eba00fc101a82b59ca8f405d18aa232196ab67fa895452cb",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VCV7.npy": {
+    "accession": "A0AA86VCV7",
+    "sha256": "8c15e2291416c8548b4d35ccf513e007e85db0efa658ff67d4a0d5affa676775",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VU12.npy": {
+    "accession": "A0AA86VU12",
+    "sha256": "b0b778893290104cee39f307d589e44c15e90de8c1f7f33d80be7f176b18fb0e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86RWY2.npy": {
+    "accession": "A0AA86RWY2",
+    "sha256": "2fa27b1e86954dfb68b585a9d6ca969701b218e93154870c5a4b400e1700c17e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SJH8.npy": {
+    "accession": "A0AA86SJH8",
+    "sha256": "b84e0c73a9f8408b7aba3a99ed7a4c265b57357d686ec6950d163e5bbb4474f3",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SGL3.npy": {
+    "accession": "A0AA86SGL3",
+    "sha256": "1d6acf4a8b2ceea716fa3d26daf1f4b2a2522d7df43b1758abd939ac1d9888b4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VZC6.npy": {
+    "accession": "A0AA86VZC6",
+    "sha256": "670484ac13852ed9bc4caf53432d1d4fe74cdd3fa607d2260e4e7d7db2bc745f",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86RZY8.npy": {
+    "accession": "A0AA86RZY8",
+    "sha256": "698178949abdd83714b9f2c5aa76083812aaa13822af5c8e18a91f03b6255b4e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SSJ1.npy": {
+    "accession": "A0AA86SSJ1",
+    "sha256": "8d01811fa04bcbe6815f51e7082e1e599af87b6c7a47f51774e6a72b4ca26b18",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VI82.npy": {
+    "accession": "A0AA86VI82",
+    "sha256": "e3b1a0009f75a69bb735593b8785682dfd3f3e1694c165eb221e8f25da27d9a0",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86V8C8.npy": {
+    "accession": "A0AA86V8C8",
+    "sha256": "52c3ac3d7442009065dc91bde90afd79f90443e1e3616f5da3d6b9d1f27bfd95",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VZA2.npy": {
+    "accession": "A0AA86VZA2",
+    "sha256": "0e5f51c58f109ab9244737ccb248a044c3c7a4795f05122c0f19051d1e3d395b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SB13.npy": {
+    "accession": "A0AA86SB13",
+    "sha256": "909dcae1169a784c4d2aab3057397f4e15d2bcfaa8e740b6db19ad9041dca07c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA87B7Q3.npy": {
+    "accession": "A0AA87B7Q3",
+    "sha256": "045da544575b609619e69259f68d63f1ca0ecf06e04a52ae9397ec60acae620c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA87BAA1.npy": {
+    "accession": "A0AA87BAA1",
+    "sha256": "4c0718f7c8351bee23e8046b22f22c718791654b8ee96fdcf846a7ca1348da5e",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86W3R2.npy": {
+    "accession": "A0AA86W3R2",
+    "sha256": "cccbfbcd8d9869f40aa8b5d0b3134788f80950678b1d4e457a01a0cca495ffed",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA87BB54.npy": {
+    "accession": "A0AA87BB54",
+    "sha256": "2dfa717470991ba41d404e05ae2f7019ace3566d022780c1fd28ab7af29a36fd",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA87BCP1.npy": {
+    "accession": "A0AA87BCP1",
+    "sha256": "69e15462d935971213b85b7fb0b8fe8f14421dafa7adb0d2d04269b3467210e8",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86W6L7.npy": {
+    "accession": "A0AA86W6L7",
+    "sha256": "2bb3d15e842d49b474f4c2c47bff6311bb5d2ee97354344e7b34c77aa4aadbf9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86W4C8.npy": {
+    "accession": "A0AA86W4C8",
+    "sha256": "b4cbe7aad1b2bff00212422d100701269094242a83ce77d3cd914774b21738fb",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA87B9M7.npy": {
+    "accession": "A0AA87B9M7",
+    "sha256": "e7484f28704a1f468311e72c951b850b6084b3d53650c7f7973f537376afd190",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86SJR2.npy": {
+    "accession": "A0AA86SJR2",
+    "sha256": "ad2c439bfaee39d36ec0d837fcb66d8976ad643295cee345a7ca9aa6680eb844",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VZM0.npy": {
+    "accession": "A0AA86VZM0",
+    "sha256": "17dabc8f5278c40ba9d2ac7b8e7cd1b10bd2f14cdd1d9f9dae6ea886dd74924b",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VC35.npy": {
+    "accession": "A0AA86VC35",
+    "sha256": "1faf8130d4f1a2a6b8245dbd39f6de7c8f2125dee67dab479ee267d0dea0bee9",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VGH4.npy": {
+    "accession": "A0AA86VGH4",
+    "sha256": "a2f9edb0e9266dbab8a5eeaba16a88d47ebb94622f00443e21f7c981ec6aace4",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86S319.npy": {
+    "accession": "A0AA86S319",
+    "sha256": "f984c8d17766313ba9af6d6cfa847d27cc70b79810fdcda90579c3469204bc44",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VFX1.npy": {
+    "accession": "A0AA86VFX1",
+    "sha256": "cc3eff35f2dce6a896af3c032fc2c569edb9c9c8fa4ddc643061c4e437b52a6c",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VB15.npy": {
+    "accession": "A0AA86VB15",
+    "sha256": "cb2c067edb5a0e9c097384e73edf3772ddff690e4f1326e25e25203f038fa675",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  },
+  "A0AA86VKK0.npy": {
+    "accession": "A0AA86VKK0",
+    "sha256": "52b3bcc9c53bb58a6a67728046ed1c42ad33f1ce14d96f1abe73e4caab58cfc8",
+    "dim": 1280,
+    "model": "facebook/esm2_t33_650M_UR50D"
+  }
+}

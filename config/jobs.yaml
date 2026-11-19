@@ -1,0 +1,61 @@
+# Jobs configuration for Proti IQ
+# Three focused application models: egg-type gel, tofu-type gel, and milk-type.
+
+jobs:
+  egg:
+    id: "egg"
+    name: "Plant-Based Egg Gel"
+    target_function: "Thermal gelation and heat-set coagulation resembling scrambled or set egg"
+    primary_benchmark: "mung_bean"
+    secondary_benchmark: "soy"
+    key_family_target: "7S"  # Vicilin-like globulin
+    weights:
+      embedding_similarity: 0.35      # ESM-2 8M cosine similarity to benchmark vicilin
+      family_match: 0.25              # 7S vicilin-like globulin alignment
+      physicochemical_distance: 0.20  # Normalized Euclidean distance (MW, pI, GRAVY, Instability)
+      sequence_identity: 0.15         # Pairwise BLOSUM62 alignment identity
+      cysteine_fraction: 0.05         # Moderate requirement for heat cross-linking
+    rationale: "Mung bean 8S vicilin drives heat gelation in commercial egg substitutes (Brishti 2017). Vicilin homology and structural representation dominate."
+    citations:
+      - "Brishti et al. 2017, Int. Food Res. J. 24(4)"
+      - "Food Chemistry: X (Cowpea protein gelation literature)"
+
+  gel:
+    id: "gel"
+    name: "Tofu-Type Coagulated Gel"
+    target_function: "Salt- or acid-induced firm curd network formation"
+    primary_benchmark: "soy"
+    secondary_benchmark: "mung_bean"
+    key_family_target: "11S" # Legumin-like globulin (glycinin)
+    weights:
+      embedding_similarity: 0.25
+      family_match: 0.25              # 11S legumin-like share
+      cysteine_fraction: 0.20         # Disulfide bridge formation crucial for 11S gel elasticity
+      physicochemical_distance: 0.15
+      sequence_identity: 0.15
+    optional_crop_inputs:
+      ratio_11s_7s:
+        weight: 0.20                  # When literature ratio is present, renormalize weights
+        literature_citation: "Foods 2025, 14(23):4029 (R=0.92 firmness, R=0.98 elasticity)"
+    rationale: "Soy glycinin (11S) hexamers form intermolecular disulfide bonds during coagulant-induced gelation (Breeding Science 2000, Foods 2025)."
+    citations:
+      - "Foods 2025, 14(23):4029"
+      - "Breeding Science 50(2), 2000"
+
+  milk:
+    id: "milk"
+    name: "Plant-Based Milk Dispersion"
+    target_function: "Colloidal stability, neutral-pH solubility, low sedimentation"
+    primary_benchmark: "soy"
+    secondary_benchmark: "pea"
+    key_family_target: "7S"  # Beta-conglycinin drives plant milk colloidal stability
+    weights:
+      embedding_similarity: 0.25
+      family_match: 0.15              # 7S vicilin-like globulins form stable colloidal dispersions
+      solubility_proxy: 0.25          # Charge density + hydrophilicity + pI clearance from pH 7
+      physicochemical_distance: 0.20
+      sequence_identity: 0.15
+    confidence_penalty: 1.00          # Pretoria open benchmark provides direct neutral-pH solubility measurements
+    rationale: "Soy milk stability requires high solubility at pH 6.5-7.2; pea suffers from poor solubility (Tang et al. 2023)."
+    citations:
+      - "Tang, Roos and Miao 2023, Foods 12(2):368"

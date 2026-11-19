@@ -1,0 +1,8 @@
+{
+  "total_bambara_proteins": 4,
+  "total_reference_storage_proteins": 46,
+  "threshold_pct": 40.0,
+  "hits_above_40_count": 0,
+  "max_identity_pct": 100.0,
+  "candidates": []
+}

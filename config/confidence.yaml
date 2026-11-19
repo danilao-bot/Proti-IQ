@@ -1,0 +1,49 @@
+# Confidence scoring rules for Proti IQ
+# Generates High, Medium, or Low badges with explicit, transparent rationale.
+
+thresholds:
+  sequence_count:
+    high: 5
+    medium: 2
+    low: 1
+  reviewed_sequences_required_for_high: true
+  plddt_mean:
+    high: 75.0
+    medium: 60.0
+    low: 0.0
+  max_embedding_distance:
+    high: 0.35
+    medium: 0.60
+
+rules:
+  - level: "High"
+    criteria:
+      - "Crop has >= 5 sequence entries in UniProt with at least 1 reviewed (Swiss-Prot) entry."
+      - "Mean AlphaFold pLDDT >= 75.0 (well-modeled structural coordinates)."
+      - "Embedding cosine distance to target benchmark <= 0.35 (well within applicability domain)."
+      - "Peer-reviewed answer key data available for the job."
+  - level: "Medium"
+    criteria:
+      - "Crop has 2 to 4 sequence entries, or only TrEMBL (unreviewed) entries."
+      - "Mean AlphaFold pLDDT between 60.0 and 75.0."
+      - "Embedding cosine distance between 0.35 and 0.60."
+  - level: "Low"
+    criteria:
+      - "Crop has only 1 sequence entry, or relies on closest-species homology proxy (e.g. Bambara fallback)."
+      - "AlphaFold pLDDT < 60.0 or unavailable."
+      - "Embedding cosine distance > 0.60 (outside primary applicability domain)."
+      - "Job has thin or disputed benchmark answer key data (e.g. Milk application)."
+
+labels:
+  high:
+    badge: "High Confidence"
+    color: "#166534"
+    bg_color: "#dcfce7"
+  medium:
+    badge: "Medium Confidence"
+    color: "#854d0e"
+    bg_color: "#fef9c3"
+  low:
+    badge: "Low Confidence"
+    color: "#991b1b"
+    bg_color: "#fee2e2"

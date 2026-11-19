@@ -1,0 +1,39 @@
+{
+  "summary": "Directional within-study back-test against peer-reviewed food literature",
+  "jobs": {
+    "gel": {
+      "benchmark_study": "Foods 2025, 14(23):4029 & Breeding Science 2000",
+      "metric": "Spearman rank correlation on 11S/7S subunit ratio vs gel breaking stress",
+      "spearman_rho": 0.92,
+      "sample_size": 7,
+      "p_value": 0.003,
+      "interpretation": "Subunit composition and cysteine fraction strongly rank coagulated curd firmness."
+    },
+    "milk": {
+      "benchmark_study": "Tang et al. 2023, Foods 12(2):368",
+      "measured_property": "Protein solubility at neutral pH 7.0",
+      "spearman_rho": 1.0,
+      "sample_size": 4,
+      "interpretation": "Directional agreement in pulse solubility; pea correctly identified as low-solubility anchor."
+    }
+  },
+  "literature_checks": {
+    "cowpea_egg_validation": {
+      "status": "INVESTIGATE",
+      "rank": 9,
+      "total_ranked": 298,
+      "score": 62.4,
+      "citation": "Food Chemistry: X (Cowpea gel closely resembled egg gel)",
+      "finding": "Cowpea achieved rank #9 of 298 candidate entries (Score: 62.4/100) placing in the top tier alongside pigeon pea. This provides directional alignment with published laboratory trial outcomes."
+    }
+  },
+  "documented_failure_cases": [
+    {
+      "case_id": "FAIL-01",
+      "target": "Mung bean isolate under pH-shifting treatment",
+      "observation": "Native mung bean isolate exhibits an LGC of 22% (WHC: 1.56 g/g). Following pH 12 alkaline unfolding and neutralization, LGC drops to 15% and WHC surges to 4.81 g/g.",
+      "why_model_cannot_predict": "Proti IQ evaluates primary amino acid sequences, ESM-2 fold embeddings, and native AlphaFold structures. It cannot capture extreme quaternary restructuring, thermal denaturing, or alkaline unfolding induced by industrial processing.",
+      "user_implication": "Computational scores guide native crop selection; processing optimization remains strictly empirical."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+crop_id,common_name,scientific_name,role,total_proteins,count_7S,count_11S,count_reviewed,decision
+mung_bean,Mung bean,Vigna radiata,benchmark,50,24,6,2,Keep
+soy,Soybean,Glycine max,benchmark,50,26,17,18,Keep
+pea,Field pea,Pisum sativum,benchmark,50,30,13,18,Keep
+cowpea,Cowpea (Black-eyed pea),Vigna unguiculata,candidate,50,12,4,0,Keep
+bambara_groundnut,Bambara groundnut,Vigna subterranea,candidate,4,0,0,1,No Data / Unranked
+pigeon_pea,Pigeon pea,Cajanus cajan,candidate,44,14,9,0,Keep
+african_yam_bean,African yam bean,Sphenostylis stenocarpa,candidate,50,3,3,0,Keep
+groundnut,Groundnut (Peanut),Arachis hypogaea,candidate,50,6,39,10,Keep

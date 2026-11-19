@@ -1,0 +1,18 @@
+job,protein,measured_property,value,unit,conditions,extraction_method,study_id,citation,verified_by,verified_at,notes
+egg,Mung bean isolate,Least gelation concentration,12.0,%,pH 7 room temp,alkaline extraction isoelectric precipitation,brishti_2017,Brishti et al. 2017 Int. Food Res. J. 24(4),,,Soy isolate was 14.0% in same study
+egg,Mung bean isolate,Foaming capacity,89.66,%,pH 7,standard whipping,brishti_2017,Brishti et al. 2017 Int. Food Res. J. 24(4),,,Soy isolate was 68.66% in same study
+egg,Mung bean native isolate,Least gelation concentration,22.0,%,native unshifted,isoelectric precipitation,ph_shift_mung,Effect of pH-shifting on WHC and gelation of mung bean protein isolate,,,Drops to 15.0% after pH 12 shift
+egg,Mung bean native isolate,Water holding capacity,1.56,g/g,native unshifted,isoelectric precipitation,ph_shift_mung,Effect of pH-shifting on WHC and gelation of mung bean protein isolate,,,Rises to 4.81 g/g after pH 12 shift
+egg,Mung bean albumin,Least gelation concentration,4.0,%,pH 7,fractionation,lalague_abstract,Lalague Food Colloids conference abstract,,,Globulin was 8.0%
+egg,Mung bean albumin,Water retention at 8% protein,80.3,%,8% protein dispersion,fractionation,lalague_abstract,Lalague Food Colloids conference abstract,,,Globulin was 96.2%
+egg,Cowpea isolate,Least gelation concentration at 70C,12.0,%,70 C heat-set,alkaline extraction isoelectric precipitation,horax_2004,Horax et al. 2004 J. Food Sci. 69(2),,,Soy isolate was 10.0% in same study
+egg,Cowpea isolate,Foaming capacity,59.4,mL,pH 7,whipping,horax_2004,Horax et al. 2004 J. Food Sci. 69(2),,,Range 58.6-60.2 vs soy 31.9-33.0 mL
+egg,Cowpea isolate,Gel resemblance to egg,1.0,qualitative,heat-set gel,pilot plant isolate,cowpea_egg_2024,Food Chemistry: X Dec 2024,,,Cowpea gel closely resembled egg gel (held-out check)
+egg,Bambara vicilin,Isoelectric point,5.3,pH units,purified fraction,chromatography,diedericks_2019,Diedericks et al. 2019 AGRIS FAO record,,,Denaturation temp 92C; solubility 86% at >200mM NaCl
+tofu_gel,Soy 7 varieties,11S/7S ratio min,1.14,ratio,standard tofu prep,calcium sulfate coagulation,foods_2025_soy,Foods 2025 14(23):4029,,,Firmness 1520 gf
+tofu_gel,Soy 7 varieties,11S/7S ratio max,4.10,ratio,standard tofu prep,calcium sulfate coagulation,foods_2025_soy,Foods 2025 14(23):4029,,,Firmness 1889 gf (R=0.92 with firmness R=0.98 with elasticity)
+tofu_gel,Soy lines,Breaking stress high 11S,4.0,relative_fold,coagulated gel,standard tofu prep,breeding_sci_2000,Breeding Science 50(2) 2000,,,11S/7S ratio 3.76 vs 0.12 (4x higher breaking stress)
+milk,Soy isolate,Solubility at pH 7,85.0,%,pH 7 room temp,standard aqueous extraction,tang_2023,Tang et al. 2023 Foods 12(2):368,,,Anchor benchmark for plant milk solubility
+milk,Pea isolate,Solubility at pH 7,45.0,%,pH 7 room temp,commercial / standard,tang_2023,Tang et al. 2023 Foods 12(2):368,,,Known poor solubility anchor
+milk,Lentil isolate,Solubility at pH 7,65.0,%,pH 7 room temp,standard,tang_2023,Tang et al. 2023 Foods 12(2):368,,,Comparative pulse benchmark
+milk,Chickpea isolate,Solubility at pH 7,62.0,%,pH 7 room temp,standard,tang_2023,Tang et al. 2023 Foods 12(2):368,,,Comparative pulse benchmark

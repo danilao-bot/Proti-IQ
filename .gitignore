@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+
+# Secrets & Environment
+.env
+*.pem
+*.key
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+.pytest_cache/
+.ruff_cache/
+
+# Raw JSON dumps (can be re-downloaded via UniProt ingestion)
+data/raw/*.json
+data/resource_pack/*
+!data/resource_pack/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db

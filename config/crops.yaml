@@ -1,0 +1,58 @@
+# Crops configuration for Proti IQ
+# Candidates: Nigerian & regional legumes targeted for screening
+# Benchmarks: Industrially proven functional reference crops
+
+benchmarks:
+  - id: mung_bean
+    common_name: "Mung bean"
+    scientific_name: "Vigna radiata"
+    tax_id: 3916
+    role: "benchmark"
+    primary_job: "egg"
+    description: "Industry gold standard for plant-based liquid egg (e.g. JUST Egg vicilin/8S)."
+  - id: soy
+    common_name: "Soybean"
+    scientific_name: "Glycine max"
+    tax_id: 3847
+    role: "benchmark"
+    primary_job: "gel"
+    description: "Gold standard for tofu curd gelation (glycinin 11S / beta-conglycinin 7S) and plant milk."
+  - id: pea
+    common_name: "Field pea"
+    scientific_name: "Pisum sativum"
+    tax_id: 3888
+    role: "benchmark"
+    primary_job: "milk"
+    description: "Secondary benchmark; lower solubility anchor in milk applications."
+
+candidates:
+  - id: cowpea
+    common_name: "Cowpea (Black-eyed pea)"
+    scientific_name: "Vigna unguiculata"
+    tax_id: 3917
+    role: "candidate"
+    description: "Major Nigerian staple. Food science literature (Food Chem: X) demonstrates heat-set gelation behavior directionally aligned with benchmark targets."
+  - id: bambara_groundnut
+    common_name: "Bambara groundnut"
+    scientific_name: "Vigna subterranea"
+    tax_id: 115715
+    role: "candidate"
+    description: "Underutilised climate-resilient African pulse with high vicilin content. Thin sequence coverage to be audited."
+  - id: pigeon_pea
+    common_name: "Pigeon pea"
+    scientific_name: "Cajanus cajan"
+    tax_id: 3821
+    role: "candidate"
+    description: "Drought-hardy legume with balanced globulin/albumin fractions."
+  - id: african_yam_bean
+    common_name: "African yam bean"
+    scientific_name: "Sphenostylis stenocarpa"
+    tax_id: 92480
+    role: "candidate"
+    description: "Indigenous West African underutilised pulse with high protein content (19-29%)."
+  - id: groundnut
+    common_name: "Groundnut (Peanut)"
+    scientific_name: "Arachis hypogaea"
+    tax_id: 3818
+    role: "candidate"
+    description: "High oilseed protein; arachin (11S) and conarachin (7S) well characterized. Strict allergen screening flag required."

@@ -1,0 +1,37 @@
+# Proti IQ Core Dependencies
+# Pinned for reproducibility and security audits
+
+# Backend & Web API
+fastapi==0.110.0
+uvicorn[standard]==0.28.0
+pydantic==2.6.4
+pydantic-settings==2.2.1
+sqlalchemy==2.0.28
+alembic==1.13.1
+slowapi==0.1.9
+structlog==24.1.0
+httpx==0.27.0
+pyyaml==6.0.1
+python-dotenv==1.0.1
+
+# Scientific & Cheminformatics / Bioinformatics
+numpy==1.26.4
+pandas==2.2.1
+scipy==1.12.0
+scikit-learn==1.4.1.post1
+biopython==1.83
+
+# Deep Learning / Protein Language Model (CPU only)
+torch==2.2.1
+transformers==4.38.2
+safetensors==0.4.2
+
+# Interactive Frontend & Visualization
+streamlit==1.32.0
+plotly==5.19.0
+stmol==0.0.9
+py3Dmol==2.0.4
+
+# Testing & Quality Assurance
+pytest==8.0.2
+ruff==0.3.2
