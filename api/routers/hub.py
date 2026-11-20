@@ -35,7 +35,7 @@ def query_llm_advisory(role: str, application: str, crop: str, context: str) -> 
 
     try:
         import httpx
-        with httpx.Client(timeout=4.5) as client:
+        with httpx.Client(timeout=15.0) as client:
             # 1. Option: Google Gemini API (100% Free at aistudio.google.com)
             if gemini_key:
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
@@ -49,18 +49,23 @@ def query_llm_advisory(role: str, application: str, crop: str, context: str) -> 
             if groq_key:
                 url = "https://api.groq.com/openai/v1/chat/completions"
                 headers = {"Authorization": f"Bearer {groq_key}", "Content-Type": "application/json"}
-                payload = {
-                    "model": "llama-3.3-70b-versatile",
-                    "messages": [
-                        {"role": "system", "content": "You are the Proti IQ African Alternative-Protein Advisory AI."},
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.2,
-                    "max_tokens": 300
-                }
-                resp = client.post(url, headers=headers, json=payload)
-                if resp.status_code == 200:
-                    return resp.json()["choices"][0]["message"]["content"].strip()
+                # Try models in priority order (availability changes over time)
+                for model in ["qwen/qwen3.8-27b", "openai/gpt-oss-20b", "llama-3.3-70b-versatile"]:
+                    payload = {
+                        "model": model,
+                        "messages": [
+                            {"role": "system", "content": "You are the Proti IQ African Alternative-Protein Advisory AI."},
+                            {"role": "user", "content": prompt}
+                        ],
+                        "temperature": 0.2,
+                        "max_tokens": 300
+                    }
+                    resp = client.post(url, headers=headers, json=payload)
+                    if resp.status_code == 200:
+                        return resp.json()["choices"][0]["message"]["content"].strip()
+                    # If model not found (404), try next; any other error, break
+                    if resp.status_code != 404:
+                        break
 
             # 3. Option: OpenRouter Free Tier
             if openrouter_key:
