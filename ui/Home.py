@@ -30,7 +30,7 @@ st.sidebar.markdown("**Decision-support for Nigerian food developers.**")
 st.sidebar.markdown("---")
 st.sidebar.caption("System Status: **Ready (Offline-Capable)**")
 st.sidebar.caption("Snapshot ID: `snapshot_nov2026`")
-st.sidebar.caption("Protein Model: `ESM-2 8M (CPU)`")
+st.sidebar.caption("Protein Model: `Meta ESM-2 650M (1280-D)`")
 
 # Introduction Section
 st.markdown(
@@ -40,6 +40,9 @@ st.markdown(
     from local crops (cowpea, Bambara groundnut, pigeon pea) face expensive trial-and-error. 
     **Proti IQ evaluates seed storage protein biophysics and deep language model representations 
     to rank which crops deserve lab-testing first.**
+    
+    > **New:** Explore the **African Alternative-Protein Discovery Hub** in the left sidebar (`0_Discovery_Hub`) 
+    > to view the complete pan-African menu of alternatives (plant-based egg, milk, curd/cheese, suya meat, crayfish umami, and clinical sarcopenia swallows) with user onboarding and older-person filters.
     """
 )
 
