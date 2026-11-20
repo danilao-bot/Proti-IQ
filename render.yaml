@@ -1,0 +1,50 @@
+# Render Blueprint Specification for Proti IQ
+# Deploy to Render: https://render.com
+services:
+  # 1. FastAPI Backend Service (For Edna's React Frontend)
+  - type: web
+    name: proti-iq-api
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: DATABASE_URL
+        value: sqlite:///./data/proti_iq.db
+      - key: SUPABASE_URL
+        value: https://dzbcefkvzufomdpfjmrw.supabase.co
+      - key: SUPABASE_ANON_KEY
+        value: sb_publishable_cRzeE31P8Dlc9T5AZpgdIg_3GUu7E46
+      - key: SUPABASE_SERVICE_KEY
+        sync: false # Set securely in Render dashboard
+      - key: GROQ_API_KEY
+        sync: false # Set securely in Render dashboard
+      - key: ALLOWED_ORIGINS
+        value: '["*"]'
+
+  # 2. Interactive Streamlit Science Hub (Backup / Judge Live Demo)
+  - type: web
+    name: proti-iq-streamlit
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run ui/Home.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: DATABASE_URL
+        value: sqlite:///./data/proti_iq.db
+      - key: SUPABASE_URL
+        value: https://dzbcefkvzufomdpfjmrw.supabase.co
+      - key: SUPABASE_ANON_KEY
+        value: sb_publishable_cRzeE31P8Dlc9T5AZpgdIg_3GUu7E46
