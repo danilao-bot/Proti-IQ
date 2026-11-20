@@ -60,8 +60,9 @@ try:
             orientation="h",
             color="Score",
             color_continuous_scale="Viridis",
-            title=f"Suitability Likelihood Ranking for {selected_job.upper()}",
+            title=f"Recommended Candidate Shortlist — Biophysical Similarity Scores for {selected_job.upper()}",
             text="Score",
+            labels={"Score": "Biophysical Similarity Score (%)", "Crop": "Candidate Crop"}
         )
         fig.update_layout(yaxis={"categoryorder": "total ascending"}, height=350)
         st.plotly_chart(fig, use_container_width=True)
@@ -75,7 +76,7 @@ try:
             contributions = json.loads(r.contributions_json) if r.contributions_json else {}
             flags = json.loads(r.flags_json) if r.flags_json else []
 
-            with st.expander(f"**Rank: {crop.common_name if crop else r.crop_id}** — Score: {r.score}/100", expanded=True):
+            with st.expander(f"**Candidate: {crop.common_name if crop else r.crop_id}** — Biophysical Similarity Score: {r.score:.1f}%", expanded=True):
                 col_a, col_b = st.columns([2, 1])
 
                 with col_a:
@@ -105,6 +106,6 @@ try:
                     render_screening_flags(flags)
 
         st.markdown("---")
-        st.info("💡 **Ready to take these native scores to commercial production?** Open **6_Lab_Brief** in the sidebar to view the **Path B Food Science Formulation Roadmap** (pH-shifting, ionic cross-linking, and projected 90%+ market parity).")
+        st.info("💡 **Ready to take these biophysical similarity scores to commercial production?** Open **6_Lab_Brief** in the sidebar to view the **Path B Food Science Formulation Roadmap** (pH-shifting, ionic cross-linking, and target benchmark metrics to beat).")
 finally:
     db.close()
