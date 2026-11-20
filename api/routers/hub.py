@@ -1,9 +1,10 @@
 """
 Proti IQ Hub & Formulation Advisory Router.
-Provides REST endpoints for Edna's React frontend:
+Provides clean REST endpoints for the React frontend, delegating logic to core and services:
 - GET  /api/v1/hub/applications
 - GET  /api/v1/hub/rankings
-- POST /api/v1/advisory/formulate
+- POST /api/v1/hub/advisory/formulate
+- GET  /api/v1/hub/empirical/{crop_id}
 """
 
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -11,199 +12,12 @@ from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 from sqlalchemy.orm import Session
 from api.db import get_db, Ranking, Crop, Protein, ModelRun
+from core.catalog.applications import APPLICATIONS_CATALOG, REGIONAL_AVAILABILITY
+from services.llm_service import generate_advisory
+from services.pretoria_service import get_pretoria_measurements, get_bambara_empirical_dossier
 import json
-import os
 
 router = APIRouter(prefix="/api/v1/hub", tags=["Discovery Hub & Advisory"])
-
-def query_llm_advisory(role: str, application: str, crop: str, context: str) -> Optional[str]:
-    """
-    Queries Google Gemini (Free), Groq Cloud (Free), OpenRouter, or xAI Grok.
-    Falls back gracefully if no key is present or offline.
-    """
-    gemini_key = os.getenv("GEMINI_API_KEY")
-    groq_key = os.getenv("GROQ_API_KEY")
-    openrouter_key = os.getenv("OPENROUTER_API_KEY")
-    xai_key = os.getenv("XAI_API_KEY")
-
-    prompt = (
-        f"You are the Proti IQ African Alternative-Protein Advisory AI.\n"
-        f"Persona: {role}\nTarget Application: {application}\nSelected Crop: {crop}\n"
-        f"Biochemical Context: {context}\n"
-        f"Provide 3 concise, practical, expert recommendations for this food preparation or clinical formulation."
-    )
-
-    try:
-        import httpx
-        with httpx.Client(timeout=15.0) as client:
-            # 1. Option: Google Gemini API (100% Free at aistudio.google.com)
-            if gemini_key:
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
-                payload = {"contents": [{"parts": [{"text": prompt}]}]}
-                resp = client.post(url, json=payload)
-                if resp.status_code == 200:
-                    data = resp.json()
-                    return data["candidates"][0]["content"]["parts"][0]["text"].strip()
-
-            # 2. Option: Groq Cloud (Free at console.groq.com)
-            if groq_key:
-                url = "https://api.groq.com/openai/v1/chat/completions"
-                headers = {"Authorization": f"Bearer {groq_key}", "Content-Type": "application/json"}
-                # Try models in priority order (availability changes over time)
-                for model in ["qwen/qwen3.8-27b", "openai/gpt-oss-20b", "llama-3.3-70b-versatile"]:
-                    payload = {
-                        "model": model,
-                        "messages": [
-                            {"role": "system", "content": "You are the Proti IQ African Alternative-Protein Advisory AI."},
-                            {"role": "user", "content": prompt}
-                        ],
-                        "temperature": 0.2,
-                        "max_tokens": 300
-                    }
-                    resp = client.post(url, headers=headers, json=payload)
-                    if resp.status_code == 200:
-                        return resp.json()["choices"][0]["message"]["content"].strip()
-                    # If model not found (404), try next; any other error, break
-                    if resp.status_code != 404:
-                        break
-
-            # 3. Option: OpenRouter Free Tier
-            if openrouter_key:
-                url = "https://openrouter.ai/api/v1/chat/completions"
-                headers = {"Authorization": f"Bearer {openrouter_key}", "Content-Type": "application/json"}
-                payload = {
-                    "model": "meta-llama/llama-3.1-8b-instruct:free",
-                    "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 300
-                }
-                resp = client.post(url, headers=headers, json=payload)
-                if resp.status_code == 200:
-                    return resp.json()["choices"][0]["message"]["content"].strip()
-
-            # 4. Option: xAI Grok
-            if xai_key:
-                url = "https://api.x.ai/v1/chat/completions"
-                headers = {"Authorization": f"Bearer {xai_key}", "Content-Type": "application/json"}
-                payload = {
-                    "model": "grok-beta",
-                    "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 300
-                }
-                resp = client.post(url, headers=headers, json=payload)
-                if resp.status_code == 200:
-                    return resp.json()["choices"][0]["message"]["content"].strip()
-    except Exception:
-        pass
-
-    return None
-
-# Master Applications Catalog
-APPLICATIONS_CATALOG = [
-    {
-        "id": "egg",
-        "name": "Plant-Based Egg Gel",
-        "animal_replaced": "Chicken Eggs",
-        "benchmark": "Mung bean 8S Vicilin (JUST Egg control, A0A1S3VZW2)",
-        "protein_family": "7S Vicilin trimeric storage globulin",
-        "top_african_crop": "Pigeon pea (Cajanus cajan)",
-        "backup_substitute": "Cowpea (Vigna unguiculata)",
-        "cultural_meals": ["Moi moi (steamed bean pudding)", "Akara (whipped bean fritters)", "Breakfast egg scramble"],
-        "plant_based_flag": "100% Plant-Based as cooked",
-        "target_metric": "Rupture Force ~0.8 N, Springiness >85%"
-    },
-    {
-        "id": "milk",
-        "name": "Plant-Based Milk & Dairy Drinks",
-        "animal_replaced": "Cow Milk & Canned Evaporated Milk",
-        "benchmark": "Soybean 7S Beta-conglycinin alpha' (P11827)",
-        "protein_family": "High net-negative charge soluble globulin",
-        "top_african_crop": "Cowpea (Vigna unguiculata)",
-        "backup_substitute": "Bambara groundnut (Vigna subterranea)",
-        "cultural_meals": ["Kunu Aya (Tigernut milk)", "Kunu Gyada (Groundnut milk)", "Tea & pap whitener"],
-        "plant_based_flag": "100% Plant-Based as cooked",
-        "target_metric": "Colloidal Stability >90% at 7 days, pH 7 Solubility >80%"
-    },
-    {
-        "id": "gel",
-        "name": "Plant-Based Curd & Cheese (Awara / Wagashi)",
-        "animal_replaced": "Stew Beef Chunks & Fulani Cow Cheese (Wara / Wagashi)",
-        "benchmark": "Soybean 11S Glycinin G4 (P02858)",
-        "protein_family": "11S Legumin hexamer with acidic/basic subunits",
-        "top_african_crop": "African yam bean (Sphenostylis stenocarpa)",
-        "backup_substitute": "Pigeon pea (Cajanus cajan)",
-        "cultural_meals": ["Awara (fried plant curd)", "Wagashi (cheese curd alternative)", "Soup meat substitute"],
-        "plant_based_flag": "100% Plant-Based as cooked",
-        "target_metric": "Breaking Stress 1.2 - 1.5 N via 0.3% CaCl2 cross-linking"
-    },
-    {
-        "id": "meat",
-        "name": "Textured Plant-Based Meat & Suya",
-        "animal_replaced": "Red Meat, Beef & Chewy Goat Meat (Asun)",
-        "benchmark": "Soy Textured Vegetable Protein (SPI Extrudate, P02858)",
-        "protein_family": "11S Legumin hexamer with structural cysteine dyads",
-        "top_african_crop": "Pigeon pea (Cajanus cajan) & African yam bean",
-        "backup_substitute": "Groundnut meal & Bambara groundnut press-cake",
-        "cultural_meals": ["Beef Suya skewers", "Dried Kilishi strips", "Peppered meat pies", "Stew meat chunks"],
-        "plant_based_flag": "100% Plant-Based as cooked",
-        "target_metric": "Tensile shear modulus matching beef muscle fibers"
-    },
-    {
-        "id": "crayfish",
-        "name": "Savory Umami Peptides & Crayfish Alternative",
-        "animal_replaced": "Dried River Crayfish & Smoked Bonga Fish Seasoning",
-        "benchmark": "Dried River Crayfish & Smoked Fish Peptides",
-        "protein_family": "Low-molecular weight umami peptide hydrolysate (<1 kDa)",
-        "top_african_crop": "Fermented African Locust Bean (Iru / Dawadawa)",
-        "backup_substitute": "Fermented African yam bean peptides",
-        "cultural_meals": ["Egusi soup", "Ogbono soup", "Efo riro", "Gbegiri soup", "Jollof rice seasoning"],
-        "plant_based_flag": "100% Plant-Based (Traditional umami secret of West Africa)",
-        "target_metric": "High free glutamic acid and sulfurous savory peptides"
-    },
-    {
-        "id": "mayo",
-        "name": "Plant-Based Mayonnaise & Dressings",
-        "animal_replaced": "Commercial Egg-Yolk Mayonnaise & Salad Creams",
-        "benchmark": "Egg-Yolk Lecithin Emulsion (70% vegetable oil phase)",
-        "protein_family": "Amphiphilic surface-active 7S globulin",
-        "top_african_crop": "Pigeon pea (Cajanus cajan) & Groundnut conarachin",
-        "backup_substitute": "Cowpea isolate",
-        "cultural_meals": ["Nigerian salad dressing (Heinz/Bama style)", "Sandwich spread", "Shawarma sauce"],
-        "plant_based_flag": "100% Plant-Based as cooked",
-        "target_metric": "Oil-in-Water emulsion stability >12 months without separation"
-    },
-    {
-        "id": "sarcopenia",
-        "name": "Clinical Sarcopenia High-Protein Swallows & Porridges",
-        "animal_replaced": "Medical Whey Protein Isolate & Meat Broth Fortifiers",
-        "benchmark": "Medical Whey Protein Isolate (Oral Nutritional Supplement)",
-        "protein_family": "Partially enzymatically hydrolyzed peptides (<5 kDa)",
-        "top_african_crop": "Cowpea & Pigeon pea hydrolysate (Papain-digested)",
-        "backup_substitute": "Bambara groundnut flour blend",
-        "cultural_meals": ["Protein-fortified Amala", "Fortified Tuwo Shinkafa", "Fortified Ogi / Akamu porridge"],
-        "plant_based_flag": "100% Plant-Based as cooked",
-        "target_metric": "18g protein / 100g portion with zero swallow paste viscosity increase"
-    }
-]
-
-# Regional agronomic crop availability matrix
-REGIONAL_AVAILABILITY = {
-    "Nigeria": {
-        "primary_crops": ["cowpea", "bambara_groundnut", "pigeon_pea", "african_yam_bean", "groundnut"],
-        "notes": "Cowpea and Groundnut widely available nationally; Bambara in East & North; AYB primarily in South & Central."
-    },
-    "Ghana": {
-        "primary_crops": ["cowpea", "bambara_groundnut", "groundnut"],
-        "notes": "Cowpea (Adua) and Bambara (Aboboi) are staple market commodities."
-    },
-    "Kenya": {
-        "primary_crops": ["pigeon_pea", "cowpea", "groundnut"],
-        "notes": "Pigeon pea (Mbaazi) is an agronomic cash crop across Eastern & Coastal Kenya."
-    },
-    "South Africa": {
-        "primary_crops": ["bambara_groundnut", "cowpea", "groundnut", "soybean"],
-        "notes": "Jugo beans (Bambara) and Cowpea cultivate well in Limpopo and Mpumalanga."
-    }
-}
 
 
 @router.get("/applications", summary="List All Alternative-Protein Categories")
@@ -239,7 +53,7 @@ def get_hub_rankings(
     rankings = query.order_by(Ranking.score.desc()).all()
 
     # Regional availability lookup
-    country_clean = country.split()[0]  # e.g. 'Nigeria' from 'Nigeria (National Hub)'
+    country_clean = country.split()[0]
     region_info = REGIONAL_AVAILABILITY.get(country_clean, REGIONAL_AVAILABILITY["Nigeria"])
 
     seen_crops = set()
@@ -272,12 +86,7 @@ def get_hub_rankings(
     # Add wet-lab empirical data for Bambara if relevant
     wet_lab_note = None
     if job in ["milk", "gel", "sarcopenia"]:
-        wet_lab_note = {
-            "crop": "Bambara groundnut",
-            "empirical_solubility_ph7": "82.27% (Pretoria dataset M38)",
-            "least_gelation_concentration": "8.0% - 10.0% w/v",
-            "status": "Tier 1 Wet-Lab Validated (Sequence models bypassed due to 0 UniProt storage entries)"
-        }
+        wet_lab_note = get_bambara_empirical_dossier()
 
     return {
         "job": job,
@@ -290,12 +99,11 @@ def get_hub_rankings(
     }
 
 
-# Request & Response schemas for Advisory Endpoint
 class FormulateRequest(BaseModel):
     role: str = Field(..., description="Role: 'consumer', 'nutritionist', or 'food_processor'")
     job: str = Field(..., description="Job application ID (e.g. egg, milk, gel, meat, crayfish, sarcopenia)")
-    crop_id: Optional[str] = Field("cowpea", description="Selected crop ID (e.g. cowpea, pigeon_pea, african_yam_bean, bambara_groundnut)")
-    staple_vehicle: Optional[str] = Field(None, description="Traditional food vehicle (e.g. amala, tuwo, ogi, moi_moi, salad)")
+    crop_id: Optional[str] = Field("cowpea", description="Selected crop ID")
+    staple_vehicle: Optional[str] = Field(None, description="Traditional food vehicle (e.g. amala, tuwo, ogi)")
     older_person_mode: Optional[bool] = Field(False, description="Whether older-person sarcopenia mode is enabled")
 
 
@@ -312,8 +120,9 @@ def formulate_advisory(req: FormulateRequest):
     crop = req.crop_id.lower().strip() if req.crop_id else "cowpea"
     older = req.older_person_mode
 
-    # Match application metadata
+    # Match application metadata from core catalog
     matched_app = next((a for a in APPLICATIONS_CATALOG if a["id"] == job), APPLICATIONS_CATALOG[0])
+    bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
 
     if "consumer" in role or "caregiver" in role:
         instructions = [
@@ -337,13 +146,7 @@ def formulate_advisory(req: FormulateRequest):
                 "Step 4: Add 1-2 tablespoons directly into Egusi, Ogbono, or Efo Riro. Delivers 100% savory umami without crayfish allergens."
             ]
 
-        savings_note = "Saves an estimated ₦3,000–₦4,500 per week compared to commercial dairy or poultry eggs."
-        health_note = "100% plant-based, zero dietary cholesterol, rich in prebiotic legume fiber."
-        if older:
-            health_note += " Highly digestible soft protein; gentle on aging digestive systems."
-
-        bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
-        llm_advice = query_llm_advisory("Consumer / Caregiver", matched_app["name"], crop, bio_ctx)
+        llm_result = generate_advisory("Consumer / Caregiver", matched_app["name"], crop, bio_ctx)
 
         return {
             "role": "consumer",
@@ -351,16 +154,15 @@ def formulate_advisory(req: FormulateRequest):
             "selected_crop": crop,
             "plant_based_as_cooked_status": matched_app["plant_based_flag"],
             "kitchen_instructions": instructions,
-            "cost_benefit": savings_note,
-            "nutritional_impact": health_note,
-            "ai_generative_advisory": llm_advice,
-            "ai_provider": "Live Cloud LLM (Gemini / Groq / OpenRouter)" if llm_advice else "Proti IQ Expert Bio-Rules"
+            "cost_benefit": "Saves an estimated ₦3,000–₦4,500 per week compared to commercial dairy or poultry eggs.",
+            "nutritional_impact": "100% plant-based, zero dietary cholesterol, rich in prebiotic legume fiber." + (" Highly digestible soft protein; gentle on aging digestive systems." if older else ""),
+            "ai_generative_advisory": llm_result["advisory_text"],
+            "ai_provider": llm_result["provider"]
         }
 
     elif "nutritionist" in role or "dietitian" in role:
         vehicle = req.staple_vehicle or "Amala"
-        bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
-        llm_advice = query_llm_advisory("Clinical Nutritionist", matched_app["name"], crop, f"Fortifying {vehicle} for elderly sarcopenia. Context: {bio_ctx}")
+        llm_result = generate_advisory("Clinical Nutritionist", matched_app["name"], crop, f"Fortifying {vehicle} for elderly sarcopenia. Context: {bio_ctx}")
 
         return {
             "role": "nutritionist",
@@ -376,13 +178,12 @@ def formulate_advisory(req: FormulateRequest):
             },
             "viscosity_impact": "Negligible change in swallow texture; maintains traditional dough viscoelasticity",
             "clinical_advisory": "Recommended 2 servings daily to prevent age-related muscle mass loss and maintain glycemic stability.",
-            "ai_generative_advisory": llm_advice,
-            "ai_provider": "Live Cloud LLM (Gemini / Groq / OpenRouter)" if llm_advice else "Proti IQ Expert Bio-Rules"
+            "ai_generative_advisory": llm_result["advisory_text"],
+            "ai_provider": llm_result["provider"]
         }
 
     else:  # food_processor / manufacturer
-        bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
-        llm_advice = query_llm_advisory("Food Factory R&D Engineer", matched_app["name"], crop, f"Industrial processing spec: {matched_app['target_metric']}. Context: {bio_ctx}")
+        llm_result = generate_advisory("Food Factory R&D Engineer", matched_app["name"], crop, f"Industrial processing spec: {matched_app['target_metric']}. Context: {bio_ctx}")
 
         return {
             "role": "food_processor",
@@ -401,6 +202,17 @@ def formulate_advisory(req: FormulateRequest):
                 "microbial_safety": "Pasteurization at 90°C ensures zero viable pathogens",
                 "moisture_content": "72% - 76% in finished coagulated curd"
             },
-            "ai_generative_advisory": llm_advice,
-            "ai_provider": "Live Cloud LLM (Gemini / Groq / OpenRouter)" if llm_advice else "Proti IQ Expert Bio-Rules"
+            "ai_generative_advisory": llm_result["advisory_text"],
+            "ai_provider": llm_result["provider"]
         }
+
+
+@router.get("/empirical/{crop_id}", summary="Get Wet-Lab Pretoria Data for a Crop")
+def get_crop_empirical_data(crop_id: str):
+    """Returns University of Pretoria wet-lab measurements for a specific crop."""
+    measurements = get_pretoria_measurements(crop_id=crop_id)
+    return {
+        "crop_id": crop_id,
+        "total_measurements": len(measurements),
+        "measurements": measurements
+    }

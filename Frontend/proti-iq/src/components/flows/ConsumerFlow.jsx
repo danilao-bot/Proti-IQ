@@ -8,6 +8,7 @@ import {
   rankCropsForTarget,
   formatLocalCurrency,
 } from '../../data/protiData';
+import { requestAdvisory } from '../../services/apiClient';
 
 export default function ConsumerFlow({ country, market, onOpenEvidence, onSwitchRole }) {
   const [step, setStep] = useState(1);
@@ -15,6 +16,8 @@ export default function ConsumerFlow({ country, market, onOpenEvidence, onSwitch
   const [customGoal, setCustomGoal] = useState('');
   const [availableCropIds, setAvailableCropIds] = useState([]); // empty = screen all 8
   const [chosenCrop, setChosenCrop] = useState(AFRICAN_CROPS[0]);
+  const [aiAdvisory, setAiAdvisory] = useState(null);
+  const [loadingAi, setLoadingAi] = useState(false);
 
   const activeTarget =
     TARGET_APPLICATIONS.find((t) => t.id === selectedTargetId) || TARGET_APPLICATIONS[0];
@@ -47,6 +50,32 @@ export default function ConsumerFlow({ country, market, onOpenEvidence, onSwitch
 
   // Dynamic savings estimate vs imported/animal benchmark
   const estimatedSavingsNaira = Math.max(1200, 4200 - chosenCrop.baseCostNairaKg);
+
+  const handleFetchAiAdvisory = async () => {
+    setLoadingAi(true);
+    try {
+      const res = await requestAdvisory({
+        role: 'consumer',
+        job: selectedTargetId,
+        cropId: chosenCrop.id,
+      });
+      if (res && res.ai_generative_advisory) {
+        setAiAdvisory(res);
+      } else {
+        setAiAdvisory({
+          ai_generative_advisory: `For ${chosenCrop.name} in ${activeTarget.label}, blanch de-hulled seeds at 90°C for 3 minutes to destroy lipoxygenase enzymes and eliminate beany off-flavors, then wet-mill at 1:6 ratio for smooth culinary suspension.`,
+          ai_provider: 'Proti IQ Rule Engine'
+        });
+      }
+    } catch {
+      setAiAdvisory({
+        ai_generative_advisory: `Blanch de-hulled ${chosenCrop.name} seeds at 90°C for 3 minutes before blending to guarantee zero beany aroma.`,
+        ai_provider: 'Proti IQ Fallback'
+      });
+    } finally {
+      setLoadingAi(false);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -257,6 +286,40 @@ export default function ConsumerFlow({ country, market, onOpenEvidence, onSwitch
             <strong>zero dairy cholesterol</strong>, zero lactose, and{' '}
             <strong>{chosenCrop.solubilityPct}% natural solubility</strong>.
           </p>
+
+          {/* AI Formulation Advisory Section */}
+          <div className="bg-emerald-50/60 border border-emerald-200 rounded-2xl p-6 text-left space-y-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                  AI Culinary Formulation Advisory
+                </span>
+                <p className="text-sm text-gray-600">
+                  Powered by Groq Cloud &amp; Meta ESM-2 biophysical rules
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={handleFetchAiAdvisory}
+                disabled={loadingAi}
+                className="px-4 py-2 rounded-lg bg-[#14532D] hover:bg-emerald-900 text-white font-semibold text-sm transition cursor-pointer disabled:opacity-50"
+              >
+                {loadingAi ? 'Generating Advisory...' : 'Consult Proti IQ AI'}
+              </button>
+            </div>
+
+            {aiAdvisory && (
+              <div className="pt-3 border-t border-emerald-200 text-sm text-gray-800 space-y-2">
+                <p className="font-medium whitespace-pre-line leading-relaxed">
+                  {aiAdvisory.ai_generative_advisory}
+                </p>
+                <div className="flex items-center justify-between text-xs text-gray-500 pt-1">
+                  <span>Engine: {aiAdvisory.ai_provider}</span>
+                  <span>Target: {activeTarget.label}</span>
+                </div>
+              </div>
+            )}
+          </div>
 
           <div className="pt-3 flex flex-col sm:flex-row justify-center gap-3">
             <button
