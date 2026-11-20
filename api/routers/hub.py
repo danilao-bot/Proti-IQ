@@ -12,8 +12,39 @@ from typing import List, Dict, Any, Optional
 from sqlalchemy.orm import Session
 from api.db import get_db, Ranking, Crop, Protein, ModelRun
 import json
+import os
 
 router = APIRouter(prefix="/api/v1/hub", tags=["Discovery Hub & Advisory"])
+
+def query_llm_advisory(role: str, application: str, crop: str, context: str) -> Optional[str]:
+    """Queries Groq or xAI Grok if API key is present in environment, with fast timeout."""
+    groq_key = os.getenv("GROQ_API_KEY")
+    xai_key = os.getenv("XAI_API_KEY")
+    api_key = groq_key or xai_key
+    if not api_key:
+        return None
+
+    url = "https://api.groq.com/openai/v1/chat/completions" if groq_key else "https://api.x.ai/v1/chat/completions"
+    model = "llama-3.3-70b-versatile" if groq_key else "grok-beta"
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": "You are the Proti IQ African Alternative-Protein Advisory AI. Provide concise, expert, culturally grounded culinary or clinical food advice."},
+            {"role": "user", "content": f"Persona: {role}\nApplication: {application}\nTarget Crop: {crop}\nBiochemical context: {context}\nProvide 3 clear, practical recommendations."}
+        ],
+        "temperature": 0.2,
+        "max_tokens": 300
+    }
+    try:
+        import httpx
+        with httpx.Client(timeout=4.0) as client:
+            resp = client.post(url, headers=headers, json=payload)
+            if resp.status_code == 200:
+                return resp.json()["choices"][0]["message"]["content"].strip()
+    except Exception:
+        pass
+    return None
 
 # Master Applications Catalog
 APPLICATIONS_CATALOG = [
@@ -260,6 +291,9 @@ def formulate_advisory(req: FormulateRequest):
         if older:
             health_note += " Highly digestible soft protein; gentle on aging digestive systems."
 
+        bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
+        llm_advice = query_llm_advisory("Consumer / Caregiver", matched_app["name"], crop, bio_ctx)
+
         return {
             "role": "consumer",
             "application": matched_app["name"],
@@ -267,11 +301,16 @@ def formulate_advisory(req: FormulateRequest):
             "plant_based_as_cooked_status": matched_app["plant_based_flag"],
             "kitchen_instructions": instructions,
             "cost_benefit": savings_note,
-            "nutritional_impact": health_note
+            "nutritional_impact": health_note,
+            "ai_generative_advisory": llm_advice,
+            "ai_provider": "Groq / xAI LLM (Live)" if llm_advice else "Proti IQ Expert Bio-Rules"
         }
 
     elif "nutritionist" in role or "dietitian" in role:
         vehicle = req.staple_vehicle or "Amala"
+        bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
+        llm_advice = query_llm_advisory("Clinical Nutritionist", matched_app["name"], crop, f"Fortifying {vehicle} for elderly sarcopenia. Context: {bio_ctx}")
+
         return {
             "role": "nutritionist",
             "application": matched_app["name"],
@@ -285,10 +324,15 @@ def formulate_advisory(req: FormulateRequest):
                 "methionine_cysteine": "2.2g / 100g protein"
             },
             "viscosity_impact": "Negligible change in swallow texture; maintains traditional dough viscoelasticity",
-            "clinical_advisory": "Recommended 2 servings daily to prevent age-related muscle mass loss and maintain glycemic stability."
+            "clinical_advisory": "Recommended 2 servings daily to prevent age-related muscle mass loss and maintain glycemic stability.",
+            "ai_generative_advisory": llm_advice,
+            "ai_provider": "Groq / xAI LLM (Live)" if llm_advice else "Proti IQ Expert Bio-Rules"
         }
 
     else:  # food_processor / manufacturer
+        bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
+        llm_advice = query_llm_advisory("Food Factory R&D Engineer", matched_app["name"], crop, f"Industrial processing spec: {matched_app['target_metric']}. Context: {bio_ctx}")
+
         return {
             "role": "food_processor",
             "application": matched_app["name"],
@@ -305,5 +349,7 @@ def formulate_advisory(req: FormulateRequest):
                 "target_breaking_stress": "1.2 - 1.5 N",
                 "microbial_safety": "Pasteurization at 90°C ensures zero viable pathogens",
                 "moisture_content": "72% - 76% in finished coagulated curd"
-            }
+            },
+            "ai_generative_advisory": llm_advice,
+            "ai_provider": "Groq / xAI LLM (Live)" if llm_advice else "Proti IQ Expert Bio-Rules"
         }
