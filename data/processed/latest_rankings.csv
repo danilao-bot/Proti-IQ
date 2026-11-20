@@ -1,271 +1,631 @@
-job,benchmark_id,crop_id,accession,protein_name,score,confidence,screening_flags
-egg,mung_bean,cowpea,A0A4D6N0G6,11-S seed storage protein,65.1,Medium,[]
-egg,mung_bean,cowpea,A0A2U9K6L4,Vicilin,80.9,Medium,[]
-egg,mung_bean,cowpea,A0A2U9K6K6,Vicilin,81.0,Medium,[]
-egg,mung_bean,cowpea,A0A2U9K6L2,Vicilin,81.3,Medium,[]
-egg,mung_bean,cowpea,A0A2U9K6K8,Vicilin,80.8,Medium,[]
-egg,mung_bean,cowpea,A0A2U9K6K9,Vicilin,81.0,Medium,[]
-egg,mung_bean,cowpea,A0A4D6KM41,SBg7S,65.5,Medium,[]
-egg,mung_bean,cowpea,A0A4D6LB30,RmlC-like jelly roll fold,80.6,Medium,[]
-egg,mung_bean,cowpea,A0A4D6LGM9,RmlC-like jelly roll fold,79.8,Medium,[]
-egg,mung_bean,cowpea,A0A4D6N8P3,RmlC-like jelly roll fold,72.2,Medium,[]
-egg,mung_bean,cowpea,A0A4D6N4W3,RmlC-like jelly roll fold,85.1,Medium,[]
-egg,mung_bean,cowpea,A0A4D6MTA9,RmlC-like jelly roll fold,80.6,Medium,[]
-egg,mung_bean,cowpea,A0A4D6MR86,RmlC-like jelly roll fold,82.0,Medium,[]
-egg,mung_bean,cowpea,A0A4D6LIH5,RmlC-like jelly roll fold,55.3,Medium,[]
-egg,mung_bean,cowpea,A0A4D6L7U3,RmlC-like jelly roll fold,54.8,Medium,[]
-egg,mung_bean,cowpea,A0A4D6N8Z9,RmlC-like jelly roll fold,55.8,Medium,[]
-egg,mung_bean,pigeon_pea,Q94FS2,Legumin seed storage protein,42.8,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151U0J2,Basic 7S globulin,65.7,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151U0Q4,Basic 7S globulin,62.4,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151STW8,Basic 7S globulin,65.3,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151U5Z8,Basic 7S globulin,62.8,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151U0R9,Basic 7S globulin,60.6,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151SLE6,Basic 7S globulin,56.3,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151TW66,Basic 7S globulin,63.9,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151U0M6,Basic 7S globulin 2,63.4,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151STZ0,Basic 7S globulin 2,60.6,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151TUN4,Glycinin G3,65.2,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151TUL0,Glycinin G3,62.3,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151TI51,Vicilin-like antimicrobial peptides 2-2,70.4,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151TN63,Vicilin-like antimicrobial peptides 2-2,74.8,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151SV05,Vicilin-like antimicrobial peptides 2-2,74.1,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151U6V8,"Beta-conglycinin, beta chain",62.6,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151U6Q2,"Beta-conglycinin, alpha chain",87.4,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151T731,Glutelin type-A 1,55.1,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151UBZ3,Glutelin type-A 2,54.2,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151UC62,Glutelin type-A 2,54.3,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151SUU8,Glutelin type-A 1,55.4,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151UBW6,Glutelin type-A 2,55.7,Medium,[]
-egg,mung_bean,pigeon_pea,A0A151TM61,Glutelin type-A 1,56.3,Medium,[]
-egg,mung_bean,african_yam_bean,A0AA86VRP6,SBg7S,64.3,Medium,[]
-egg,mung_bean,african_yam_bean,A0AA86VZQ4,Cupin type-1 domain-containing protein,67.5,Medium,[]
-egg,mung_bean,african_yam_bean,A0AA86W2F3,Cupin type-1 domain-containing protein,70.2,Medium,[]
-egg,mung_bean,african_yam_bean,A0AA86SVJ7,Cupin type-1 domain-containing protein,82.6,Medium,[]
-egg,mung_bean,african_yam_bean,A0AA86S3E3,Cupin type-1 domain-containing protein,56.2,Medium,[]
-egg,mung_bean,african_yam_bean,A0AA86SEW6,Cupin type-1 domain-containing protein,55.5,Medium,[]
-egg,mung_bean,groundnut,Q647H2,Arachin Ahy-3,63.7,Medium,[]
-egg,mung_bean,groundnut,Q647H1,Conarachin,65.5,Medium,[]
-egg,mung_bean,groundnut,A1DZF0,Arachin 6,63.8,Medium,[]
-egg,mung_bean,groundnut,Q647H4,Arachin Ahy-1,64.3,Medium,[]
-egg,mung_bean,groundnut,Q5I6T2,Arachin Ahy-4,63.9,Medium,[]
-egg,mung_bean,groundnut,B5TYU1,Arachin Arah3 isoform,63.9,Medium,[]
-egg,mung_bean,groundnut,Q647H3,Arachin Ahy-2,63.9,Medium,[]
-egg,mung_bean,groundnut,Q6T2T4,Storage protein,64.3,Medium,[]
-egg,mung_bean,groundnut,P43238,Allergen Ara h 1.0101,84.5,Medium,"[""Allergen (UniProt Annotated)""]"
-egg,mung_bean,groundnut,P20780,Arachin 21 kDa protein,45.6,Medium,[]
-egg,mung_bean,groundnut,P04149,Arachin 25 kDa protein,42.4,Medium,[]
-egg,mung_bean,groundnut,E9LFE8,11S arachin,56.3,Medium,[]
-egg,mung_bean,groundnut,Q6PSU6,Conarachin,76.9,Medium,[]
-egg,mung_bean,groundnut,Q6PSU4,Conarachin,79.5,Medium,[]
-egg,mung_bean,groundnut,Q6PSU5,Conarachin,76.8,Medium,[]
-egg,mung_bean,groundnut,E9LFE7,7S conarachin,70.7,Medium,[]
-egg,mung_bean,groundnut,E9LFF0,11S arachin,45.1,Medium,[]
-egg,mung_bean,groundnut,P43237,Allergen Ara h 1,85.1,Medium,"[""Allergen (UniProt Annotated)""]"
-egg,mung_bean,groundnut,E9LFE9,11S arachin,59.8,Medium,[]
-egg,mung_bean,groundnut,A0A2R9ZPY0,Arachin Ahy-2,63.9,Medium,[]
-egg,mung_bean,groundnut,A1DZF1,Arachin 7,60.6,Medium,[]
-egg,mung_bean,groundnut,G0Y6W7,Conarachin,43.1,Medium,[]
-egg,mung_bean,groundnut,A0ACH3QKJ7,Cupin type-1 domain-containing protein,64.2,Medium,[]
-egg,mung_bean,groundnut,A0A445AI08,Cupin type-1 domain-containing protein,64.2,Medium,[]
-egg,mung_bean,groundnut,A0ACH3NPW9,Cupin type-1 domain-containing protein,60.0,Medium,[]
-egg,mung_bean,groundnut,A0ACH3NPQ2,Cupin type-1 domain-containing protein,61.9,Medium,[]
-egg,mung_bean,groundnut,A0A444YLR8,Cupin type-1 domain-containing protein,61.2,Medium,[]
-egg,mung_bean,groundnut,A0A445CPP8,Cupin type-1 domain-containing protein,61.7,Medium,[]
-egg,mung_bean,groundnut,A0A444YLZ4,Cupin type-1 domain-containing protein,61.9,Medium,[]
-egg,mung_bean,groundnut,A0A444YLS7,Cupin type-1 domain-containing protein,63.7,Medium,[]
-egg,mung_bean,groundnut,A0A445CPR0,Cupin type-1 domain-containing protein,63.8,Medium,[]
-egg,mung_bean,groundnut,A0ACH3NPJ3,Cupin type-1 domain-containing protein,63.7,Medium,[]
-egg,mung_bean,groundnut,A0A444YLI2,Cupin type-1 domain-containing protein,59.6,Medium,[]
-egg,mung_bean,groundnut,A0ACH3QIX2,Cupin type-1 domain-containing protein,65.5,Medium,[]
-egg,mung_bean,groundnut,A0ACH3TF40,Cupin type-1 domain-containing protein,65.1,Medium,[]
-egg,mung_bean,groundnut,A0ACH3NNZ1,Cupin type-1 domain-containing protein,63.8,Medium,[]
-egg,mung_bean,groundnut,Q9SQH7,Glycinin,65.0,Medium,[]
-egg,mung_bean,groundnut,A0A444YLX0,Cupin type-1 domain-containing protein,64.6,Medium,[]
-egg,mung_bean,groundnut,A0A445AEY9,Cupin type-1 domain-containing protein,65.5,Medium,[]
-egg,mung_bean,groundnut,A0A445CPR7,Cupin type-1 domain-containing protein,63.7,Medium,[]
-egg,mung_bean,groundnut,A0A445CPS9,Cupin type-1 domain-containing protein,62.1,Medium,[]
-egg,mung_bean,groundnut,A0ACH3NP65,Cupin type-1 domain-containing protein,64.2,Medium,[]
-egg,mung_bean,groundnut,A0ACH3NP83,Cupin type-1 domain-containing protein,62.7,Medium,[]
-egg,mung_bean,groundnut,O82580,Glycinin,62.6,Medium,[]
-egg,mung_bean,groundnut,Q0GM57,Iso-Ara h3,63.6,Medium,[]
-gel,soy,cowpea,A0A4D6N0G6,11-S seed storage protein,87.8,Medium,[]
-gel,soy,cowpea,A0A2U9K6L4,Vicilin,49.5,Medium,[]
-gel,soy,cowpea,A0A2U9K6K6,Vicilin,49.4,Medium,[]
-gel,soy,cowpea,A0A2U9K6L2,Vicilin,52.4,Medium,[]
-gel,soy,cowpea,A0A2U9K6K8,Vicilin,49.5,Medium,[]
-gel,soy,cowpea,A0A2U9K6K9,Vicilin,49.2,Medium,[]
-gel,soy,cowpea,A0A4D6KM41,SBg7S,58.3,Medium,[]
-gel,soy,cowpea,A0A4D6LB30,RmlC-like jelly roll fold,47.5,Medium,[]
-gel,soy,cowpea,A0A4D6LGM9,RmlC-like jelly roll fold,48.2,Medium,[]
-gel,soy,cowpea,A0A4D6N8P3,RmlC-like jelly roll fold,54.9,Medium,[]
-gel,soy,cowpea,A0A4D6N4W3,RmlC-like jelly roll fold,57.4,Medium,[]
-gel,soy,cowpea,A0A4D6MTA9,RmlC-like jelly roll fold,48.0,Medium,[]
-gel,soy,cowpea,A0A4D6MR86,RmlC-like jelly roll fold,49.3,Medium,[]
-gel,soy,cowpea,A0A4D6LIH5,RmlC-like jelly roll fold,66.6,Medium,[]
-gel,soy,cowpea,A0A4D6L7U3,RmlC-like jelly roll fold,61.3,Medium,[]
-gel,soy,cowpea,A0A4D6N8Z9,RmlC-like jelly roll fold,67.4,Medium,[]
-gel,soy,pigeon_pea,Q94FS2,Legumin seed storage protein,59.6,Low,[]
-gel,soy,pigeon_pea,A0A151U0J2,Basic 7S globulin,58.4,Medium,[]
-gel,soy,pigeon_pea,A0A151U0Q4,Basic 7S globulin,55.5,Medium,[]
-gel,soy,pigeon_pea,A0A151STW8,Basic 7S globulin,57.4,Medium,[]
-gel,soy,pigeon_pea,A0A151U5Z8,Basic 7S globulin,55.9,Medium,[]
-gel,soy,pigeon_pea,A0A151U0R9,Basic 7S globulin,54.2,Medium,[]
-gel,soy,pigeon_pea,A0A151SLE6,Basic 7S globulin,51.4,Medium,[]
-gel,soy,pigeon_pea,A0A151TW66,Basic 7S globulin,56.5,Medium,[]
-gel,soy,pigeon_pea,A0A151U0M6,Basic 7S globulin 2,56.2,Medium,[]
-gel,soy,pigeon_pea,A0A151STZ0,Basic 7S globulin 2,53.7,Medium,[]
-gel,soy,pigeon_pea,A0A151TUN4,Glycinin G3,87.9,Medium,[]
-gel,soy,pigeon_pea,A0A151TUL0,Glycinin G3,80.9,Medium,[]
-gel,soy,pigeon_pea,A0A151TI51,Vicilin-like antimicrobial peptides 2-2,53.2,Medium,[]
-gel,soy,pigeon_pea,A0A151TN63,Vicilin-like antimicrobial peptides 2-2,56.8,Medium,[]
-gel,soy,pigeon_pea,A0A151SV05,Vicilin-like antimicrobial peptides 2-2,56.9,Medium,[]
-gel,soy,pigeon_pea,A0A151U6V8,"Beta-conglycinin, beta chain",41.0,Medium,[]
-gel,soy,pigeon_pea,A0A151U6Q2,"Beta-conglycinin, alpha chain",61.1,Medium,[]
-gel,soy,pigeon_pea,A0A151T731,Glutelin type-A 1,68.5,Medium,[]
-gel,soy,pigeon_pea,A0A151UBZ3,Glutelin type-A 2,57.6,Medium,[]
-gel,soy,pigeon_pea,A0A151UC62,Glutelin type-A 2,56.9,Medium,[]
-gel,soy,pigeon_pea,A0A151SUU8,Glutelin type-A 1,68.3,Medium,[]
-gel,soy,pigeon_pea,A0A151UBW6,Glutelin type-A 2,64.4,Medium,[]
-gel,soy,pigeon_pea,A0A151TM61,Glutelin type-A 1,67.8,Medium,[]
-gel,soy,african_yam_bean,A0AA86VRP6,SBg7S,57.8,Medium,[]
-gel,soy,african_yam_bean,A0AA86VZQ4,Cupin type-1 domain-containing protein,88.5,Medium,[]
-gel,soy,african_yam_bean,A0AA86W2F3,Cupin type-1 domain-containing protein,46.9,Medium,[]
-gel,soy,african_yam_bean,A0AA86SVJ7,Cupin type-1 domain-containing protein,50.8,Medium,[]
-gel,soy,african_yam_bean,A0AA86S3E3,Cupin type-1 domain-containing protein,67.5,Medium,[]
-gel,soy,african_yam_bean,A0AA86SEW6,Cupin type-1 domain-containing protein,68.3,Medium,[]
-gel,soy,groundnut,Q647H2,Arachin Ahy-3,87.1,Medium,[]
-gel,soy,groundnut,Q647H1,Conarachin,83.0,Medium,[]
-gel,soy,groundnut,A1DZF0,Arachin 6,82.0,Medium,[]
-gel,soy,groundnut,Q647H4,Arachin Ahy-1,81.9,Medium,[]
-gel,soy,groundnut,Q5I6T2,Arachin Ahy-4,82.2,Medium,[]
-gel,soy,groundnut,B5TYU1,Arachin Arah3 isoform,82.1,Medium,[]
-gel,soy,groundnut,Q647H3,Arachin Ahy-2,81.9,Medium,[]
-gel,soy,groundnut,Q6T2T4,Storage protein,81.9,Medium,[]
-gel,soy,groundnut,P43238,Allergen Ara h 1.0101,62.4,Medium,"[""Allergen (UniProt Annotated)""]"
-gel,soy,groundnut,P20780,Arachin 21 kDa protein,62.6,Low,[]
-gel,soy,groundnut,P04149,Arachin 25 kDa protein,48.8,Medium,[]
-gel,soy,groundnut,E9LFE8,11S arachin,68.8,Medium,[]
-gel,soy,groundnut,Q6PSU6,Conarachin,52.1,Medium,[]
-gel,soy,groundnut,Q6PSU4,Conarachin,52.3,Medium,[]
-gel,soy,groundnut,Q6PSU5,Conarachin,51.9,Medium,[]
-gel,soy,groundnut,E9LFE7,7S conarachin,45.3,Medium,[]
-gel,soy,groundnut,E9LFF0,11S arachin,53.1,Medium,[]
-gel,soy,groundnut,P43237,Allergen Ara h 1,63.1,Medium,"[""Allergen (UniProt Annotated)""]"
-gel,soy,groundnut,E9LFE9,11S arachin,77.7,Medium,[]
-gel,soy,groundnut,A0A2R9ZPY0,Arachin Ahy-2,85.3,Medium,[]
-gel,soy,groundnut,A1DZF1,Arachin 7,80.9,Medium,[]
-gel,soy,groundnut,G0Y6W7,Conarachin,60.3,Low,[]
-gel,soy,groundnut,A0ACH3QKJ7,Cupin type-1 domain-containing protein,82.3,Medium,[]
-gel,soy,groundnut,A0A445AI08,Cupin type-1 domain-containing protein,82.3,Medium,[]
-gel,soy,groundnut,A0ACH3NPW9,Cupin type-1 domain-containing protein,77.7,Medium,[]
-gel,soy,groundnut,A0ACH3NPQ2,Cupin type-1 domain-containing protein,77.5,Medium,[]
-gel,soy,groundnut,A0A444YLR8,Cupin type-1 domain-containing protein,80.1,Medium,[]
-gel,soy,groundnut,A0A445CPP8,Cupin type-1 domain-containing protein,77.9,Medium,[]
-gel,soy,groundnut,A0A444YLZ4,Cupin type-1 domain-containing protein,77.5,Medium,[]
-gel,soy,groundnut,A0A444YLS7,Cupin type-1 domain-containing protein,87.1,Medium,[]
-gel,soy,groundnut,A0A445CPR0,Cupin type-1 domain-containing protein,82.1,Medium,[]
-gel,soy,groundnut,A0ACH3NPJ3,Cupin type-1 domain-containing protein,87.1,Medium,[]
-gel,soy,groundnut,A0A444YLI2,Cupin type-1 domain-containing protein,75.8,Medium,[]
-gel,soy,groundnut,A0ACH3QIX2,Cupin type-1 domain-containing protein,79.1,Medium,[]
-gel,soy,groundnut,A0ACH3TF40,Cupin type-1 domain-containing protein,82.9,Medium,[]
-gel,soy,groundnut,A0ACH3NNZ1,Cupin type-1 domain-containing protein,82.0,Medium,[]
-gel,soy,groundnut,Q9SQH7,Glycinin,86.0,Medium,[]
-gel,soy,groundnut,A0A444YLX0,Cupin type-1 domain-containing protein,80.5,Medium,[]
-gel,soy,groundnut,A0A445AEY9,Cupin type-1 domain-containing protein,79.1,Medium,[]
-gel,soy,groundnut,A0A445CPR7,Cupin type-1 domain-containing protein,82.1,Medium,[]
-gel,soy,groundnut,A0A445CPS9,Cupin type-1 domain-containing protein,84.8,Medium,[]
-gel,soy,groundnut,A0ACH3NP65,Cupin type-1 domain-containing protein,82.0,Medium,[]
-gel,soy,groundnut,A0ACH3NP83,Cupin type-1 domain-containing protein,77.6,Medium,[]
-gel,soy,groundnut,O82580,Glycinin,77.0,Medium,[]
-gel,soy,groundnut,Q0GM57,Iso-Ara h3,82.2,Medium,[]
-milk,soy,cowpea,A0A4D6N0G6,11-S seed storage protein,62.4,Low,[]
-milk,soy,cowpea,A0A2U9K6L4,Vicilin,78.2,Low,[]
-milk,soy,cowpea,A0A2U9K6K6,Vicilin,77.7,Low,[]
-milk,soy,cowpea,A0A2U9K6L2,Vicilin,79.1,Low,[]
-milk,soy,cowpea,A0A2U9K6K8,Vicilin,78.7,Low,[]
-milk,soy,cowpea,A0A2U9K6K9,Vicilin,77.1,Low,[]
-milk,soy,cowpea,A0A4D6KM41,SBg7S,47.1,Low,[]
-milk,soy,cowpea,A0A4D6LB30,RmlC-like jelly roll fold,70.4,Low,[]
-milk,soy,cowpea,A0A4D6LGM9,RmlC-like jelly roll fold,75.8,Low,[]
-milk,soy,cowpea,A0A4D6N8P3,RmlC-like jelly roll fold,60.6,Low,[]
-milk,soy,cowpea,A0A4D6N4W3,RmlC-like jelly roll fold,70.9,Low,[]
-milk,soy,cowpea,A0A4D6MTA9,RmlC-like jelly roll fold,72.1,Low,[]
-milk,soy,cowpea,A0A4D6MR86,RmlC-like jelly roll fold,77.9,Low,[]
-milk,soy,cowpea,A0A4D6LIH5,RmlC-like jelly roll fold,42.6,Low,[]
-milk,soy,cowpea,A0A4D6L7U3,RmlC-like jelly roll fold,50.1,Low,[]
-milk,soy,cowpea,A0A4D6N8Z9,RmlC-like jelly roll fold,47.4,Low,[]
-milk,soy,pigeon_pea,Q94FS2,Legumin seed storage protein,45.7,Low,[]
-milk,soy,pigeon_pea,A0A151U0J2,Basic 7S globulin,48.6,Low,[]
-milk,soy,pigeon_pea,A0A151U0Q4,Basic 7S globulin,47.7,Low,[]
-milk,soy,pigeon_pea,A0A151STW8,Basic 7S globulin,46.8,Low,[]
-milk,soy,pigeon_pea,A0A151U5Z8,Basic 7S globulin,44.0,Low,[]
-milk,soy,pigeon_pea,A0A151U0R9,Basic 7S globulin,45.5,Low,[]
-milk,soy,pigeon_pea,A0A151SLE6,Basic 7S globulin,46.5,Low,[]
-milk,soy,pigeon_pea,A0A151TW66,Basic 7S globulin,42.9,Low,[]
-milk,soy,pigeon_pea,A0A151U0M6,Basic 7S globulin 2,46.4,Low,[]
-milk,soy,pigeon_pea,A0A151STZ0,Basic 7S globulin 2,48.7,Low,[]
-milk,soy,pigeon_pea,A0A151TUN4,Glycinin G3,56.2,Low,[]
-milk,soy,pigeon_pea,A0A151TUL0,Glycinin G3,56.2,Low,[]
-milk,soy,pigeon_pea,A0A151TI51,Vicilin-like antimicrobial peptides 2-2,58.9,Low,[]
-milk,soy,pigeon_pea,A0A151TN63,Vicilin-like antimicrobial peptides 2-2,58.3,Low,[]
-milk,soy,pigeon_pea,A0A151SV05,Vicilin-like antimicrobial peptides 2-2,65.2,Low,[]
-milk,soy,pigeon_pea,A0A151U6V8,"Beta-conglycinin, beta chain",55.4,Low,[]
-milk,soy,pigeon_pea,A0A151U6Q2,"Beta-conglycinin, alpha chain",80.6,Low,[]
-milk,soy,pigeon_pea,A0A151T731,Glutelin type-A 1,51.0,Low,[]
-milk,soy,pigeon_pea,A0A151UBZ3,Glutelin type-A 2,49.0,Low,[]
-milk,soy,pigeon_pea,A0A151UC62,Glutelin type-A 2,46.2,Low,[]
-milk,soy,pigeon_pea,A0A151SUU8,Glutelin type-A 1,49.8,Low,[]
-milk,soy,pigeon_pea,A0A151UBW6,Glutelin type-A 2,50.8,Low,[]
-milk,soy,pigeon_pea,A0A151TM61,Glutelin type-A 1,48.1,Low,[]
-milk,soy,african_yam_bean,A0AA86VRP6,SBg7S,46.2,Low,[]
-milk,soy,african_yam_bean,A0AA86VZQ4,Cupin type-1 domain-containing protein,66.0,Low,[]
-milk,soy,african_yam_bean,A0AA86W2F3,Cupin type-1 domain-containing protein,61.5,Low,[]
-milk,soy,african_yam_bean,A0AA86SVJ7,Cupin type-1 domain-containing protein,70.2,Low,[]
-milk,soy,african_yam_bean,A0AA86S3E3,Cupin type-1 domain-containing protein,46.7,Low,[]
-milk,soy,african_yam_bean,A0AA86SEW6,Cupin type-1 domain-containing protein,49.8,Low,[]
-milk,soy,groundnut,Q647H2,Arachin Ahy-3,59.8,Low,[]
-milk,soy,groundnut,Q647H1,Conarachin,66.8,Low,[]
-milk,soy,groundnut,A1DZF0,Arachin 6,62.6,Low,[]
-milk,soy,groundnut,Q647H4,Arachin Ahy-1,62.3,Low,[]
-milk,soy,groundnut,Q5I6T2,Arachin Ahy-4,63.3,Low,[]
-milk,soy,groundnut,B5TYU1,Arachin Arah3 isoform,62.8,Low,[]
-milk,soy,groundnut,Q647H3,Arachin Ahy-2,62.1,Low,[]
-milk,soy,groundnut,Q6T2T4,Storage protein,62.5,Low,[]
-milk,soy,groundnut,P43238,Allergen Ara h 1.0101,71.3,Low,"[""Allergen (UniProt Annotated)""]"
-milk,soy,groundnut,P20780,Arachin 21 kDa protein,50.9,Low,[]
-milk,soy,groundnut,P04149,Arachin 25 kDa protein,34.4,Low,[]
-milk,soy,groundnut,E9LFE8,11S arachin,54.0,Low,[]
-milk,soy,groundnut,Q6PSU6,Conarachin,76.6,Low,[]
-milk,soy,groundnut,Q6PSU4,Conarachin,75.5,Low,[]
-milk,soy,groundnut,Q6PSU5,Conarachin,76.4,Low,[]
-milk,soy,groundnut,E9LFE7,7S conarachin,73.5,Low,[]
-milk,soy,groundnut,E9LFF0,11S arachin,48.4,Low,[]
-milk,soy,groundnut,P43237,Allergen Ara h 1,72.3,Low,"[""Allergen (UniProt Annotated)""]"
-milk,soy,groundnut,E9LFE9,11S arachin,44.2,Low,[]
-milk,soy,groundnut,A0A2R9ZPY0,Arachin Ahy-2,51.6,Low,[]
-milk,soy,groundnut,A1DZF1,Arachin 7,53.4,Low,[]
-milk,soy,groundnut,G0Y6W7,Conarachin,38.5,Low,[]
-milk,soy,groundnut,A0ACH3QKJ7,Cupin type-1 domain-containing protein,55.2,Low,[]
-milk,soy,groundnut,A0A445AI08,Cupin type-1 domain-containing protein,55.2,Low,[]
-milk,soy,groundnut,A0ACH3NPW9,Cupin type-1 domain-containing protein,56.2,Low,[]
-milk,soy,groundnut,A0ACH3NPQ2,Cupin type-1 domain-containing protein,52.4,Low,[]
-milk,soy,groundnut,A0A444YLR8,Cupin type-1 domain-containing protein,56.0,Low,[]
-milk,soy,groundnut,A0A445CPP8,Cupin type-1 domain-containing protein,53.7,Low,[]
-milk,soy,groundnut,A0A444YLZ4,Cupin type-1 domain-containing protein,52.4,Low,[]
-milk,soy,groundnut,A0A444YLS7,Cupin type-1 domain-containing protein,59.8,Low,[]
-milk,soy,groundnut,A0A445CPR0,Cupin type-1 domain-containing protein,62.8,Low,[]
-milk,soy,groundnut,A0ACH3NPJ3,Cupin type-1 domain-containing protein,59.8,Low,[]
-milk,soy,groundnut,A0A444YLI2,Cupin type-1 domain-containing protein,55.2,Low,[]
-milk,soy,groundnut,A0ACH3QIX2,Cupin type-1 domain-containing protein,63.4,Low,[]
-milk,soy,groundnut,A0ACH3TF40,Cupin type-1 domain-containing protein,67.2,Low,[]
-milk,soy,groundnut,A0ACH3NNZ1,Cupin type-1 domain-containing protein,62.6,Low,[]
-milk,soy,groundnut,Q9SQH7,Glycinin,63.0,Low,[]
-milk,soy,groundnut,A0A444YLX0,Cupin type-1 domain-containing protein,61.5,Low,[]
-milk,soy,groundnut,A0A445AEY9,Cupin type-1 domain-containing protein,63.4,Low,[]
-milk,soy,groundnut,A0A445CPR7,Cupin type-1 domain-containing protein,62.6,Low,[]
-milk,soy,groundnut,A0A445CPS9,Cupin type-1 domain-containing protein,58.2,Low,[]
-milk,soy,groundnut,A0ACH3NP65,Cupin type-1 domain-containing protein,62.5,Low,[]
-milk,soy,groundnut,A0ACH3NP83,Cupin type-1 domain-containing protein,63.7,Low,[]
-milk,soy,groundnut,O82580,Glycinin,61.6,Low,[]
-milk,soy,groundnut,Q0GM57,Iso-Ara h3,61.9,Low,[]
+job,crop_id,crop_name,protein_accession,score,confidence
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6N0G6,65.1,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L4,80.9,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K6,81.0,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L2,81.3,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K8,80.8,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K9,81.0,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6KM41,65.5,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6LB30,80.6,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6LGM9,79.8,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6N8P3,72.2,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6N4W3,85.1,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6MTA9,80.6,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6MR86,82.0,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6LIH5,55.3,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6L7U3,54.8,Medium
+egg,cowpea,Cowpea (Black-eyed pea),A0A4D6N8Z9,55.8,Medium
+egg,pigeon_pea,Pigeon pea,Q94FS2,42.8,Medium
+egg,pigeon_pea,Pigeon pea,A0A151U0J2,65.7,Medium
+egg,pigeon_pea,Pigeon pea,A0A151U0Q4,62.4,Medium
+egg,pigeon_pea,Pigeon pea,A0A151STW8,65.3,Medium
+egg,pigeon_pea,Pigeon pea,A0A151U5Z8,62.8,Medium
+egg,pigeon_pea,Pigeon pea,A0A151U0R9,60.6,Medium
+egg,pigeon_pea,Pigeon pea,A0A151SLE6,56.3,Medium
+egg,pigeon_pea,Pigeon pea,A0A151TW66,63.9,Medium
+egg,pigeon_pea,Pigeon pea,A0A151U0M6,63.4,Medium
+egg,pigeon_pea,Pigeon pea,A0A151STZ0,60.6,Medium
+egg,pigeon_pea,Pigeon pea,A0A151TUN4,65.2,Medium
+egg,pigeon_pea,Pigeon pea,A0A151TUL0,62.3,Medium
+egg,pigeon_pea,Pigeon pea,A0A151TI51,70.4,Medium
+egg,pigeon_pea,Pigeon pea,A0A151TN63,74.8,Medium
+egg,pigeon_pea,Pigeon pea,A0A151SV05,74.1,Medium
+egg,pigeon_pea,Pigeon pea,A0A151U6V8,62.6,Medium
+egg,pigeon_pea,Pigeon pea,A0A151U6Q2,87.4,Medium
+egg,pigeon_pea,Pigeon pea,A0A151T731,55.1,Medium
+egg,pigeon_pea,Pigeon pea,A0A151UBZ3,54.2,Medium
+egg,pigeon_pea,Pigeon pea,A0A151UC62,54.3,Medium
+egg,pigeon_pea,Pigeon pea,A0A151SUU8,55.4,Medium
+egg,pigeon_pea,Pigeon pea,A0A151UBW6,55.7,Medium
+egg,pigeon_pea,Pigeon pea,A0A151TM61,56.3,Medium
+egg,african_yam_bean,African yam bean,A0AA86VRP6,64.3,Medium
+egg,african_yam_bean,African yam bean,A0AA86VZQ4,67.5,Medium
+egg,african_yam_bean,African yam bean,A0AA86W2F3,70.2,Medium
+egg,african_yam_bean,African yam bean,A0AA86SVJ7,82.6,Medium
+egg,african_yam_bean,African yam bean,A0AA86S3E3,56.2,Medium
+egg,african_yam_bean,African yam bean,A0AA86SEW6,55.5,Medium
+egg,groundnut,Groundnut (Peanut),Q647H2,63.7,Medium
+egg,groundnut,Groundnut (Peanut),Q647H1,65.5,Medium
+egg,groundnut,Groundnut (Peanut),A1DZF0,63.8,Medium
+egg,groundnut,Groundnut (Peanut),Q647H4,64.3,Medium
+egg,groundnut,Groundnut (Peanut),Q5I6T2,63.9,Medium
+egg,groundnut,Groundnut (Peanut),B5TYU1,63.9,Medium
+egg,groundnut,Groundnut (Peanut),Q647H3,63.9,Medium
+egg,groundnut,Groundnut (Peanut),Q6T2T4,64.3,Medium
+egg,groundnut,Groundnut (Peanut),P43238,84.5,Medium
+egg,groundnut,Groundnut (Peanut),P20780,45.6,Medium
+egg,groundnut,Groundnut (Peanut),P04149,42.4,Medium
+egg,groundnut,Groundnut (Peanut),E9LFE8,56.3,Medium
+egg,groundnut,Groundnut (Peanut),Q6PSU6,76.9,Medium
+egg,groundnut,Groundnut (Peanut),Q6PSU4,79.5,Medium
+egg,groundnut,Groundnut (Peanut),Q6PSU5,76.8,Medium
+egg,groundnut,Groundnut (Peanut),E9LFE7,70.7,Medium
+egg,groundnut,Groundnut (Peanut),E9LFF0,45.1,Medium
+egg,groundnut,Groundnut (Peanut),P43237,85.1,Medium
+egg,groundnut,Groundnut (Peanut),E9LFE9,59.8,Medium
+egg,groundnut,Groundnut (Peanut),A0A2R9ZPY0,63.9,Medium
+egg,groundnut,Groundnut (Peanut),A1DZF1,60.6,Medium
+egg,groundnut,Groundnut (Peanut),G0Y6W7,43.1,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3QKJ7,64.2,Medium
+egg,groundnut,Groundnut (Peanut),A0A445AI08,64.2,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3NPW9,60.0,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3NPQ2,61.9,Medium
+egg,groundnut,Groundnut (Peanut),A0A444YLR8,61.2,Medium
+egg,groundnut,Groundnut (Peanut),A0A445CPP8,61.7,Medium
+egg,groundnut,Groundnut (Peanut),A0A444YLZ4,61.9,Medium
+egg,groundnut,Groundnut (Peanut),A0A444YLS7,63.7,Medium
+egg,groundnut,Groundnut (Peanut),A0A445CPR0,63.8,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3NPJ3,63.7,Medium
+egg,groundnut,Groundnut (Peanut),A0A444YLI2,59.6,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3QIX2,65.5,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3TF40,65.1,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3NNZ1,63.8,Medium
+egg,groundnut,Groundnut (Peanut),Q9SQH7,65.0,Medium
+egg,groundnut,Groundnut (Peanut),A0A444YLX0,64.6,Medium
+egg,groundnut,Groundnut (Peanut),A0A445AEY9,65.5,Medium
+egg,groundnut,Groundnut (Peanut),A0A445CPR7,63.7,Medium
+egg,groundnut,Groundnut (Peanut),A0A445CPS9,62.1,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3NP65,64.2,Medium
+egg,groundnut,Groundnut (Peanut),A0ACH3NP83,62.7,Medium
+egg,groundnut,Groundnut (Peanut),O82580,62.6,Medium
+egg,groundnut,Groundnut (Peanut),Q0GM57,63.6,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6N0G6,87.8,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L4,49.5,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K6,49.4,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L2,52.4,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K8,49.5,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K9,49.2,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6KM41,58.3,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6LB30,47.5,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6LGM9,48.2,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6N8P3,54.9,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6N4W3,57.4,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6MTA9,48.0,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6MR86,49.3,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6LIH5,66.6,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6L7U3,61.3,Medium
+gel,cowpea,Cowpea (Black-eyed pea),A0A4D6N8Z9,67.4,Medium
+gel,pigeon_pea,Pigeon pea,Q94FS2,59.6,Low
+gel,pigeon_pea,Pigeon pea,A0A151U0J2,58.4,Medium
+gel,pigeon_pea,Pigeon pea,A0A151U0Q4,55.5,Medium
+gel,pigeon_pea,Pigeon pea,A0A151STW8,57.4,Medium
+gel,pigeon_pea,Pigeon pea,A0A151U5Z8,55.9,Medium
+gel,pigeon_pea,Pigeon pea,A0A151U0R9,54.2,Medium
+gel,pigeon_pea,Pigeon pea,A0A151SLE6,51.4,Medium
+gel,pigeon_pea,Pigeon pea,A0A151TW66,56.5,Medium
+gel,pigeon_pea,Pigeon pea,A0A151U0M6,56.2,Medium
+gel,pigeon_pea,Pigeon pea,A0A151STZ0,53.7,Medium
+gel,pigeon_pea,Pigeon pea,A0A151TUN4,87.9,Medium
+gel,pigeon_pea,Pigeon pea,A0A151TUL0,80.9,Medium
+gel,pigeon_pea,Pigeon pea,A0A151TI51,53.2,Medium
+gel,pigeon_pea,Pigeon pea,A0A151TN63,56.8,Medium
+gel,pigeon_pea,Pigeon pea,A0A151SV05,56.9,Medium
+gel,pigeon_pea,Pigeon pea,A0A151U6V8,41.0,Medium
+gel,pigeon_pea,Pigeon pea,A0A151U6Q2,61.1,Medium
+gel,pigeon_pea,Pigeon pea,A0A151T731,68.5,Medium
+gel,pigeon_pea,Pigeon pea,A0A151UBZ3,57.6,Medium
+gel,pigeon_pea,Pigeon pea,A0A151UC62,56.9,Medium
+gel,pigeon_pea,Pigeon pea,A0A151SUU8,68.3,Medium
+gel,pigeon_pea,Pigeon pea,A0A151UBW6,64.4,Medium
+gel,pigeon_pea,Pigeon pea,A0A151TM61,67.8,Medium
+gel,african_yam_bean,African yam bean,A0AA86VRP6,57.8,Medium
+gel,african_yam_bean,African yam bean,A0AA86VZQ4,88.5,Medium
+gel,african_yam_bean,African yam bean,A0AA86W2F3,46.9,Medium
+gel,african_yam_bean,African yam bean,A0AA86SVJ7,50.8,Medium
+gel,african_yam_bean,African yam bean,A0AA86S3E3,67.5,Medium
+gel,african_yam_bean,African yam bean,A0AA86SEW6,68.3,Medium
+gel,groundnut,Groundnut (Peanut),Q647H2,87.1,Medium
+gel,groundnut,Groundnut (Peanut),Q647H1,83.0,Medium
+gel,groundnut,Groundnut (Peanut),A1DZF0,82.0,Medium
+gel,groundnut,Groundnut (Peanut),Q647H4,81.9,Medium
+gel,groundnut,Groundnut (Peanut),Q5I6T2,82.2,Medium
+gel,groundnut,Groundnut (Peanut),B5TYU1,82.1,Medium
+gel,groundnut,Groundnut (Peanut),Q647H3,81.9,Medium
+gel,groundnut,Groundnut (Peanut),Q6T2T4,81.9,Medium
+gel,groundnut,Groundnut (Peanut),P43238,62.4,Medium
+gel,groundnut,Groundnut (Peanut),P20780,62.6,Low
+gel,groundnut,Groundnut (Peanut),P04149,48.8,Medium
+gel,groundnut,Groundnut (Peanut),E9LFE8,68.8,Medium
+gel,groundnut,Groundnut (Peanut),Q6PSU6,52.1,Medium
+gel,groundnut,Groundnut (Peanut),Q6PSU4,52.3,Medium
+gel,groundnut,Groundnut (Peanut),Q6PSU5,51.9,Medium
+gel,groundnut,Groundnut (Peanut),E9LFE7,45.3,Medium
+gel,groundnut,Groundnut (Peanut),E9LFF0,53.1,Medium
+gel,groundnut,Groundnut (Peanut),P43237,63.1,Medium
+gel,groundnut,Groundnut (Peanut),E9LFE9,77.7,Medium
+gel,groundnut,Groundnut (Peanut),A0A2R9ZPY0,85.3,Medium
+gel,groundnut,Groundnut (Peanut),A1DZF1,80.9,Medium
+gel,groundnut,Groundnut (Peanut),G0Y6W7,60.3,Low
+gel,groundnut,Groundnut (Peanut),A0ACH3QKJ7,82.3,Medium
+gel,groundnut,Groundnut (Peanut),A0A445AI08,82.3,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3NPW9,77.7,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3NPQ2,77.5,Medium
+gel,groundnut,Groundnut (Peanut),A0A444YLR8,80.1,Medium
+gel,groundnut,Groundnut (Peanut),A0A445CPP8,77.9,Medium
+gel,groundnut,Groundnut (Peanut),A0A444YLZ4,77.5,Medium
+gel,groundnut,Groundnut (Peanut),A0A444YLS7,87.1,Medium
+gel,groundnut,Groundnut (Peanut),A0A445CPR0,82.1,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3NPJ3,87.1,Medium
+gel,groundnut,Groundnut (Peanut),A0A444YLI2,75.8,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3QIX2,79.1,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3TF40,82.9,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3NNZ1,82.0,Medium
+gel,groundnut,Groundnut (Peanut),Q9SQH7,86.0,Medium
+gel,groundnut,Groundnut (Peanut),A0A444YLX0,80.5,Medium
+gel,groundnut,Groundnut (Peanut),A0A445AEY9,79.1,Medium
+gel,groundnut,Groundnut (Peanut),A0A445CPR7,82.1,Medium
+gel,groundnut,Groundnut (Peanut),A0A445CPS9,84.8,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3NP65,82.0,Medium
+gel,groundnut,Groundnut (Peanut),A0ACH3NP83,77.6,Medium
+gel,groundnut,Groundnut (Peanut),O82580,77.0,Medium
+gel,groundnut,Groundnut (Peanut),Q0GM57,82.2,Medium
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6N0G6,62.4,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L4,78.2,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K6,77.7,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L2,79.1,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K8,78.7,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K9,77.1,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6KM41,47.1,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6LB30,70.4,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6LGM9,75.8,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6N8P3,60.6,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6N4W3,70.9,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6MTA9,72.1,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6MR86,77.9,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6LIH5,42.6,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6L7U3,50.1,Low
+milk,cowpea,Cowpea (Black-eyed pea),A0A4D6N8Z9,47.4,Low
+milk,pigeon_pea,Pigeon pea,Q94FS2,45.7,Low
+milk,pigeon_pea,Pigeon pea,A0A151U0J2,48.6,Low
+milk,pigeon_pea,Pigeon pea,A0A151U0Q4,47.7,Low
+milk,pigeon_pea,Pigeon pea,A0A151STW8,46.8,Low
+milk,pigeon_pea,Pigeon pea,A0A151U5Z8,44.0,Low
+milk,pigeon_pea,Pigeon pea,A0A151U0R9,45.5,Low
+milk,pigeon_pea,Pigeon pea,A0A151SLE6,46.5,Low
+milk,pigeon_pea,Pigeon pea,A0A151TW66,42.9,Low
+milk,pigeon_pea,Pigeon pea,A0A151U0M6,46.4,Low
+milk,pigeon_pea,Pigeon pea,A0A151STZ0,48.7,Low
+milk,pigeon_pea,Pigeon pea,A0A151TUN4,56.2,Low
+milk,pigeon_pea,Pigeon pea,A0A151TUL0,56.2,Low
+milk,pigeon_pea,Pigeon pea,A0A151TI51,58.9,Low
+milk,pigeon_pea,Pigeon pea,A0A151TN63,58.3,Low
+milk,pigeon_pea,Pigeon pea,A0A151SV05,65.2,Low
+milk,pigeon_pea,Pigeon pea,A0A151U6V8,55.4,Low
+milk,pigeon_pea,Pigeon pea,A0A151U6Q2,80.6,Low
+milk,pigeon_pea,Pigeon pea,A0A151T731,51.0,Low
+milk,pigeon_pea,Pigeon pea,A0A151UBZ3,49.0,Low
+milk,pigeon_pea,Pigeon pea,A0A151UC62,46.2,Low
+milk,pigeon_pea,Pigeon pea,A0A151SUU8,49.8,Low
+milk,pigeon_pea,Pigeon pea,A0A151UBW6,50.8,Low
+milk,pigeon_pea,Pigeon pea,A0A151TM61,48.1,Low
+milk,african_yam_bean,African yam bean,A0AA86VRP6,46.2,Low
+milk,african_yam_bean,African yam bean,A0AA86VZQ4,66.0,Low
+milk,african_yam_bean,African yam bean,A0AA86W2F3,61.5,Low
+milk,african_yam_bean,African yam bean,A0AA86SVJ7,70.2,Low
+milk,african_yam_bean,African yam bean,A0AA86S3E3,46.7,Low
+milk,african_yam_bean,African yam bean,A0AA86SEW6,49.8,Low
+milk,groundnut,Groundnut (Peanut),Q647H2,59.8,Low
+milk,groundnut,Groundnut (Peanut),Q647H1,66.8,Low
+milk,groundnut,Groundnut (Peanut),A1DZF0,62.6,Low
+milk,groundnut,Groundnut (Peanut),Q647H4,62.3,Low
+milk,groundnut,Groundnut (Peanut),Q5I6T2,63.3,Low
+milk,groundnut,Groundnut (Peanut),B5TYU1,62.8,Low
+milk,groundnut,Groundnut (Peanut),Q647H3,62.1,Low
+milk,groundnut,Groundnut (Peanut),Q6T2T4,62.5,Low
+milk,groundnut,Groundnut (Peanut),P43238,71.3,Low
+milk,groundnut,Groundnut (Peanut),P20780,50.9,Low
+milk,groundnut,Groundnut (Peanut),P04149,34.4,Low
+milk,groundnut,Groundnut (Peanut),E9LFE8,54.0,Low
+milk,groundnut,Groundnut (Peanut),Q6PSU6,76.6,Low
+milk,groundnut,Groundnut (Peanut),Q6PSU4,75.5,Low
+milk,groundnut,Groundnut (Peanut),Q6PSU5,76.4,Low
+milk,groundnut,Groundnut (Peanut),E9LFE7,73.5,Low
+milk,groundnut,Groundnut (Peanut),E9LFF0,48.4,Low
+milk,groundnut,Groundnut (Peanut),P43237,72.3,Low
+milk,groundnut,Groundnut (Peanut),E9LFE9,44.2,Low
+milk,groundnut,Groundnut (Peanut),A0A2R9ZPY0,51.6,Low
+milk,groundnut,Groundnut (Peanut),A1DZF1,53.4,Low
+milk,groundnut,Groundnut (Peanut),G0Y6W7,38.5,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3QKJ7,55.2,Low
+milk,groundnut,Groundnut (Peanut),A0A445AI08,55.2,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3NPW9,56.2,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3NPQ2,52.4,Low
+milk,groundnut,Groundnut (Peanut),A0A444YLR8,56.0,Low
+milk,groundnut,Groundnut (Peanut),A0A445CPP8,53.7,Low
+milk,groundnut,Groundnut (Peanut),A0A444YLZ4,52.4,Low
+milk,groundnut,Groundnut (Peanut),A0A444YLS7,59.8,Low
+milk,groundnut,Groundnut (Peanut),A0A445CPR0,62.8,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3NPJ3,59.8,Low
+milk,groundnut,Groundnut (Peanut),A0A444YLI2,55.2,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3QIX2,63.4,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3TF40,67.2,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3NNZ1,62.6,Low
+milk,groundnut,Groundnut (Peanut),Q9SQH7,63.0,Low
+milk,groundnut,Groundnut (Peanut),A0A444YLX0,61.5,Low
+milk,groundnut,Groundnut (Peanut),A0A445AEY9,63.4,Low
+milk,groundnut,Groundnut (Peanut),A0A445CPR7,62.6,Low
+milk,groundnut,Groundnut (Peanut),A0A445CPS9,58.2,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3NP65,62.5,Low
+milk,groundnut,Groundnut (Peanut),A0ACH3NP83,63.7,Low
+milk,groundnut,Groundnut (Peanut),O82580,61.6,Low
+milk,groundnut,Groundnut (Peanut),Q0GM57,61.9,Low
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6N0G6,92.8,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L4,57.9,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K6,57.9,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L2,61.5,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K8,58.0,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K9,57.7,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6KM41,69.7,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6LB30,55.3,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6LGM9,56.2,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6N8P3,65.2,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6N4W3,67.7,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6MTA9,56.1,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6MR86,57.5,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6LIH5,74.7,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6L7U3,68.5,Medium
+meat,cowpea,Cowpea (Black-eyed pea),A0A4D6N8Z9,75.9,Medium
+meat,pigeon_pea,Pigeon pea,Q94FS2,68.4,Low
+meat,pigeon_pea,Pigeon pea,A0A151U0J2,69.9,Medium
+meat,pigeon_pea,Pigeon pea,A0A151U0Q4,66.2,Medium
+meat,pigeon_pea,Pigeon pea,A0A151STW8,68.5,Medium
+meat,pigeon_pea,Pigeon pea,A0A151U5Z8,66.7,Medium
+meat,pigeon_pea,Pigeon pea,A0A151U0R9,64.6,Medium
+meat,pigeon_pea,Pigeon pea,A0A151SLE6,61.3,Medium
+meat,pigeon_pea,Pigeon pea,A0A151TW66,67.3,Medium
+meat,pigeon_pea,Pigeon pea,A0A151U0M6,67.1,Medium
+meat,pigeon_pea,Pigeon pea,A0A151STZ0,64.0,Medium
+meat,pigeon_pea,Pigeon pea,A0A151TUN4,96.0,Medium
+meat,pigeon_pea,Pigeon pea,A0A151TUL0,87.3,Medium
+meat,pigeon_pea,Pigeon pea,A0A151TI51,62.6,Medium
+meat,pigeon_pea,Pigeon pea,A0A151TN63,66.4,Medium
+meat,pigeon_pea,Pigeon pea,A0A151SV05,66.4,Medium
+meat,pigeon_pea,Pigeon pea,A0A151U6V8,47.7,Medium
+meat,pigeon_pea,Pigeon pea,A0A151U6Q2,72.4,Medium
+meat,pigeon_pea,Pigeon pea,A0A151T731,77.2,Medium
+meat,pigeon_pea,Pigeon pea,A0A151UBZ3,63.8,Medium
+meat,pigeon_pea,Pigeon pea,A0A151UC62,63.0,Medium
+meat,pigeon_pea,Pigeon pea,A0A151SUU8,76.9,Medium
+meat,pigeon_pea,Pigeon pea,A0A151UBW6,72.6,Medium
+meat,pigeon_pea,Pigeon pea,A0A151TM61,76.4,Medium
+meat,african_yam_bean,African yam bean,A0AA86VRP6,69.1,Medium
+meat,african_yam_bean,African yam bean,A0AA86VZQ4,93.9,Medium
+meat,african_yam_bean,African yam bean,A0AA86W2F3,54.6,Medium
+meat,african_yam_bean,African yam bean,A0AA86SVJ7,59.3,Medium
+meat,african_yam_bean,African yam bean,A0AA86S3E3,76.0,Medium
+meat,african_yam_bean,African yam bean,A0AA86SEW6,76.9,Medium
+meat,groundnut,Groundnut (Peanut),Q647H2,96.0,Medium
+meat,groundnut,Groundnut (Peanut),Q647H1,89.5,Medium
+meat,groundnut,Groundnut (Peanut),A1DZF0,89.7,Medium
+meat,groundnut,Groundnut (Peanut),Q647H4,89.6,Medium
+meat,groundnut,Groundnut (Peanut),Q5I6T2,89.9,Medium
+meat,groundnut,Groundnut (Peanut),B5TYU1,89.7,Medium
+meat,groundnut,Groundnut (Peanut),Q647H3,89.5,Medium
+meat,groundnut,Groundnut (Peanut),Q6T2T4,89.6,Medium
+meat,groundnut,Groundnut (Peanut),P43238,74.5,Medium
+meat,groundnut,Groundnut (Peanut),P20780,72.4,Low
+meat,groundnut,Groundnut (Peanut),P04149,54.9,Medium
+meat,groundnut,Groundnut (Peanut),E9LFE8,77.0,Medium
+meat,groundnut,Groundnut (Peanut),Q6PSU6,61.8,Medium
+meat,groundnut,Groundnut (Peanut),Q6PSU4,61.8,Medium
+meat,groundnut,Groundnut (Peanut),Q6PSU5,61.5,Medium
+meat,groundnut,Groundnut (Peanut),E9LFE7,53.3,Medium
+meat,groundnut,Groundnut (Peanut),E9LFF0,56.5,Medium
+meat,groundnut,Groundnut (Peanut),P43237,75.2,Medium
+meat,groundnut,Groundnut (Peanut),E9LFE9,87.3,Medium
+meat,groundnut,Groundnut (Peanut),A0A2R9ZPY0,94.1,Medium
+meat,groundnut,Groundnut (Peanut),A1DZF1,91.9,Medium
+meat,groundnut,Groundnut (Peanut),G0Y6W7,69.5,Low
+meat,groundnut,Groundnut (Peanut),A0ACH3QKJ7,91.4,Medium
+meat,groundnut,Groundnut (Peanut),A0A445AI08,91.4,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3NPW9,85.5,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3NPQ2,84.0,Medium
+meat,groundnut,Groundnut (Peanut),A0A444YLR8,88.7,Medium
+meat,groundnut,Groundnut (Peanut),A0A445CPP8,84.4,Medium
+meat,groundnut,Groundnut (Peanut),A0A444YLZ4,84.0,Medium
+meat,groundnut,Groundnut (Peanut),A0A444YLS7,96.0,Medium
+meat,groundnut,Groundnut (Peanut),A0A445CPR0,89.7,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3NPJ3,96.0,Medium
+meat,groundnut,Groundnut (Peanut),A0A444YLI2,85.7,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3QIX2,83.7,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3TF40,88.5,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3NNZ1,89.7,Medium
+meat,groundnut,Groundnut (Peanut),Q9SQH7,95.1,Medium
+meat,groundnut,Groundnut (Peanut),A0A444YLX0,88.2,Medium
+meat,groundnut,Groundnut (Peanut),A0A445AEY9,83.7,Medium
+meat,groundnut,Groundnut (Peanut),A0A445CPR7,89.8,Medium
+meat,groundnut,Groundnut (Peanut),A0A445CPS9,93.2,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3NP65,89.6,Medium
+meat,groundnut,Groundnut (Peanut),A0ACH3NP83,84.5,Medium
+meat,groundnut,Groundnut (Peanut),O82580,83.6,Medium
+meat,groundnut,Groundnut (Peanut),Q0GM57,89.9,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6N0G6,71.4,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L4,82.6,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K6,82.1,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L2,83.7,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K8,83.2,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K9,81.4,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6KM41,55.8,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6LB30,73.5,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6LGM9,80.0,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6N8P3,66.8,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6N4W3,71.4,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6MTA9,76.2,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6MR86,81.7,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6LIH5,48.5,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6L7U3,57.3,Medium
+crayfish,cowpea,Cowpea (Black-eyed pea),A0A4D6N8Z9,54.2,Medium
+crayfish,pigeon_pea,Pigeon pea,Q94FS2,54.2,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151U0J2,57.9,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151U0Q4,56.8,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151STW8,55.2,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151U5Z8,52.3,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151U0R9,54.3,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151SLE6,56.0,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151TW66,50.9,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151U0M6,55.2,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151STZ0,58.1,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151TUN4,64.1,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151TUL0,64.3,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151TI51,67.8,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151TN63,67.0,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151SV05,75.4,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151U6V8,62.3,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151U6Q2,83.2,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151T731,58.4,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151UBZ3,56.1,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151UC62,53.0,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151SUU8,57.0,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151UBW6,58.4,Medium
+crayfish,pigeon_pea,Pigeon pea,A0A151TM61,55.2,Medium
+crayfish,african_yam_bean,African yam bean,A0AA86VRP6,54.8,Medium
+crayfish,african_yam_bean,African yam bean,A0AA86VZQ4,75.6,Medium
+crayfish,african_yam_bean,African yam bean,A0AA86W2F3,63.1,Medium
+crayfish,african_yam_bean,African yam bean,A0AA86SVJ7,73.0,Medium
+crayfish,african_yam_bean,African yam bean,A0AA86S3E3,53.4,Medium
+crayfish,african_yam_bean,African yam bean,A0AA86SEW6,57.0,Medium
+crayfish,groundnut,Groundnut (Peanut),Q647H2,68.4,Medium
+crayfish,groundnut,Groundnut (Peanut),Q647H1,76.9,Medium
+crayfish,groundnut,Groundnut (Peanut),A1DZF0,71.5,Medium
+crayfish,groundnut,Groundnut (Peanut),Q647H4,71.2,Medium
+crayfish,groundnut,Groundnut (Peanut),Q5I6T2,72.4,Medium
+crayfish,groundnut,Groundnut (Peanut),B5TYU1,71.8,Medium
+crayfish,groundnut,Groundnut (Peanut),Q647H3,70.9,Medium
+crayfish,groundnut,Groundnut (Peanut),Q6T2T4,71.5,Medium
+crayfish,groundnut,Groundnut (Peanut),P43238,76.4,Medium
+crayfish,groundnut,Groundnut (Peanut),P20780,60.5,Medium
+crayfish,groundnut,Groundnut (Peanut),P04149,40.3,Medium
+crayfish,groundnut,Groundnut (Peanut),E9LFE8,62.3,Medium
+crayfish,groundnut,Groundnut (Peanut),Q6PSU6,85.9,Medium
+crayfish,groundnut,Groundnut (Peanut),Q6PSU4,82.6,Medium
+crayfish,groundnut,Groundnut (Peanut),Q6PSU5,85.7,Medium
+crayfish,groundnut,Groundnut (Peanut),E9LFE7,85.1,Medium
+crayfish,groundnut,Groundnut (Peanut),E9LFF0,55.8,Medium
+crayfish,groundnut,Groundnut (Peanut),P43237,77.6,Medium
+crayfish,groundnut,Groundnut (Peanut),E9LFE9,50.1,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A2R9ZPY0,58.6,Medium
+crayfish,groundnut,Groundnut (Peanut),A1DZF1,61.3,Medium
+crayfish,groundnut,Groundnut (Peanut),G0Y6W7,45.8,Low
+crayfish,groundnut,Groundnut (Peanut),A0ACH3QKJ7,62.9,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A445AI08,62.9,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3NPW9,64.4,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3NPQ2,59.7,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A444YLR8,64.2,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A445CPP8,61.3,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A444YLZ4,59.7,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A444YLS7,68.4,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A445CPR0,71.8,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3NPJ3,68.4,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A444YLI2,63.6,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3QIX2,72.6,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3TF40,77.3,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3NNZ1,71.5,Medium
+crayfish,groundnut,Groundnut (Peanut),Q9SQH7,72.2,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A444YLX0,70.3,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A445AEY9,72.6,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A445CPR7,71.5,Medium
+crayfish,groundnut,Groundnut (Peanut),A0A445CPS9,66.3,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3NP65,71.5,Medium
+crayfish,groundnut,Groundnut (Peanut),A0ACH3NP83,73.0,Medium
+crayfish,groundnut,Groundnut (Peanut),O82580,70.6,Medium
+crayfish,groundnut,Groundnut (Peanut),Q0GM57,70.8,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6N0G6,71.5,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L4,85.1,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K6,84.7,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L2,86.0,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K8,85.6,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K9,84.1,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6KM41,60.4,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6LB30,77.4,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6LGM9,82.8,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6N8P3,71.5,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6N4W3,76.2,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6MTA9,79.8,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6MR86,84.5,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6LIH5,51.1,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6L7U3,58.7,Medium
+mayo,cowpea,Cowpea (Black-eyed pea),A0A4D6N8Z9,55.9,Medium
+mayo,pigeon_pea,Pigeon pea,Q94FS2,52.7,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151U0J2,61.6,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151U0Q4,60.6,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151STW8,60.3,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151U5Z8,57.0,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151U0R9,58.3,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151SLE6,58.8,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151TW66,56.1,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151U0M6,59.4,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151STZ0,61.5,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151TUN4,65.2,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151TUL0,65.2,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151TI51,71.9,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151TN63,71.6,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151SV05,78.2,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151U6V8,66.9,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151U6Q2,85.9,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151T731,59.5,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151UBZ3,57.7,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151UC62,55.1,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151SUU8,58.3,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151UBW6,59.7,Medium
+mayo,pigeon_pea,Pigeon pea,A0A151TM61,56.8,Medium
+mayo,african_yam_bean,African yam bean,A0AA86VRP6,59.4,Medium
+mayo,african_yam_bean,African yam bean,A0AA86VZQ4,75.1,Medium
+mayo,african_yam_bean,African yam bean,A0AA86W2F3,68.5,Medium
+mayo,african_yam_bean,African yam bean,A0AA86SVJ7,77.2,Medium
+mayo,african_yam_bean,African yam bean,A0AA86S3E3,55.3,Medium
+mayo,african_yam_bean,African yam bean,A0AA86SEW6,58.3,Medium
+mayo,groundnut,Groundnut (Peanut),Q647H2,68.7,Medium
+mayo,groundnut,Groundnut (Peanut),Q647H1,76.0,Medium
+mayo,groundnut,Groundnut (Peanut),A1DZF0,71.4,Medium
+mayo,groundnut,Groundnut (Peanut),Q647H4,71.1,Medium
+mayo,groundnut,Groundnut (Peanut),Q5I6T2,72.1,Medium
+mayo,groundnut,Groundnut (Peanut),B5TYU1,71.6,Medium
+mayo,groundnut,Groundnut (Peanut),Q647H3,70.8,Medium
+mayo,groundnut,Groundnut (Peanut),Q6T2T4,71.4,Medium
+mayo,groundnut,Groundnut (Peanut),P43238,80.2,Medium
+mayo,groundnut,Groundnut (Peanut),P20780,58.0,Medium
+mayo,groundnut,Groundnut (Peanut),P04149,41.8,Medium
+mayo,groundnut,Groundnut (Peanut),E9LFE8,63.1,Medium
+mayo,groundnut,Groundnut (Peanut),Q6PSU6,88.1,Medium
+mayo,groundnut,Groundnut (Peanut),Q6PSU4,85.2,Medium
+mayo,groundnut,Groundnut (Peanut),Q6PSU5,87.9,Medium
+mayo,groundnut,Groundnut (Peanut),E9LFE7,87.1,Medium
+mayo,groundnut,Groundnut (Peanut),E9LFF0,57.1,Medium
+mayo,groundnut,Groundnut (Peanut),P43237,81.1,Medium
+mayo,groundnut,Groundnut (Peanut),E9LFE9,53.6,Medium
+mayo,groundnut,Groundnut (Peanut),A0A2R9ZPY0,60.5,Medium
+mayo,groundnut,Groundnut (Peanut),A1DZF1,62.7,Medium
+mayo,groundnut,Groundnut (Peanut),G0Y6W7,45.3,Low
+mayo,groundnut,Groundnut (Peanut),A0ACH3QKJ7,63.9,Medium
+mayo,groundnut,Groundnut (Peanut),A0A445AI08,63.9,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3NPW9,64.8,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3NPQ2,61.2,Medium
+mayo,groundnut,Groundnut (Peanut),A0A444YLR8,64.8,Medium
+mayo,groundnut,Groundnut (Peanut),A0A445CPP8,62.6,Medium
+mayo,groundnut,Groundnut (Peanut),A0A444YLZ4,61.2,Medium
+mayo,groundnut,Groundnut (Peanut),A0A444YLS7,68.7,Medium
+mayo,groundnut,Groundnut (Peanut),A0A445CPR0,71.5,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3NPJ3,68.7,Medium
+mayo,groundnut,Groundnut (Peanut),A0A444YLI2,64.6,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3QIX2,72.5,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3TF40,76.5,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3NNZ1,71.4,Medium
+mayo,groundnut,Groundnut (Peanut),Q9SQH7,71.9,Medium
+mayo,groundnut,Groundnut (Peanut),A0A444YLX0,70.5,Medium
+mayo,groundnut,Groundnut (Peanut),A0A445AEY9,72.5,Medium
+mayo,groundnut,Groundnut (Peanut),A0A445CPR7,71.3,Medium
+mayo,groundnut,Groundnut (Peanut),A0A445CPS9,66.8,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3NP65,71.3,Medium
+mayo,groundnut,Groundnut (Peanut),A0ACH3NP83,72.6,Medium
+mayo,groundnut,Groundnut (Peanut),O82580,70.5,Medium
+mayo,groundnut,Groundnut (Peanut),Q0GM57,70.8,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6N0G6,70.1,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L4,81.7,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K6,80.9,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A2U9K6L2,82.9,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K8,82.4,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A2U9K6K9,80.2,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6KM41,53.8,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6LB30,71.7,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6LGM9,79.2,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6N8P3,66.6,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6N4W3,68.9,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6MTA9,74.5,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6MR86,80.6,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6LIH5,46.1,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6L7U3,55.9,Medium
+sarcopenia,cowpea,Cowpea (Black-eyed pea),A0A4D6N8Z9,52.3,Medium
+sarcopenia,pigeon_pea,Pigeon pea,Q94FS2,55.8,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151U0J2,55.7,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151U0Q4,55.7,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151STW8,53.6,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151U5Z8,50.5,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151U0R9,53.3,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151SLE6,55.3,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151TW66,48.7,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151U0M6,53.6,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151STZ0,57.8,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151TUN4,61.9,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151TUL0,62.4,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151TI51,67.2,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151TN63,64.5,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151SV05,73.9,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151U6V8,63.7,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151U6Q2,81.5,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151T731,57.3,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151UBZ3,54.4,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151UC62,51.0,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151SUU8,55.5,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151UBW6,57.1,Medium
+sarcopenia,pigeon_pea,Pigeon pea,A0A151TM61,53.3,Medium
+sarcopenia,african_yam_bean,African yam bean,A0AA86VRP6,52.8,Medium
+sarcopenia,african_yam_bean,African yam bean,A0AA86VZQ4,74.1,Medium
+sarcopenia,african_yam_bean,African yam bean,A0AA86W2F3,63.8,Medium
+sarcopenia,african_yam_bean,African yam bean,A0AA86SVJ7,70.8,Medium
+sarcopenia,african_yam_bean,African yam bean,A0AA86S3E3,51.4,Medium
+sarcopenia,african_yam_bean,African yam bean,A0AA86SEW6,55.5,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q647H2,67.0,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q647H1,75.7,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A1DZF0,69.9,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q647H4,69.4,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q5I6T2,70.9,Medium
+sarcopenia,groundnut,Groundnut (Peanut),B5TYU1,70.2,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q647H3,69.0,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q6T2T4,69.7,Medium
+sarcopenia,groundnut,Groundnut (Peanut),P43238,73.5,Medium
+sarcopenia,groundnut,Groundnut (Peanut),P20780,61.8,Medium
+sarcopenia,groundnut,Groundnut (Peanut),P04149,38.9,Medium
+sarcopenia,groundnut,Groundnut (Peanut),E9LFE8,61.8,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q6PSU6,86.2,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q6PSU4,81.3,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q6PSU5,85.9,Medium
+sarcopenia,groundnut,Groundnut (Peanut),E9LFE7,86.4,Medium
+sarcopenia,groundnut,Groundnut (Peanut),E9LFF0,57.5,Medium
+sarcopenia,groundnut,Groundnut (Peanut),P43237,74.8,Medium
+sarcopenia,groundnut,Groundnut (Peanut),E9LFE9,48.1,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A2R9ZPY0,56.2,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A1DZF1,60.3,Medium
+sarcopenia,groundnut,Groundnut (Peanut),G0Y6W7,45.4,Low
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3QKJ7,61.0,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A445AI08,61.0,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3NPW9,63.3,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3NPQ2,57.6,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A444YLR8,62.9,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A445CPP8,59.4,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A444YLZ4,57.6,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A444YLS7,66.9,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A445CPR0,70.1,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3NPJ3,67.0,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A444YLI2,62.4,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3QIX2,70.5,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3TF40,76.0,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3NNZ1,69.9,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q9SQH7,70.6,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A444YLX0,68.3,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A445AEY9,70.5,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A445CPR7,69.8,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0A445CPS9,65.0,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3NP65,69.7,Medium
+sarcopenia,groundnut,Groundnut (Peanut),A0ACH3NP83,71.8,Medium
+sarcopenia,groundnut,Groundnut (Peanut),O82580,68.8,Medium
+sarcopenia,groundnut,Groundnut (Peanut),Q0GM57,69.3,Medium

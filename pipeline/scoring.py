@@ -144,33 +144,24 @@ def score_protein_for_job(
     cys_frac = candidate_features.get("cysteine_fraction", 0.0)
     solubility_proxy = candidate_features.get("solubility_proxy", 0.5)
 
-    # Weighted combination
-    if job_id == "egg":
-        total_score = (
-            weights["embedding_similarity"] * emb_sim
-            + weights["family_match"] * family_score
-            + weights["physicochemical_distance"] * phys_sim
-            + weights["sequence_identity"] * seq_id
-            + weights["cysteine_fraction"] * min(1.0, cys_frac * 50.0)
-        )
-    elif job_id == "gel":
-        total_score = (
-            weights["embedding_similarity"] * emb_sim
-            + weights["family_match"] * family_score
-            + weights["cysteine_fraction"] * min(1.0, cys_frac * 60.0)
-            + weights["physicochemical_distance"] * phys_sim
-            + weights["sequence_identity"] * seq_id
-        )
-    elif job_id == "milk":
-        total_score = (
-            weights["embedding_similarity"] * emb_sim
-            + weights["family_match"] * family_score
-            + weights["solubility_proxy"] * solubility_proxy
-            + weights["physicochemical_distance"] * phys_sim
-            + weights["sequence_identity"] * seq_id
-        ) * job_config.get("confidence_penalty", 0.95)
-    else:
-        total_score = 0.5
+    # Dynamic feature value mapping matching configured weights
+    cys_scaled = min(1.0, cys_frac * (50.0 if job_id == "egg" else 60.0))
+    feature_values = {
+        "embedding_similarity": emb_sim,
+        "family_match": family_score,
+        "physicochemical_distance": phys_sim,
+        "sequence_identity": seq_id,
+        "cysteine_fraction": cys_scaled,
+        "solubility_proxy": solubility_proxy,
+    }
+
+    # Calculate total score from configured weights
+    total_score = sum(
+        weight * feature_values.get(feat_key, 0.5)
+        for feat_key, weight in weights.items()
+    )
+    if "confidence_penalty" in job_config:
+        total_score *= job_config["confidence_penalty"]
 
     scaled_score = round(float(total_score * 100.0), 1)
 
@@ -239,9 +230,13 @@ def run_scoring_for_all(db: Session, jobs_config_path: str = "config/jobs.yaml")
 
         # Curated benchmark proteins: the verified major food storage globulins
         CURATED_BENCHMARKS = {
-            "egg": "A0A1S3VZW2",  # Mung bean beta-conglycinin (594 aa)
-            "gel": "P02858",      # Soy glycinin G4 (563 aa)
-            "milk": "P11827",     # Soy beta-conglycinin alpha' (621 aa)
+            "egg": "A0A1S3VZW2",       # Mung bean beta-conglycinin (594 aa)
+            "gel": "P02858",           # Soy glycinin G4 (563 aa, 11S legumin)
+            "milk": "P11827",          # Soy beta-conglycinin alpha' (621 aa, 7S vicilin)
+            "meat": "P02858",          # Soy glycinin G4 (11S legumin for shear fiber formation)
+            "crayfish": "P11827",      # Soy beta-conglycinin (Glu/Asp umami donor)
+            "mayo": "P11827",          # Soy 7S vicilin (amphiphilic emulsion film)
+            "sarcopenia": "P11827",    # Soy 7S vicilin (high-solubility clinical anchor)
         }
         target_acc = CURATED_BENCHMARKS.get(job_id)
         bm_protein = db.query(Protein).filter(Protein.accession == target_acc).first() if target_acc else None

@@ -1,5 +1,5 @@
 # Jobs configuration for Proti IQ
-# Three focused application models: egg-type gel, tofu-type gel, and milk-type.
+# Comprehensive functional application models spanning alternative proteins and traditional applications.
 
 jobs:
   egg:
@@ -10,7 +10,7 @@ jobs:
     secondary_benchmark: "soy"
     key_family_target: "7S"  # Vicilin-like globulin
     weights:
-      embedding_similarity: 0.35      # ESM-2 8M cosine similarity to benchmark vicilin
+      embedding_similarity: 0.35      # ESM-2 650M cosine similarity to benchmark vicilin
       family_match: 0.25              # 7S vicilin-like globulin alignment
       physicochemical_distance: 0.20  # Normalized Euclidean distance (MW, pI, GRAVY, Instability)
       sequence_identity: 0.15         # Pairwise BLOSUM62 alignment identity
@@ -33,10 +33,6 @@ jobs:
       cysteine_fraction: 0.20         # Disulfide bridge formation crucial for 11S gel elasticity
       physicochemical_distance: 0.15
       sequence_identity: 0.15
-    optional_crop_inputs:
-      ratio_11s_7s:
-        weight: 0.20                  # When literature ratio is present, renormalize weights
-        literature_citation: "Foods 2025, 14(23):4029 (R=0.92 firmness, R=0.98 elasticity)"
     rationale: "Soy glycinin (11S) hexamers form intermolecular disulfide bonds during coagulant-induced gelation (Breeding Science 2000, Foods 2025)."
     citations:
       - "Foods 2025, 14(23):4029"
@@ -59,3 +55,69 @@ jobs:
     rationale: "Soy milk stability requires high solubility at pH 6.5-7.2; pea suffers from poor solubility (Tang et al. 2023)."
     citations:
       - "Tang, Roos and Miao 2023, Foods 12(2):368"
+
+  meat:
+    id: "meat"
+    name: "Textured Plant-Based Meat & Suya"
+    target_function: "High-temperature shear fiber formation and tensile chewiness"
+    primary_benchmark: "soy"
+    secondary_benchmark: "mung_bean"
+    key_family_target: "11S" # Legumin-like globulin (glycinin)
+    weights:
+      embedding_similarity: 0.30
+      family_match: 0.25
+      cysteine_fraction: 0.25         # Essential for intermolecular covalent disulfide bonds during extrusion
+      physicochemical_distance: 0.20
+    rationale: "11S legumin hexamers unfold under high-moisture extrusion shear, forming covalent disulfide cross-links for meat-like fibrous texture."
+    citations:
+      - "Osen et al. 2014, Food Chemistry (High-moisture extrusion of plant proteins)"
+      - "Foods 2025, 14(23):4029"
+
+  crayfish:
+    id: "crayfish"
+    name: "Savory Umami Peptides & Crayfish Alternative"
+    target_function: "Savory umami peptide yield and glutamate-dense hydrolysates"
+    primary_benchmark: "soy"
+    secondary_benchmark: "mung_bean"
+    key_family_target: "7S"
+    weights:
+      embedding_similarity: 0.25
+      family_match: 0.20
+      solubility_proxy: 0.30          # High solubility for liquid and spray-dried seasoning broth
+      physicochemical_distance: 0.25
+    rationale: "Storage globulins with acidic amino acid clusters (Glu, Asp) release potent savory umami peptides upon solid-state fermentation."
+    citations:
+      - "Beaumont 2002, Int. J. Food Microbiol. (Fermented legume condiments)"
+      - "Achi 2005, African Journal of Biotechnology (Dawadawa fermentation)"
+
+  mayo:
+    id: "mayo"
+    name: "Plant-Based Mayonnaise & Emulsions"
+    target_function: "High oil-in-water emulsion stability (70% oil phase) and droplet encapsulation"
+    primary_benchmark: "soy"
+    secondary_benchmark: "mung_bean"
+    key_family_target: "7S"
+    weights:
+      embedding_similarity: 0.30
+      family_match: 0.25
+      solubility_proxy: 0.25
+      physicochemical_distance: 0.20
+    rationale: "7S vicilin globulins form amphiphilic interfacial films around oil droplets, preventing droplet coalescence."
+    citations:
+      - "McSweeney et al. 2021, Food Hydrocolloids (Plant-based mayonnaise stabilization)"
+
+  sarcopenia:
+    id: "sarcopenia"
+    name: "Clinical Sarcopenia High-Protein Swallows & Porridges"
+    target_function: "High solubility at low solution viscosity for elderly swallow fortification"
+    primary_benchmark: "soy"
+    secondary_benchmark: "mung_bean"
+    key_family_target: "7S"
+    weights:
+      embedding_similarity: 0.25
+      family_match: 0.20
+      solubility_proxy: 0.35          # High solubility at pH 4-7 to prevent gritty swallow texture
+      physicochemical_distance: 0.20
+    rationale: "Enzymatic hydrolysate incorporates 18g protein per portion into traditional swallows (Amala/Tuwo) without paste viscosity increase."
+    citations:
+      - "Bauer et al. 2013, JAMDA (Evidence-based recommendations for protein intake in older people)"

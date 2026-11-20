@@ -14,7 +14,7 @@ except ImportError:
     has_slowapi = False
 from api.db import init_db, SessionLocal
 from api.security import limiter, security_headers_middleware
-from api.routers import jobs, crops, rank, evidence, proteins, sources
+from api.routers import jobs, crops, rank, evidence, proteins, sources, hub
 
 # Initialize tables
 init_db()
@@ -35,17 +35,12 @@ if has_slowapi:
 # Inject security headers middleware
 app.middleware("http")(security_headers_middleware)
 
-# CORS configuration
+# CORS configuration: Open to all origins for React frontend integration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:8501",
-        "http://127.0.0.1:8501",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -56,6 +51,7 @@ app.include_router(rank.router)
 app.include_router(evidence.router)
 app.include_router(proteins.router)
 app.include_router(sources.router)
+app.include_router(hub.router)
 
 
 @app.get("/health", tags=["Health"])
