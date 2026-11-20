@@ -80,7 +80,7 @@ elif selected_job_view == "Heat-Set Plant-Based Egg Gel (7S Vicilin)":
     
     col1, col2 = st.columns([1, 1])
     with col1:
-        st.markdown("""
+        st.markdown(r"""
         #### Biochemical Mechanism
         * **7S Vicilin Thermal Gelation:** The JUST Egg industrial formulation relies on mung bean 8S vicilin unfolding at $72^\circ\text{C}$ to form an elastic, scramblable gel matrix without rubberiness.
         * **Why Indigenous Vicilins Qualify:** African yam bean and Pigeon pea beta-conglycinin 7S trimers exhibit cupin barrel fold conservation, achieving >85% ESM-2 biophysical representation alignment with mung bean vicilin.
@@ -120,7 +120,7 @@ elif selected_job_view == "Coagulated Curd Gel / Tofu (11S Legumin)":
     
     col1, col2 = st.columns([1, 1])
     with col1:
-        st.markdown("""
+        st.markdown(r"""
         #### Biochemical Mechanism
         * **11S Legumin Hexamer Cross-linking:** Soy tofu coagulates when divalent cations ($\text{Ca}^{2+}$) bridge negative carboxyl groups on adjacent glycinin subunits, while thermal heating ($85^\circ\text{C}$) exposes buried cysteine sulfhydryl groups for intermolecular $-S-S-$ cross-linking.
         * **Why Indigenous Legumins Qualify:** Groundnut arachin and African yam bean legumin possess dense clusters of acidic amino acids (Asp, Glu) and intact cysteine dyads matching soy glycinin G4.
@@ -159,7 +159,7 @@ elif selected_job_view == "Colloidal Plant-Based Milk":
     
     col1, col2 = st.columns([1, 1])
     with col1:
-        st.markdown("""
+        st.markdown(r"""
         #### Biochemical Mechanism
         * **Colloidal Stability & Electrostatic Repulsion:** Plant milks phase-separate if protein net charge near neutral pH is too low. Cowpea and Pigeon pea vicilins exhibit strong negative electrostatic potential ($-18$ to $-28$ net charge at pH 7.0), maintaining electrostatic repulsion against droplet aggregation.
         * **Pretoria Wet-Lab Empirical Evidence:** Lab-extracted Cowpea isolate reaches **82.6% solubility** at pH 7.0, outperforming lab-extracted soy isolate (**75.3%**). Bambara groundnut reaches **82.3% solubility**.

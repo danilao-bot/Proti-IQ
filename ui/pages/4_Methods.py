@@ -17,7 +17,7 @@ tab1, tab2, tab3 = st.tabs(["Scientific Methodology", "Limitations and Boundarie
 
 with tab1:
     st.markdown(
-        """
+        r"""
         ### Multi-Criteria Functional Scoring Framework
         Proti IQ evaluates seed storage proteins using a multi-representation computational pipeline:
         
