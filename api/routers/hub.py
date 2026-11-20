@@ -17,33 +17,79 @@ import os
 router = APIRouter(prefix="/api/v1/hub", tags=["Discovery Hub & Advisory"])
 
 def query_llm_advisory(role: str, application: str, crop: str, context: str) -> Optional[str]:
-    """Queries Groq or xAI Grok if API key is present in environment, with fast timeout."""
+    """
+    Queries Google Gemini (Free), Groq Cloud (Free), OpenRouter, or xAI Grok.
+    Falls back gracefully if no key is present or offline.
+    """
+    gemini_key = os.getenv("GEMINI_API_KEY")
     groq_key = os.getenv("GROQ_API_KEY")
+    openrouter_key = os.getenv("OPENROUTER_API_KEY")
     xai_key = os.getenv("XAI_API_KEY")
-    api_key = groq_key or xai_key
-    if not api_key:
-        return None
 
-    url = "https://api.groq.com/openai/v1/chat/completions" if groq_key else "https://api.x.ai/v1/chat/completions"
-    model = "llama-3.3-70b-versatile" if groq_key else "grok-beta"
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": "You are the Proti IQ African Alternative-Protein Advisory AI. Provide concise, expert, culturally grounded culinary or clinical food advice."},
-            {"role": "user", "content": f"Persona: {role}\nApplication: {application}\nTarget Crop: {crop}\nBiochemical context: {context}\nProvide 3 clear, practical recommendations."}
-        ],
-        "temperature": 0.2,
-        "max_tokens": 300
-    }
+    prompt = (
+        f"You are the Proti IQ African Alternative-Protein Advisory AI.\n"
+        f"Persona: {role}\nTarget Application: {application}\nSelected Crop: {crop}\n"
+        f"Biochemical Context: {context}\n"
+        f"Provide 3 concise, practical, expert recommendations for this food preparation or clinical formulation."
+    )
+
     try:
         import httpx
-        with httpx.Client(timeout=4.0) as client:
-            resp = client.post(url, headers=headers, json=payload)
-            if resp.status_code == 200:
-                return resp.json()["choices"][0]["message"]["content"].strip()
+        with httpx.Client(timeout=4.5) as client:
+            # 1. Option: Google Gemini API (100% Free at aistudio.google.com)
+            if gemini_key:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
+                payload = {"contents": [{"parts": [{"text": prompt}]}]}
+                resp = client.post(url, json=payload)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+
+            # 2. Option: Groq Cloud (Free at console.groq.com)
+            if groq_key:
+                url = "https://api.groq.com/openai/v1/chat/completions"
+                headers = {"Authorization": f"Bearer {groq_key}", "Content-Type": "application/json"}
+                payload = {
+                    "model": "llama-3.3-70b-versatile",
+                    "messages": [
+                        {"role": "system", "content": "You are the Proti IQ African Alternative-Protein Advisory AI."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    "temperature": 0.2,
+                    "max_tokens": 300
+                }
+                resp = client.post(url, headers=headers, json=payload)
+                if resp.status_code == 200:
+                    return resp.json()["choices"][0]["message"]["content"].strip()
+
+            # 3. Option: OpenRouter Free Tier
+            if openrouter_key:
+                url = "https://openrouter.ai/api/v1/chat/completions"
+                headers = {"Authorization": f"Bearer {openrouter_key}", "Content-Type": "application/json"}
+                payload = {
+                    "model": "meta-llama/llama-3.1-8b-instruct:free",
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 300
+                }
+                resp = client.post(url, headers=headers, json=payload)
+                if resp.status_code == 200:
+                    return resp.json()["choices"][0]["message"]["content"].strip()
+
+            # 4. Option: xAI Grok
+            if xai_key:
+                url = "https://api.x.ai/v1/chat/completions"
+                headers = {"Authorization": f"Bearer {xai_key}", "Content-Type": "application/json"}
+                payload = {
+                    "model": "grok-beta",
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 300
+                }
+                resp = client.post(url, headers=headers, json=payload)
+                if resp.status_code == 200:
+                    return resp.json()["choices"][0]["message"]["content"].strip()
     except Exception:
         pass
+
     return None
 
 # Master Applications Catalog
@@ -303,7 +349,7 @@ def formulate_advisory(req: FormulateRequest):
             "cost_benefit": savings_note,
             "nutritional_impact": health_note,
             "ai_generative_advisory": llm_advice,
-            "ai_provider": "Groq / xAI LLM (Live)" if llm_advice else "Proti IQ Expert Bio-Rules"
+            "ai_provider": "Live Cloud LLM (Gemini / Groq / OpenRouter)" if llm_advice else "Proti IQ Expert Bio-Rules"
         }
 
     elif "nutritionist" in role or "dietitian" in role:
@@ -326,7 +372,7 @@ def formulate_advisory(req: FormulateRequest):
             "viscosity_impact": "Negligible change in swallow texture; maintains traditional dough viscoelasticity",
             "clinical_advisory": "Recommended 2 servings daily to prevent age-related muscle mass loss and maintain glycemic stability.",
             "ai_generative_advisory": llm_advice,
-            "ai_provider": "Groq / xAI LLM (Live)" if llm_advice else "Proti IQ Expert Bio-Rules"
+            "ai_provider": "Live Cloud LLM (Gemini / Groq / OpenRouter)" if llm_advice else "Proti IQ Expert Bio-Rules"
         }
 
     else:  # food_processor / manufacturer
@@ -351,5 +397,5 @@ def formulate_advisory(req: FormulateRequest):
                 "moisture_content": "72% - 76% in finished coagulated curd"
             },
             "ai_generative_advisory": llm_advice,
-            "ai_provider": "Groq / xAI LLM (Live)" if llm_advice else "Proti IQ Expert Bio-Rules"
+            "ai_provider": "Live Cloud LLM (Gemini / Groq / OpenRouter)" if llm_advice else "Proti IQ Expert Bio-Rules"
         }
