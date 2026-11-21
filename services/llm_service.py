@@ -1,6 +1,6 @@
 """
 Proti IQ Multi-Provider LLM Advisory Service.
-Interfaces with Groq Cloud (Qwen 3.8-27b), Google Gemini, or falls back to Expert Biophysical Rules.
+Interfaces with Groq Cloud, AWS Bedrock (Amazon Nova Pro / Lite), Google Gemini, or falls back to Expert Biophysical Rules.
 Includes prompt-injection guardrails, role-conditioned personas, and unsupported claims filtering.
 """
 
@@ -13,6 +13,12 @@ try:
     has_httpx = True
 except ImportError:
     has_httpx = False
+
+try:
+    import boto3
+    has_boto3 = True
+except ImportError:
+    has_boto3 = False
 
 
 PROHIBITED_CLAIMS = [
@@ -73,6 +79,47 @@ def get_role_system_prompt(role: str, age: int = 35, country: str = "Nigeria", g
         )
 
 
+def invoke_bedrock_nova(system_prompt: str, user_prompt: str) -> Optional[tuple]:
+    """Invokes AWS Bedrock Amazon Nova Lite / Pro foundation model using temporary session credentials."""
+    if not has_boto3:
+        return None
+    
+    aws_key = os.getenv("AWS_ACCESS_KEY_ID")
+    aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
+    aws_token = os.getenv("AWS_SESSION_TOKEN")
+    aws_region = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
+
+    if not (aws_key and aws_secret and aws_token):
+        return None
+
+    try:
+        session = boto3.Session(
+            aws_access_key_id=aws_key,
+            aws_secret_access_key=aws_secret,
+            aws_session_token=aws_token,
+            region_name=aws_region
+        )
+        client = session.client("bedrock-runtime")
+
+        # Prioritize Nova Lite (fastest response), fallback to Nova Pro / Nova Micro
+        for model_id in ["us.amazon.nova-lite-v1:0", "us.amazon.nova-pro-v1:0", "us.amazon.nova-micro-v1:0"]:
+            try:
+                resp = client.converse(
+                    modelId=model_id,
+                    system=[{"text": system_prompt}],
+                    messages=[{"role": "user", "content": [{"text": user_prompt}]}],
+                    inferenceConfig={"maxTokens": 400, "temperature": 0.2}
+                )
+                text = resp["output"]["message"]["content"][0]["text"].strip()
+                if text:
+                    return (text, model_id)
+            except Exception:
+                continue
+    except Exception as e:
+        print("AWS Bedrock exception:", e)
+    return None
+
+
 def generate_advisory(
     role: str,
     application: str,
@@ -131,7 +178,18 @@ def generate_advisory(
                         if resp.status_code != 404:
                             break
 
-                # 2. Option: Google Gemini API
+                # 2. Option: AWS Bedrock (Amazon Nova Lite / Pro)
+                bedrock_result = invoke_bedrock_nova(system_prompt, user_prompt)
+                if bedrock_result:
+                    text, model_id = bedrock_result
+                    sanitized = filter_unsupported_claims(text)
+                    return {
+                        "advisory_text": sanitized,
+                        "provider": f"AWS Bedrock ({model_id})",
+                        "status": "live"
+                    }
+
+                # 3. Option: Google Gemini API
                 if gemini_key:
                     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
                     combined = f"{system_prompt}\n\n{user_prompt}"
@@ -169,6 +227,17 @@ def generate_advisory(
                         }
         except Exception as e:
             print("LLM call exception:", e)
+
+    # 4. Standalone Fallback Option: AWS Bedrock
+    bedrock_result = invoke_bedrock_nova(system_prompt, user_prompt)
+    if bedrock_result:
+        text, model_id = bedrock_result
+        sanitized = filter_unsupported_claims(text)
+        return {
+            "advisory_text": sanitized,
+            "provider": f"AWS Bedrock ({model_id})",
+            "status": "live"
+        }
 
     # Deterministic Rule-Based Fallback
     fallback_text = (

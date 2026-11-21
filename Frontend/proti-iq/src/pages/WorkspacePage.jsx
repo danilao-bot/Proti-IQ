@@ -189,23 +189,18 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 pb-4">
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-[#14532D]">
-                LOCKED OPERATIONAL WORKSPACE
+                WORKSPACE • {role_title.toUpperCase()}
               </p>
               <h1 className="text-3xl font-black text-gray-900 mt-1">
-                Welcome, {full_name}
+                Hi, {full_name}
               </h1>
             </div>
-            {geriatric_mode && (
-              <span className="self-start sm:self-auto px-3.5 py-1.5 rounded-lg bg-emerald-50 text-emerald-900 font-bold text-xs border border-emerald-200">
-                Geriatric Sarcopenia Mode Active (High Leucine &amp; Soft Swallow)
-              </span>
-            )}
           </div>
 
           {/* Central AI Query Input */}
           <div className="space-y-3">
             <label className="block text-sm font-bold text-gray-800">
-              Ask Proti IQ (Target: {selectedJob.toUpperCase()} • Legume: {selectedCrop.replace('_', ' ').toUpperCase()})
+              Ask Proti IQ a question or describe what you want to prepare
             </label>
 
             <div className="flex flex-col sm:flex-row gap-2">
@@ -214,7 +209,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
                 value={inputQuery}
                 onChange={(e) => setInputQuery(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSendQuery()}
-                placeholder="Ask e.g. 'How can I make plant based milk, guide me step by step'..."
+                placeholder="e.g., How can I make plant based milk from cowpea with no beany taste?"
                 className="flex-1 px-4 py-3.5 rounded-xl border border-gray-300 text-gray-900 bg-white focus:outline-none focus:border-[#14532D] text-base"
               />
               <button
@@ -223,38 +218,8 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
                 disabled={loading}
                 className="bg-[#14532D] hover:bg-emerald-900 text-white font-extrabold px-6 py-3.5 rounded-xl text-base transition cursor-pointer disabled:opacity-50 shrink-0"
               >
-                {loading ? 'Analyzing...' : 'Consult Proti IQ'}
+                {loading ? 'Analyzing...' : 'Ask Proti IQ'}
               </button>
-            </div>
-
-            {/* Target Selectors */}
-            <div className="flex flex-wrap items-center gap-3 pt-1 text-xs text-gray-600">
-              <span className="font-bold text-gray-700">Calibrate Context:</span>
-              <select
-                value={selectedCrop}
-                onChange={(e) => setSelectedCrop(e.target.value)}
-                className="border border-gray-300 rounded-lg px-2.5 py-1.5 bg-white text-gray-800 font-medium"
-              >
-                <option value="cowpea">Cowpea (Vigna unguiculata)</option>
-                <option value="pigeon_pea">Pigeon Pea (Cajanus cajan)</option>
-                <option value="african_yam_bean">African Yam Bean (Sphenostylis)</option>
-                <option value="bambara">Bambara Groundnut (Vigna subterranea)</option>
-                <option value="groundnut">Groundnut (Arachis hypogaea)</option>
-              </select>
-
-              <select
-                value={selectedJob}
-                onChange={(e) => setSelectedJob(e.target.value)}
-                className="border border-gray-300 rounded-lg px-2.5 py-1.5 bg-white text-gray-800 font-medium"
-              >
-                <option value="milk">Colloidal Milk Drink</option>
-                <option value="meat">Textured Suya Meat</option>
-                <option value="egg">Heat-Set Scrambled Egg</option>
-                <option value="gel">Coagulated Awara Curd</option>
-                <option value="mayo">Emulsified Salad Cream</option>
-                <option value="crayfish">Savory Umami Seasoning</option>
-                <option value="sarcopenia">Geriatric Swallow Fortification</option>
-              </select>
             </div>
 
             {/* Suggested Prompt Chips */}
@@ -419,7 +384,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
                         disabled={currentStepIndex === 0}
                         className="px-5 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm cursor-pointer disabled:opacity-40"
                       >
-                        &lt; Previous Step
+                        Previous Step
                       </button>
 
                       {currentStepIndex < steps.length - 1 ? (
@@ -428,7 +393,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
                           onClick={() => setCurrentStepIndex((prev) => Math.min(steps.length - 1, prev + 1))}
                           className="px-6 py-3 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-sm cursor-pointer transition"
                         >
-                          Next Step: {steps[currentStepIndex + 1]?.title} &gt;
+                          Next Step
                         </button>
                       ) : (
                         <button
@@ -569,21 +534,21 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
             {assigned_role === 'researcher' && (
               <div className="space-y-4 text-sm text-gray-700">
                 <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1">
-                  <p className="text-xs font-bold uppercase text-gray-500">ESM-2 Architecture</p>
-                  <p className="font-bold text-gray-900">esm2_t33_650M_UR50D</p>
-                  <p className="text-xs text-gray-600">1,280 dimensions • 650M parameters • 250M training sequences.</p>
+                  <p className="text-xs font-bold uppercase text-gray-500">Crude Protein Density</p>
+                  <p className="text-xl font-extrabold text-[#14532D]">24.8% Dry Seed Weight</p>
+                  <p className="text-xs text-gray-600">Composed primarily of 7S vicilin and 11S legumin globulin fractions.</p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1">
-                  <p className="text-xs font-bold uppercase text-gray-500">Database Coverage</p>
-                  <p className="font-bold text-gray-900">348 Seed Storage Globulins</p>
-                  <p className="text-xs text-gray-600">630 calibrated rankings across 7 functional food jobs.</p>
+                  <p className="text-xs font-bold uppercase text-gray-500">Thermal Gelation Window</p>
+                  <p className="font-bold text-gray-900">82°C – 88°C Peak Denaturation</p>
+                  <p className="text-xs text-gray-600">Optimal temperature window for protein network unfolding without burning.</p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1">
-                  <p className="text-xs font-bold uppercase text-gray-500">AlphaFold Verification</p>
-                  <p className="font-bold text-gray-900">Mean pLDDT: 88.4 (High Tier)</p>
-                  <p className="text-xs text-gray-600">Available across all 14 sequenced legume genomes.</p>
+                  <p className="text-xs font-bold uppercase text-gray-500">Pretoria Wet-Lab Solubility</p>
+                  <p className="font-bold text-gray-900">78.4% at Neutral pH 7.0</p>
+                  <p className="text-xs text-gray-600">Empirically validated high dispersion suitable for clear beverages and emulsions.</p>
                 </div>
               </div>
             )}
