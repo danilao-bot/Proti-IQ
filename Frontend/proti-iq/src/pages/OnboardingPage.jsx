@@ -131,7 +131,7 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
 
         {/* STEP 1: Name and Age */}
         {step === 1 && (
-          <div className="space-y-5">
+          <div key="step-1" className="space-y-5 animate-fadeIn">
             <div>
               <label className="block text-sm font-bold text-gray-900 mb-1">
                 Full Name
@@ -167,14 +167,14 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
               onClick={handleNextFromStep1}
               className="w-full py-4 px-6 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-base transition cursor-pointer"
             >
-              Continue to Location &gt;
+              Continue
             </button>
           </div>
         )}
 
         {/* STEP 2: Location */}
         {step === 2 && (
-          <div className="space-y-5">
+          <div key="step-2" className="space-y-5 animate-fadeIn">
             <div>
               <label className="block text-sm font-bold text-gray-900 mb-1">
                 African Country
@@ -194,7 +194,7 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
 
             <div>
               <label className="block text-sm font-bold text-gray-900 mb-1">
-                State / Region (Optional)
+                State or Region
               </label>
               <input
                 type="text"
@@ -211,14 +211,14 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
                 onClick={() => setStep(1)}
                 className="w-1/3 py-4 px-4 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm cursor-pointer"
               >
-                &lt; Back
+                Back
               </button>
               <button
                 type="button"
                 onClick={handleNextFromStep2}
                 className="w-2/3 py-4 px-6 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-base transition cursor-pointer"
               >
-                Continue to Mission &gt;
+                Continue
               </button>
             </div>
           </div>
@@ -226,14 +226,14 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
 
         {/* STEP 3: Primary Mission */}
         {step === 3 && (
-          <div className="space-y-4">
+          <div key="step-3" className="space-y-4 animate-fadeIn">
             <p className="text-sm text-gray-600">Select what you primarily aim to accomplish with Proti IQ:</p>
             
             {[
-              { id: 'consumer', title: 'Affordable Family Meals & Caregiving', desc: 'Prepare healthy, affordable plant-based meals at home, remove beany flavors, or manage elderly digestion.' },
-              { id: 'nutritionist', title: 'Clinical Dietary Formulation', desc: 'Formulate therapeutic diets for hospital patients, elderly sarcopenia, or malnourished children.' },
-              { id: 'processor', title: 'Commercial Food Manufacturing', desc: 'Manufacture plant-based meat, milk, or curd alternatives at scale to replace imported soy/whey.' },
-              { id: 'researcher', title: 'Biophysical Research & Academics', desc: 'Conduct molecular research on seed storage globulins, ESM-2 vectors, and AlphaFold coordinates.' }
+              { id: 'consumer', title: 'Affordable Family Meals & Healthy Cooking', desc: 'Prepare healthy, affordable plant-based meals at home, remove beany flavors, or cook for loved ones.' },
+              { id: 'nutritionist', title: 'Clinical Dietary Formulation', desc: 'Formulate balanced, high-protein diets for hospital patients, elderly nutrition, or growing children.' },
+              { id: 'processor', title: 'Commercial Food Manufacturing', desc: 'Manufacture plant-based milk, meat, or curd alternatives at commercial scale to replace imported soy.' },
+              { id: 'researcher', title: 'Scientific Food Research & Innovation', desc: 'Study protein quality, amino acid profiles, and nutritional science of native African legumes.' }
             ].map((opt) => (
               <label
                 key={opt.id}
@@ -262,14 +262,14 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
                 onClick={() => setStep(2)}
                 className="w-1/3 py-4 px-4 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm cursor-pointer"
               >
-                &lt; Back
+                Back
               </button>
               <button
                 type="button"
                 onClick={handleNextFromStep3}
                 className="w-2/3 py-4 px-6 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-base transition cursor-pointer"
               >
-                Continue to Scale &gt;
+                Continue
               </button>
             </div>
           </div>
@@ -277,14 +277,14 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
 
         {/* STEP 4: Scale */}
         {step === 4 && (
-          <div className="space-y-4">
+          <div key="step-4" className="space-y-4 animate-fadeIn">
             <p className="text-sm text-gray-600">Select your operating scale or facility type:</p>
 
             {[
               { id: 'household', title: 'Household Kitchen or Community Center', desc: 'Standard pots, home blenders, stovetop cooking, local wet-markets.' },
               { id: 'clinical', title: 'Clinical Ward, Hospital, or Dietetic Practice', desc: 'Patient meal planning, therapeutic feeding, dietary counseling.' },
-              { id: 'factory', title: 'Commercial Factory or Extrusion Pilot Plant', desc: 'Pneumatic presses, thermal tanks, twin-screw extruders, bulk storage.' },
-              { id: 'laboratory', title: 'University Laboratory or Research Institution', desc: 'Spectrophotometry, gel electrophoresis, computational structural biology.' }
+              { id: 'factory', title: 'Commercial Factory or Processing Facility', desc: 'Food production lines, curd-making equipment, bulk ingredient processing.' },
+              { id: 'laboratory', title: 'Research Center or Laboratory', desc: 'Food testing, quality assessment, and nutritional development.' }
             ].map((opt) => (
               <label
                 key={opt.id}
@@ -313,14 +313,14 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
                 onClick={() => setStep(3)}
                 className="w-1/3 py-4 px-4 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm cursor-pointer"
               >
-                &lt; Back
+                Back
               </button>
               <button
                 type="button"
                 onClick={handleNextFromStep4}
                 className="w-2/3 py-4 px-6 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-base transition cursor-pointer"
               >
-                Review Profile &gt;
+                Continue
               </button>
             </div>
           </div>
@@ -328,7 +328,7 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
 
         {/* STEP 5: Confirmation and Role Lock */}
         {step === 5 && (
-          <div className="space-y-5">
+          <div key="step-5" className="space-y-5 animate-fadeIn">
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 space-y-3 text-sm">
               <h2 className="font-extrabold text-gray-900 text-base border-b border-gray-200 pb-2">
                 Resolved Profile Summary
@@ -384,7 +384,7 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
                 onClick={() => setStep(4)}
                 className="w-1/3 py-4 px-4 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm cursor-pointer"
               >
-                &lt; Edit
+                Back to Edit
               </button>
               <button
                 type="button"

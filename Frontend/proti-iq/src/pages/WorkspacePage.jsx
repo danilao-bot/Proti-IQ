@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { sendChatQuery, getChatSuggestions, exportDocument } from '../services/chatClient';
 
 export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNavigateView, activeSubView = 'hub' }) {
@@ -18,19 +18,46 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingStage, setLoadingStage] = useState(0);
-  const [chatResponse, setChatResponse] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [downloading, setDownloading] = useState(false);
 
-  // Guided Walkthrough Stepper State
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
-  const [showAllSteps, setShowAllSteps] = useState(false);
-  const [showExaminedParams, setShowExaminedParams] = useState(false);
+  // Chat Conversation State
+  const [messages, setMessages] = useState([
+    {
+      id: 'welcome',
+      sender: 'assistant',
+      text: `Hi ${full_name}! I am your Proti IQ AI advisor for ${role_title}. What African legume or food recipe would you like to prepare, fortify, or optimize today?`,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      steps: null,
+      follow_ups: [
+        "How do I make smooth cowpea milk with zero beany taste?",
+        "What is the best African bean to replace eggs in cooking?",
+        "How can I fortify family meals with Pigeon Pea?"
+      ]
+    }
+  ]);
+
+  // Guided Walkthrough Stepper State (Tracks step index per message or active response)
+  const [activeStepIndices, setActiveStepIndices] = useState({});
+  const [showAllStepsMap, setShowAllStepsMap] = useState({});
+  const [showExaminedParamsMap, setShowExaminedParamsMap] = useState({});
+
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, loading]);
 
   // Load role-specific suggestions on mount
   useEffect(() => {
     getChatSuggestions(assigned_role).then((suggs) => {
-      setSuggestions(suggs);
+      if (suggs && suggs.length > 0) {
+        setSuggestions(suggs);
+      }
     });
   }, [assigned_role]);
 
@@ -41,7 +68,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
       setLoadingStage(0);
       timer = setInterval(() => {
         setLoadingStage((prev) => (prev < 2 ? prev + 1 : prev));
-      }, 900);
+      }, 700);
     }
     return () => clearInterval(timer);
   }, [loading]);
@@ -50,9 +77,24 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
     const textToSend = (typeof queryText === 'string' ? queryText : inputQuery).trim();
     if (!textToSend) return;
 
+    const userMsgId = 'user-' + Date.now();
+    const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    // Append User Message to Chat Stream
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: userMsgId,
+        sender: 'user',
+        text: textToSend,
+        timestamp: timeStr
+      }
+    ]);
+
+    setInputQuery('');
     setLoading(true);
     setErrorMsg('');
-    setCurrentStepIndex(0);
+
     try {
       const res = await sendChatQuery({
         message: textToSend,
@@ -63,8 +105,26 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
         age: age,
         geriatric_mode: geriatric_mode
       });
-      setChatResponse(res);
-      setInputQuery('');
+
+      const assistantMsgId = 'assistant-' + Date.now();
+      
+      // Initialize active step for this message
+      setActiveStepIndices((prev) => ({ ...prev, [assistantMsgId]: 0 }));
+
+      // Append Assistant Response to Chat Stream
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: assistantMsgId,
+          sender: 'assistant',
+          text: res.advisory_text,
+          steps: res.steps || [],
+          examined_parameters: res.examined_parameters || [],
+          follow_ups: res.follow_up_suggestions || [],
+          provider: res.provider,
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+      ]);
     } catch (err) {
       setErrorMsg(err.message || 'Failed to generate advisory. Please retry.');
     } finally {
@@ -72,7 +132,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
     }
   };
 
-  const handleExport = async () => {
+  const handleExport = async (msgSteps) => {
     setDownloading(true);
     try {
       let exportType = 'recipe';
@@ -86,7 +146,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
         job_name: selectedJob.toUpperCase(),
         role: assigned_role,
         parameters: {
-          vehicle: 'Amala',
+          vehicle: 'African Legume Formulation',
           fortification_pct: 15,
           protein_yield_g: 18.5
         }
@@ -99,9 +159,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
   };
 
   const isConsumer = assigned_role === 'consumer';
-  const bodyTextClass = (isConsumer || geriatric_mode) ? 'text-lg' : 'text-base';
-  const steps = chatResponse?.steps || [];
-  const currentStep = steps[currentStepIndex];
+  const bodyTextClass = isConsumer ? 'text-base sm:text-lg' : 'text-sm sm:text-base';
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] text-gray-900 flex flex-col justify-between">
@@ -131,7 +189,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
       </header>
 
       {/* Main Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
         
         {/* Navigation Tabs */}
         <nav className="flex items-center gap-2 border-b border-gray-200 pb-3 overflow-x-auto text-sm font-bold">
@@ -184,67 +242,8 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
           )}
         </nav>
 
-        {/* Personalized Welcome & Query Bar */}
-        <section className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 pb-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-[#14532D]">
-                WORKSPACE • {role_title.toUpperCase()}
-              </p>
-              <h1 className="text-3xl font-black text-gray-900 mt-1">
-                Hi, {full_name}
-              </h1>
-            </div>
-          </div>
-
-          {/* Central AI Query Input */}
-          <div className="space-y-3">
-            <label className="block text-sm font-bold text-gray-800">
-              Ask Proti IQ a question or describe what you want to prepare
-            </label>
-
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="text"
-                value={inputQuery}
-                onChange={(e) => setInputQuery(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSendQuery()}
-                placeholder="e.g., How can I make plant based milk from cowpea with no beany taste?"
-                className="flex-1 px-4 py-3.5 rounded-xl border border-gray-300 text-gray-900 bg-white focus:outline-none focus:border-[#14532D] text-base"
-              />
-              <button
-                type="button"
-                onClick={() => handleSendQuery()}
-                disabled={loading}
-                className="bg-[#14532D] hover:bg-emerald-900 text-white font-extrabold px-6 py-3.5 rounded-xl text-base transition cursor-pointer disabled:opacity-50 shrink-0"
-              >
-                {loading ? 'Analyzing...' : 'Ask Proti IQ'}
-              </button>
-            </div>
-
-            {/* Suggested Prompt Chips */}
-            {suggestions.length > 0 && (
-              <div className="pt-2">
-                <p className="text-xs font-semibold text-gray-500 mb-2">Suggested queries for your role:</p>
-                <div className="flex flex-wrap gap-2">
-                  {suggestions.map((sugg, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => handleSendQuery(sugg)}
-                      className="text-left text-xs text-gray-800 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-lg px-3 py-2 transition cursor-pointer"
-                    >
-                      {sugg}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </section>
-
         {errorMsg && (
-          <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm font-medium">
+          <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm font-medium animate-fadeIn">
             {errorMsg}
           </div>
         )}
@@ -252,214 +251,290 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
         {/* Dynamic Workspace Split-View */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
-          {/* Left 2 Columns: Step-by-Step Guided Walkthrough */}
-          <section className="lg:col-span-2 bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
+          {/* Left 2 Columns: Modern Interactive Conversational Chat */}
+          <section className="lg:col-span-2 bg-white border border-gray-200 rounded-2xl flex flex-col shadow-sm overflow-hidden h-[720px]">
             
-            <div className="border-b border-gray-200 pb-3 flex items-center justify-between">
-              <h2 className="text-xl font-extrabold text-gray-900">
-                Interactive Guided Advisory
-              </h2>
-              {steps.length > 0 && (
-                <button
-                  type="button"
-                  onClick={() => setShowAllSteps(!showAllSteps)}
-                  className="text-xs font-bold text-[#14532D] hover:underline cursor-pointer"
-                >
-                  {showAllSteps ? 'Show Step-by-Step Mode' : 'View All Steps at Once'}
-                </button>
-              )}
+            {/* Chat Pane Header */}
+            <div className="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-white shrink-0">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#14532D] text-white font-black flex items-center justify-center text-sm shadow-sm">
+                  IQ
+                </div>
+                <div>
+                  <h2 className="font-extrabold text-gray-900 text-base leading-tight">
+                    Proti IQ Assistant
+                  </h2>
+                  <p className="text-xs text-gray-500 flex items-center gap-1.5 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Active • Calibrated for {role_title}</span>
+                  </p>
+                </div>
+              </div>
+
+              <span className="text-xs font-semibold text-gray-400">
+                Market: {country}
+              </span>
             </div>
 
-            {/* Live Loading Stages */}
-            {loading && (
-              <div className="py-10 space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs font-bold text-gray-600">
-                    <span>Executing Biophysical Pipeline</span>
-                    <span>Stage {loadingStage + 1} of 3</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                    <div
-                      className="bg-[#14532D] h-2 rounded-full transition-all duration-500"
-                      style={{ width: `${((loadingStage + 1) / 3) * 100}%` }}
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2 pt-2 text-sm text-gray-700">
-                  <p className={`flex items-center gap-2 ${loadingStage >= 0 ? 'font-bold text-gray-900' : 'text-gray-400'}`}>
-                    <span>{loadingStage > 0 ? '[Done]' : '[Active]'}</span>
-                    <span>Scanning {selectedCrop.replace('_', ' ').toUpperCase()} storage globulin profiles...</span>
-                  </p>
-                  <p className={`flex items-center gap-2 ${loadingStage >= 1 ? 'font-bold text-gray-900' : 'text-gray-400'}`}>
-                    <span>{loadingStage > 1 ? '[Done]' : loadingStage === 1 ? '[Active]' : '[Pending]'}</span>
-                    <span>Calibrating enzyme de-flavoring and temperature thresholds...</span>
-                  </p>
-                  <p className={`flex items-center gap-2 ${loadingStage >= 2 ? 'font-bold text-gray-900' : 'text-gray-400'}`}>
-                    <span>{loadingStage === 2 ? '[Active]' : '[Pending]'}</span>
-                    <span>Synthesizing step-by-step guided instructions...</span>
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {!loading && !chatResponse && (
-              <div className="py-12 text-center text-gray-500 space-y-1">
-                <p className="text-base font-semibold">Ready for your query.</p>
-                <p className="text-xs">Ask a question above to receive an interactive, step-by-step guided procedure.</p>
-              </div>
-            )}
-
-            {/* Interactive Guided Steps Display */}
-            {!loading && chatResponse && (
-              <div className="space-y-6">
-                
-                {/* Expandable Examined Parameters Drawer */}
-                {chatResponse.examined_parameters && chatResponse.examined_parameters.length > 0 && (
-                  <div className="border border-gray-200 rounded-xl overflow-hidden text-xs">
-                    <button
-                      type="button"
-                      onClick={() => setShowExaminedParams(!showExaminedParams)}
-                      className="w-full bg-gray-50 hover:bg-gray-100 p-3 flex items-center justify-between font-bold text-gray-800 cursor-pointer"
-                    >
-                      <span>Scientific Data Analyzed ({chatResponse.examined_parameters.length} parameters verified)</span>
-                      <span>{showExaminedParams ? '▲ Collapse' : '▼ View Data'}</span>
-                    </button>
-                    {showExaminedParams && (
-                      <div className="p-3 bg-white space-y-2 border-t border-gray-200">
-                        {chatResponse.examined_parameters.map((param, idx) => (
-                          <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1 border-b border-gray-100 last:border-b-0">
-                            <span className="font-bold text-gray-900">{param.name}:</span>
-                            <span className="font-semibold text-[#14532D]">{param.measured_value}</span>
-                            <span className="text-gray-500 text-[11px]">{param.scientific_significance}</span>
-                          </div>
-                        ))}
+            {/* Chat Messages Scrollable Stream */}
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 bg-[#FAF9F6]">
+              {messages.map((msg) => (
+                <div key={msg.id} className="space-y-3">
+                  
+                  {/* USER MESSAGE */}
+                  {msg.sender === 'user' && (
+                    <div className="flex justify-end animate-fadeIn">
+                      <div className="bg-[#14532D] text-white rounded-2xl rounded-tr-sm px-5 py-3 max-w-lg shadow-sm text-sm sm:text-base leading-relaxed">
+                        <p>{msg.text}</p>
+                        <span className="block text-[10px] text-emerald-200/80 text-right mt-1">
+                          {msg.timestamp}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                )}
-
-                {/* MODE A: Step-by-Step Guided Stepper (One by One) */}
-                {!showAllSteps && currentStep && (
-                  <div className="space-y-4">
-                    {/* Stepper Progress Bar */}
-                    <div className="flex items-center justify-between text-xs font-bold text-gray-600">
-                      <span>STEP {currentStep.step_number} OF {steps.length}</span>
-                      <span>{currentStep.duration || 'Action Step'}</span>
                     </div>
+                  )}
 
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-[#14532D] h-2 rounded-full transition-all duration-300"
-                        style={{ width: `${(currentStep.step_number / steps.length) * 100}%` }}
-                      />
-                    </div>
+                  {/* ASSISTANT MESSAGE */}
+                  {msg.sender === 'assistant' && (
+                    <div className="flex items-start gap-3 animate-fadeIn">
+                      <div className="w-8 h-8 rounded-full bg-[#14532D] text-white font-black flex items-center justify-center text-xs shrink-0 mt-1 shadow-sm">
+                        IQ
+                      </div>
 
-                    {/* Active Step Card */}
-                    <div className="border border-gray-200 rounded-2xl p-6 bg-white space-y-3">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-full bg-[#14532D] text-white font-extrabold flex items-center justify-center text-lg shrink-0">
-                          {currentStep.step_number}
-                        </div>
-                        <div className="space-y-1 flex-1">
-                          <h3 className="text-xl font-bold text-gray-900">{currentStep.title}</h3>
-                          <p className={`${bodyTextClass} text-gray-800 leading-relaxed mt-2`}>
-                            {currentStep.instruction}
+                      <div className="space-y-4 max-w-2xl flex-1">
+                        
+                        {/* Advisory Text Bubble */}
+                        <div className="bg-white border border-gray-200 rounded-2xl rounded-tl-sm p-5 shadow-sm space-y-3 text-gray-800">
+                          <p className={`${bodyTextClass} leading-relaxed`}>
+                            {msg.text}
                           </p>
-                        </div>
-                      </div>
 
-                      {currentStep.critical_tip && (
-                        <div className="mt-3 p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 text-xs text-amber-950 font-medium">
-                          <strong>Scientific Rationale:</strong> {currentStep.critical_tip}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Stepper Navigation Buttons */}
-                    <div className="flex items-center justify-between gap-3 pt-2">
-                      <button
-                        type="button"
-                        onClick={() => setCurrentStepIndex((prev) => Math.max(0, prev - 1))}
-                        disabled={currentStepIndex === 0}
-                        className="px-5 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm cursor-pointer disabled:opacity-40"
-                      >
-                        Previous Step
-                      </button>
-
-                      {currentStepIndex < steps.length - 1 ? (
-                        <button
-                          type="button"
-                          onClick={() => setCurrentStepIndex((prev) => Math.min(steps.length - 1, prev + 1))}
-                          className="px-6 py-3 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-sm cursor-pointer transition"
-                        >
-                          Next Step
-                        </button>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={handleExport}
-                          disabled={downloading}
-                          className="px-6 py-3 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-sm cursor-pointer transition"
-                        >
-                          {downloading ? 'Downloading...' : 'Completed! Download Guide (.txt)'}
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* MODE B: View All Steps at Once */}
-                {showAllSteps && (
-                  <div className="space-y-4">
-                    {steps.map((st, idx) => (
-                      <div key={idx} className="border border-gray-200 rounded-xl p-5 bg-white flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#14532D] text-white font-bold flex items-center justify-center text-sm shrink-0">
-                          {st.step_number}
-                        </div>
-                        <div className="space-y-1 flex-1">
-                          <div className="flex items-center justify-between">
-                            <h4 className="font-bold text-gray-900">{st.title}</h4>
-                            <span className="text-xs text-gray-500">{st.duration}</span>
-                          </div>
-                          <p className="text-sm text-gray-700">{st.instruction}</p>
-                          {st.critical_tip && (
-                            <p className="text-xs text-amber-900 mt-1">
-                              <strong>Note:</strong> {st.critical_tip}
+                          {msg.provider && (
+                            <p className="text-[11px] text-gray-400 border-t border-gray-100 pt-2">
+                              Formulated via {msg.provider}
                             </p>
                           )}
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
 
-                {/* Follow-up Prompts Section */}
-                {chatResponse.follow_up_suggestions && chatResponse.follow_up_suggestions.length > 0 && (
-                  <div className="pt-4 border-t border-gray-200 space-y-2">
-                    <p className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                      Suggested Follow-Up Questions:
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {chatResponse.follow_up_suggestions.map((q, idx) => (
-                        <button
-                          key={idx}
-                          type="button"
-                          onClick={() => handleSendQuery(q)}
-                          className="text-xs text-[#14532D] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg px-3 py-2 font-semibold cursor-pointer transition"
-                        >
-                          {q}
-                        </button>
-                      ))}
+                        {/* Interactive Step-by-Step Guided Stepper */}
+                        {msg.steps && msg.steps.length > 0 && (
+                          <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm space-y-4 animate-fadeIn">
+                            
+                            <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+                              <span className="text-xs font-extrabold uppercase tracking-wider text-[#14532D]">
+                                Step-by-Step Interactive Guide
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  setShowAllStepsMap((prev) => ({
+                                    ...prev,
+                                    [msg.id]: !prev[msg.id]
+                                  }))
+                                }
+                                className="text-xs font-bold text-gray-600 hover:text-[#14532D] cursor-pointer"
+                              >
+                                {showAllStepsMap[msg.id] ? 'Single-Step Mode' : 'View All Steps'}
+                              </button>
+                            </div>
+
+                            {/* Single Step Stepper Mode */}
+                            {!showAllStepsMap[msg.id] && (() => {
+                              const sIdx = activeStepIndices[msg.id] || 0;
+                              const curStep = msg.steps[sIdx] || msg.steps[0];
+                              const totalSteps = msg.steps.length;
+
+                              return (
+                                <div className="space-y-4">
+                                  {/* Progress bar */}
+                                  <div className="space-y-1">
+                                    <div className="flex items-center justify-between text-xs font-bold text-gray-600">
+                                      <span>Step {curStep.step_number} of {totalSteps}</span>
+                                      <span>{curStep.duration || 'Action Step'}</span>
+                                    </div>
+                                    <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                                      <div
+                                        className="bg-[#14532D] h-1.5 rounded-full transition-all duration-300"
+                                        style={{ width: `${(curStep.step_number / totalSteps) * 100}%` }}
+                                      />
+                                    </div>
+                                  </div>
+
+                                  {/* Step Card Content */}
+                                  <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
+                                    <h4 className="font-bold text-gray-900 text-base">
+                                      {curStep.title}
+                                    </h4>
+                                    <p className={`${bodyTextClass} text-gray-700 leading-relaxed`}>
+                                      {curStep.instruction}
+                                    </p>
+
+                                    {curStep.critical_tip && (
+                                      <div className="p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-950 font-medium mt-2">
+                                        <strong>Key Tip:</strong> {curStep.critical_tip}
+                                      </div>
+                                    )}
+                                  </div>
+
+                                  {/* Step Navigation Buttons */}
+                                  <div className="flex items-center justify-between gap-3 pt-1">
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        setActiveStepIndices((prev) => ({
+                                          ...prev,
+                                          [msg.id]: Math.max(0, sIdx - 1)
+                                        }))
+                                      }
+                                      disabled={sIdx === 0}
+                                      className="px-4 py-2.5 rounded-xl border border-gray-300 hover:bg-gray-100 text-gray-800 font-bold text-xs cursor-pointer disabled:opacity-40 transition"
+                                    >
+                                      Previous Step
+                                    </button>
+
+                                    {sIdx < totalSteps - 1 ? (
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          setActiveStepIndices((prev) => ({
+                                            ...prev,
+                                            [msg.id]: Math.min(totalSteps - 1, sIdx + 1)
+                                          }))
+                                        }
+                                        className="px-5 py-2.5 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-xs cursor-pointer transition shadow-sm"
+                                      >
+                                        Next Step
+                                      </button>
+                                    ) : (
+                                      <button
+                                        type="button"
+                                        onClick={() => handleExport(msg.steps)}
+                                        disabled={downloading}
+                                        className="px-5 py-2.5 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-xs cursor-pointer transition shadow-sm"
+                                      >
+                                        {downloading ? 'Preparing...' : 'Completed! Download Guide'}
+                                      </button>
+                                    )}
+                                  </div>
+                                </div>
+                              );
+                            })()}
+
+                            {/* View All Steps Mode */}
+                            {showAllStepsMap[msg.id] && (
+                              <div className="space-y-3">
+                                {msg.steps.map((st, sidx) => (
+                                  <div key={sidx} className="p-3.5 rounded-xl border border-gray-200 bg-gray-50 flex items-start gap-3">
+                                    <span className="w-6 h-6 rounded-full bg-[#14532D] text-white font-bold text-xs flex items-center justify-center shrink-0">
+                                      {st.step_number}
+                                    </span>
+                                    <div className="space-y-1 flex-1">
+                                      <div className="flex items-center justify-between">
+                                        <h5 className="font-bold text-gray-900 text-sm">{st.title}</h5>
+                                        <span className="text-xs text-gray-500">{st.duration}</span>
+                                      </div>
+                                      <p className="text-xs text-gray-700">{st.instruction}</p>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Follow-up Prompts */}
+                        {msg.follow_ups && msg.follow_ups.length > 0 && (
+                          <div className="space-y-2 pt-1">
+                            <p className="text-xs font-semibold text-gray-500">
+                              Suggested follow-up questions:
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {msg.follow_ups.map((fup, fidx) => (
+                                <button
+                                  key={fidx}
+                                  type="button"
+                                  onClick={() => handleSendQuery(fup)}
+                                  className="text-xs text-[#14532D] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg px-3 py-1.5 font-medium cursor-pointer transition"
+                                >
+                                  {fup}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
+                  )}
+                </div>
+              ))}
+
+              {/* LIVE TYPING / FORMULATING MICRO-ANIMATION */}
+              {loading && (
+                <div className="flex items-start gap-3 animate-fadeIn">
+                  <div className="w-8 h-8 rounded-full bg-[#14532D] text-white font-black flex items-center justify-center text-xs shrink-0 shadow-sm">
+                    IQ
                   </div>
-                )}
+                  <div className="bg-white border border-gray-200 rounded-2xl rounded-tl-sm p-4 text-sm text-gray-700 shadow-sm space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <span className="font-bold text-gray-900">Proti IQ is formulating</span>
+                      <span className="flex gap-1 items-center">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#14532D] typing-dot-1"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#14532D] typing-dot-2"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#14532D] typing-dot-3"></span>
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500">
+                      {loadingStage === 0 && "Scanning native legume protein profiles..."}
+                      {loadingStage === 1 && "Calibrating temperature and taste balance..."}
+                      {loadingStage >= 2 && "Synthesizing step-by-step instructions..."}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Chat Input Bar Pinned at Bottom */}
+            <div className="p-4 border-t border-gray-200 bg-white shrink-0 space-y-3">
+              <div className="flex items-center gap-2">
+                <input
+                  type="text"
+                  value={inputQuery}
+                  onChange={(e) => setInputQuery(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && !loading && handleSendQuery()}
+                  placeholder="Ask a question or request a recipe..."
+                  className="flex-1 px-4 py-3 rounded-xl border border-gray-300 text-gray-900 bg-white focus:outline-none focus:border-[#14532D] text-sm sm:text-base"
+                />
+                <button
+                  type="button"
+                  onClick={() => handleSendQuery()}
+                  disabled={loading || !inputQuery.trim()}
+                  className="bg-[#14532D] hover:bg-emerald-900 text-white font-extrabold px-6 py-3 rounded-xl text-sm sm:text-base transition cursor-pointer disabled:opacity-40 shrink-0 shadow-sm"
+                >
+                  {loading ? 'Thinking...' : 'Send'}
+                </button>
               </div>
-            )}
+
+              {/* Starter Prompt Chips if user has only welcome message */}
+              {messages.length === 1 && suggestions.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {suggestions.slice(0, 3).map((sugg, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => handleSendQuery(sugg)}
+                      className="text-xs text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-lg px-2.5 py-1.5 cursor-pointer transition"
+                    >
+                      {sugg}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </section>
 
           {/* Right Column: Contextual Data Panel */}
-          <aside className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-5 shadow-sm">
+          <aside className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-5 shadow-sm self-start">
             <h2 className="text-xl font-extrabold text-gray-900 border-b border-gray-200 pb-3">
               Contextual Data Panel
             </h2>
