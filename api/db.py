@@ -200,6 +200,25 @@ class AuditLog(Base):
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
 
+class UserProfile(Base):
+    __tablename__ = "user_profiles"
+
+    id = Column(String(36), primary_key=True, index=True)
+    full_name = Column(String(100), nullable=False)
+    age = Column(Integer, nullable=False)
+    country = Column(String(50), nullable=False)
+    region = Column(String(100), nullable=True)
+    mission = Column(String(50), nullable=False)
+    scale = Column(String(50), nullable=False)
+    assigned_role = Column(String(50), nullable=False)
+    geriatric_mode = Column(Boolean, default=False, nullable=False)
+    consent_given = Column(Boolean, default=True, nullable=False)
+    cookie_consent = Column(Boolean, default=True, nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    last_login_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    deleted_at = Column(DateTime, nullable=True)
+
+
 def init_db():
     """Create all tables in the database if they do not exist."""
     Base.metadata.create_all(bind=engine)

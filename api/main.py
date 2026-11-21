@@ -17,7 +17,7 @@ except ImportError:
     has_slowapi = False
 from api.db import init_db, SessionLocal
 from api.security import limiter, security_headers_middleware
-from api.routers import jobs, crops, rank, evidence, proteins, sources, hub
+from api.routers import jobs, crops, rank, evidence, proteins, sources, hub, auth, chat, export, legal
 
 # Initialize tables
 init_db()
@@ -55,6 +55,10 @@ app.include_router(evidence.router)
 app.include_router(proteins.router)
 app.include_router(sources.router)
 app.include_router(hub.router)
+app.include_router(auth.router)
+app.include_router(chat.router)
+app.include_router(export.router)
+app.include_router(legal.router)
 
 
 @app.get("/health", tags=["Health"])
