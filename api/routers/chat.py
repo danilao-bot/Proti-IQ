@@ -1,11 +1,11 @@
 """
 Proti IQ Persona-Conditioned Chat Engine & Contextual Query Pipeline.
 Routes queries through core biophysics and LLM services to generate structured,
-step-by-step guided responses with interactive parameter verification.
+step-by-step guided responses with clear, human, useful insights.
 """
 
 from typing import Optional, List, Dict, Any
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from pydantic import BaseModel, Field
 
 from services.llm_service import generate_advisory
@@ -23,7 +23,7 @@ class ChatQueryRequest(BaseModel):
     job: Optional[str] = Field("milk", description="Target alternative-protein job")
     country: str = Field("Nigeria", description="User's regional market")
     age: int = Field(35, description="User's age for nutritional calibration")
-    geriatric_mode: bool = Field(False, description="Flag for 50+ age safety rules")
+    geriatric_mode: bool = Field(False, description="Flag for older adult comfort rules")
 
 
 class InteractiveStep(BaseModel):
@@ -55,34 +55,33 @@ class ChatQueryResponse(BaseModel):
 
 ROLE_SUGGESTIONS = {
     "consumer": [
-        "How do I eliminate beany off-flavors when making plant-based milk?",
-        "What is the cheapest high-protein legume in my local market?",
-        "How do I prepare soft, easily digestible cowpea scrambles for an older family member?",
-        "What is the exact blanching time to deactivate lipoxygenase in African Yam Bean?"
+        "How do I make smooth cowpea milk with zero beany taste?",
+        "What is the best African bean to replace eggs in cooking?",
+        "How do I make soft, easy-to-digest bean meals for elderly family?",
+        "What is the cheapest local protein in my market right now?"
     ],
     "nutritionist": [
-        "Generate a 15% Bambara groundnut fortification protocol for Amala swallow targeting sarcopenia.",
-        "What is the post-prandial leucine density of Pigeon Pea vicilin compared to whey?",
-        "Evaluate the amino acid balance and PDCAAS of Cowpea globulins for child nutrition.",
-        "Provide Pretoria empirical solubility and least gelation concentration for Bambara groundnut."
+        "How do I fortify swallows like Amala for older adults without changing taste?",
+        "What is the protein and leucine content of Pigeon Pea?",
+        "How can I blend local beans to provide complete protein for kids?",
+        "Compare the digestibility of cowpea versus imported soy."
     ],
     "processor": [
-        "What is the optimal CaCl2 concentration for African Yam Bean curd coagulation at 85°C?",
-        "Compare the shear texturization potential of Pigeon Pea 11S legumin against Soy Glycinin P02858.",
-        "Generate extrusion parameter ranges (temperature, moisture, shear) for plant-based meat suya.",
-        "What is the curd yield multiplier of standard alkaline extraction versus traditional street curd?"
+        "How do I make firm plant-based Awara curd from African Yam Bean?",
+        "What temperature unfolds cowpea protein for texturized meat suya?",
+        "How much calcium chloride is needed for bean curd coagulation?",
+        "What is the cost saving of local legume isolate vs imported soy isolate?"
     ],
     "researcher": [
-        "Show the 1,280-dimensional ESM-2 cosine distance between Cowpea Vicilin A0A1S3VZW2 and Soy Glycinin P02858.",
-        "What is the pLDDT confidence distribution across AlphaFold model AF-A0A1S3VZW2-F1?",
-        "Retrieve Pretoria wet-lab raw titration curves across pH 2.0 to 12.0 for Bambara globulin fractions.",
-        "List all 630 cross-job ranking scores sorted by biophysical divergence."
+        "Compare the protein structure of African Yam Bean against Soy Glycinin.",
+        "What is the solubility profile of cowpea across different pH levels?",
+        "Which African legume has the highest cysteine cross-linking potential?",
+        "Show the ranking of all 14 African legumes for plant-based meat."
     ]
 }
 
 
 def build_guided_steps(role: str, crop: str, job: str, geriatric_mode: bool) -> List[InteractiveStep]:
-    """Builds concrete, sequential, one-by-one actionable steps tailored to persona."""
     crop_title = crop.replace("_", " ").title()
 
     if "consumer" in role:
@@ -90,79 +89,79 @@ def build_guided_steps(role: str, crop: str, job: str, geriatric_mode: bool) -> 
             return [
                 InteractiveStep(
                     step_number=1,
-                    title="Seed Hydration & De-Hulling",
-                    instruction=f"Soak dry {crop_title} seeds in warm water (40°C) for 15 minutes. Gently rub seeds between palms to slip off the seed coats. Discard the outer skins completely.",
+                    title="Soaking and Peeling",
+                    instruction=f"Soak your dry {crop_title} in warm water for 15 minutes. Rub the beans between your hands to slip off the outer skins, then rinse them away.",
                     duration="15 minutes",
-                    critical_tip="Removing outer seed coats removes over 75% of polyphenols and tannins that cause astringency and digestive gas."
+                    critical_tip="Removing the skins removes bitterness and prevents stomach gas."
                 ),
                 InteractiveStep(
                     step_number=2,
-                    title="Thermal Enzyme Inactivation (De-Flavoring)",
-                    instruction="Drop the de-hulled seeds into actively boiling water (90°C) for exactly 3 minutes. Remove and submerge immediately into cool water.",
+                    title="Quick 3-Minute Hot Blanch (The Secret to No Beany Taste)",
+                    instruction="Drop the peeled beans into boiling water for exactly 3 minutes, then scoop them out into cold water.",
                     duration="3 minutes",
-                    critical_tip="Crucial step: 90°C heat permanently denatures lipoxygenase enzymes before they can break down fatty acids into beany hexanal aromas."
+                    critical_tip="This boiling step stops the enzymes that create the raw bean smell, leaving a clean, fresh taste."
                 ),
                 InteractiveStep(
                     step_number=3,
-                    title="Precision Wet-Milling",
-                    instruction="Transfer blanched seeds into a blender. Add clean water at a 1:6 seed-to-water ratio. Blend on high speed for 2 minutes until silky smooth.",
+                    title="Smooth Blending",
+                    instruction="Add the blanched beans to a blender with clean water (use 6 cups of water for every 1 cup of beans). Blend on high until completely smooth.",
                     duration="2 minutes",
-                    critical_tip="The 1:6 ratio mimics whole dairy milk colloidal viscosity without causing gritty mouthfeel."
+                    critical_tip="This water ratio gives you the exact thickness and creaminess of regular dairy milk."
                 ),
                 InteractiveStep(
                     step_number=4,
-                    title="Muslin Straining & Gentle Simmer",
-                    instruction="Pour the milk through a fine muslin or cheesecloth into a pot. Squeeze gently to collect the protein liquor. Simmer over low heat for 5 minutes with vanilla, cinnamon, or date syrup.",
+                    title="Straining and Gentle Simmer",
+                    instruction="Pour the milk through a clean cheesecloth or fine muslin cloth into a cooking pot. Simmer gently on low heat for 5 minutes. Sweeten with date syrup or a drop of vanilla.",
                     duration="5 minutes",
-                    critical_tip="Simmering pasteurizes the milk and ensures gentle gastrointestinal tolerance for all ages."
+                    critical_tip="Simmering makes the milk easy on the stomach and keeps it fresh in the fridge for up to 4 days."
                 )
             ]
         elif job == "egg":
             return [
                 InteractiveStep(
                     step_number=1,
-                    title="Fine Legume Flour Formulation",
-                    instruction=f"Measure 100g of finely milled {crop_title} flour into a mixing bowl.",
+                    title="Flour Preparation",
+                    instruction=f"Measure 1 cup of finely ground {crop_title} flour into a small bowl.",
                     duration="2 minutes",
-                    critical_tip="High-mesh flour ensures rapid heat-set coagulation without clumping."
+                    critical_tip="Fine flour cooks evenly and scrambles without lumps."
                 ),
                 InteractiveStep(
                     step_number=2,
-                    title="Liquid & Lipid Emulsion",
-                    instruction="Whisk in 180ml warm water, 1 tablespoon vegetable oil, a pinch of turmeric for natural golden color, and black salt (kala namak) for savory aroma.",
-                    duration="3 minutes",
-                    critical_tip="Turmeric provides authentic egg appearance while vegetable lipids match whole egg yolk mouthfeel."
+                    title="Whisking the Batter",
+                    instruction="Whisk in 3/4 cup of warm water, 1 tablespoon of cooking oil, a pinch of turmeric for golden yellow color, and a pinch of salt.",
+                    duration="2 minutes",
+                    critical_tip="The oil and turmeric give it the authentic appearance and soft richness of whole scrambled eggs."
                 ),
                 InteractiveStep(
                     step_number=3,
-                    title="Pan Scrambling & Thermal Set",
-                    instruction="Pour the batter into an oiled pan over medium heat (85°C). Cook gently for 3-4 minutes, folding the curd into soft scrambled curds as it sets.",
+                    title="Soft Pan Scrambling",
+                    instruction="Heat a lightly oiled pan on medium heat. Pour in the batter and let it sit for 30 seconds, then gently fold into soft scrambled curds as it sets.",
                     duration="4 minutes",
-                    critical_tip="7S vicilin globulins undergo rapid thermal unfolding at 85°C, creating tender scrambled textures gentle on aging digestion."
+                    critical_tip="Cooking gently on medium heat keeps the scramble tender, juicy, and very easy to chew."
                 )
             ]
         else:
             return [
                 InteractiveStep(
                     step_number=1,
-                    title="Cleaning & Soaking",
-                    instruction=f"Clean dry {crop_title} seeds and pre-soak in warm water for 20 minutes.",
+                    title="Clean and Soak",
+                    instruction=f"Rinse dry {crop_title} and soak in warm water for 20 minutes to soften.",
                     duration="20 minutes",
-                    critical_tip="Activates uniform moisture penetration."
+                    critical_tip="Helps cook evenly and shortens cooking time."
                 ),
                 InteractiveStep(
                     step_number=2,
-                    title="Thermal Preparation",
-                    instruction="Blanch or steam at 90°C to eliminate bitter antinutrients and off-notes.",
-                    duration="5 minutes",
-                    critical_tip="Destroys enzyme activity and maximizes digestibility."
+                    title="Cook with Spices",
+                    instruction="Simmer until tender, then season with your favorite local herbs and peppers.",
+                    duration="15 minutes",
+                    critical_tip="Retains natural protein and healthy fiber."
                 ),
                 InteractiveStep(
                     step_number=3,
-                    title="Culinary Finishing",
-                    instruction="Season with traditional spices and serve as a nutrient-dense protein meal.",
-                    duration="10 minutes",
-                    critical_tip="Delivers 24g bioavailable protein per 100g portion."
+                    title="Serve and Enjoy",
+                    instruction="Serve warm as a hearty, affordable, 100% plant-based protein meal.",
+                    duration="5 minutes",
+                    critical_tip="Delivers 24g of natural protein with zero cholesterol."
                 )
             ]
 
@@ -170,24 +169,24 @@ def build_guided_steps(role: str, crop: str, job: str, geriatric_mode: bool) -> 
         return [
             InteractiveStep(
                 step_number=1,
-                title="Cohort Nutritional Assessment",
-                instruction="Confirm patient target: Geriatric Sarcopenia requires >= 2.5g leucine per meal to activate the post-prandial mTOR protein synthesis pathway.",
+                title="Nutritional Target Check",
+                instruction=f"Confirm cohort requirement: Fortifying with {crop_title} delivers concentrated lysine and leucine to stimulate muscle maintenance.",
                 duration="Assessment",
-                critical_tip="Failing the 2.5g leucine threshold impairs muscle preservation in adults over 50."
+                critical_tip="Aim for 2.5g leucine per meal threshold to support aging muscle health."
             ),
             InteractiveStep(
                 step_number=2,
-                title="Prescription Blend Formulation",
-                instruction=f"Formulate a 15% {crop_title} isolate blend into the staple vehicle (e.g. 85g Amala flour + 15g {crop_title} isolate).",
-                duration="Weighing",
-                critical_tip="Delivers 18.5g protein per portion while preserving authentic swallow viscoelasticity."
+                title="Staple Blend Formulation",
+                instruction=f"Blend 15% {crop_title} flour with 85% staple flour (such as Amala, Cassava, or Maize).",
+                duration="Formulation",
+                critical_tip="Delivers 18.5g of bioavailable protein per serving without changing traditional swallow texture."
             ),
             InteractiveStep(
                 step_number=3,
-                title="Preparation & Viscosity Safety Check",
-                instruction="Stir powder into boiling water vigorously. Verify dough does not exceed safe dysphagia shear limits (maintains smooth bolus transit).",
+                title="Cooking and Texture Verification",
+                instruction="Stir powder into boiling water vigorously until smooth. Verify dough texture remains soft for safe, easy swallowing.",
                 duration="5 minutes",
-                critical_tip="Pretoria wet-lab solubility confirms zero throat clinging or choking hazard."
+                critical_tip="High natural solubility prevents throat dryness or swallowing difficulties."
             )
         ]
 
@@ -195,31 +194,30 @@ def build_guided_steps(role: str, crop: str, job: str, geriatric_mode: bool) -> 
         return [
             InteractiveStep(
                 step_number=1,
-                title="Alkaline Solubilization Extraction",
-                instruction=f"Slurry {crop_title} meal at 1:10 w/v in water adjusted to pH 8.5 with food-grade NaOH. Agitate at 45°C for 45 minutes.",
+                title="Alkaline Protein Solubilization",
+                instruction=f"Slurry {crop_title} meal at 1:10 ratio in water at pH 8.5. Agitate at 45°C for 45 minutes to dissolve storage globulins.",
                 duration="45 minutes",
-                critical_tip="Solubilizes >80% of storage globulins into aqueous liquor."
+                critical_tip="Extracts over 80% of native storage proteins into liquid solution."
             ),
             InteractiveStep(
                 step_number=2,
-                title="Thermal Unfolding & Isoelectric Focus",
-                instruction="Heat liquor to 85°C for 15 minutes to unfold 11S legumin hexamers. Adjust pH to pI 4.8 to induce curding.",
+                title="Thermal Denaturation & Acid Precipitation",
+                instruction="Heat liquor to 85°C for 15 minutes to unfold 11S legumin hexamers. Adjust pH to 4.8 to precipitate protein curds.",
                 duration="15 minutes",
-                critical_tip="Exposes internal hydrophobic patches and reactive cysteine residues."
+                critical_tip="Unfolding exposes reactive sites needed for strong network binding."
             ),
             InteractiveStep(
                 step_number=3,
-                title="Divalent Calcium Cross-Linking & Pressing",
-                instruction="Dose 0.3% w/v food-grade CaCl2 at 80°C. Transfer to perforated pneumatic mold and press at 1.6 MPa for 20 minutes.",
+                title="Food-Grade Calcium Cross-Linking",
+                instruction="Add 0.3% food-grade CaCl2 at 80°C. Press into molds at 1.6 MPa pressure for 20 minutes.",
                 duration="20 minutes",
-                critical_tip="Forms stable calcium-bridged curd network with 1.35 N breaking stress matching beef suya."
+                critical_tip="Produces a firm, cohesive curd matching commercial Awara and firm tofu texture."
             )
         ]
 
 
-@router.get("/suggestions", summary="Get Role-Conditioned Prompt Suggestions")
+@router.get("/suggestions", summary="Get Human-Friendly Prompt Suggestions")
 def get_prompt_suggestions(role: str = "consumer"):
-    """Returns curated prompt suggestions for the active role."""
     clean_role = role.lower().strip()
     return {
         "role": clean_role,
@@ -229,13 +227,6 @@ def get_prompt_suggestions(role: str = "consumer"):
 
 @router.post("/query", response_model=ChatQueryResponse, summary="Submit Structured Chat Query")
 def submit_chat_query(req: ChatQueryRequest):
-    """
-    Processes chat queries with role conditioning and generates simultaneously:
-    1. Human-readable advisory text
-    2. Step-by-step interactive walkthrough
-    3. Examined scientific parameter proofs
-    4. Role-specific contextual data panel
-    """
     clean_role = req.role.lower().strip()
     clean_job = req.job.lower().strip() if req.job else "milk"
     clean_crop = req.crop_id.lower().strip() if req.crop_id else "cowpea"
@@ -243,7 +234,6 @@ def submit_chat_query(req: ChatQueryRequest):
     matched_app = next((a for a in APPLICATIONS_CATALOG if a["id"] == clean_job), APPLICATIONS_CATALOG[0])
     bio_ctx = matched_app.get("biochemical_mechanism", matched_app.get("target_metric", ""))
 
-    # 1. Generate role-conditioned advisory from LLM service
     llm_result = generate_advisory(
         role=clean_role,
         application=matched_app["name"],
@@ -255,62 +245,57 @@ def submit_chat_query(req: ChatQueryRequest):
         user_query=req.message
     )
 
-    # 2. Build active stages
     active_stages = [
-        f"Scanning {clean_crop.replace('_', ' ').title()} seed storage globulin profiles...",
-        f"Calibrating biophysical denaturation threshold for {matched_app['name']}...",
-        f"Formulating step-by-step protocol for {clean_role.title()} in {req.country}."
+        f"Reviewing {clean_crop.replace('_', ' ').title()} protein profile...",
+        f"Calibrating best cooking temperatures for {matched_app['name']}...",
+        f"Preparing step-by-step guided instructions."
     ]
 
-    # 3. Build step-by-step sequential cards
     steps = build_guided_steps(clean_role, clean_crop, clean_job, req.geriatric_mode)
 
-    # 4. Build examined parameters
     examined = [
         ExaminedParameter(
-            name="Enzyme Inactivation Threshold",
-            measured_value="90°C for >= 180 seconds",
-            scientific_significance="Denatures lipoxygenase; prevents beany off-flavor hexanals."
+            name="De-Flavoring Heat Threshold",
+            measured_value="90°C for 3 minutes",
+            scientific_significance="Stops the enzymes that cause bean odor, giving a clean, fresh milk taste."
         ),
         ExaminedParameter(
-            name="Empirical Protein Solubility",
-            measured_value="78.4% at pH 6.8 (University of Pretoria)",
-            scientific_significance="Guarantees smooth colloidal suspension without throat clinging."
+            name="Protein Smoothness in Water",
+            measured_value="78.4% Natural Solubility",
+            scientific_significance="Ensures smooth liquid texture with no sandy or chalky feeling in the mouth."
         ),
         ExaminedParameter(
-            name="Regional Market Economic Advantage",
-            measured_value="1,800 NGN/kg (Saves ~2,400 NGN vs imported soy)",
-            scientific_significance="Affordable local sourcing across Nigerian and West African agricultural markets."
+            name="Local Market Cost Savings",
+            measured_value="Saves ~2,400 NGN per kg",
+            scientific_significance="Affordable indigenous African legume compared to expensive imported dairy or soy."
         )
     ]
 
-    # 5. Build context-aware follow-up suggestions
     if clean_role == "consumer":
         follow_ups = [
-            "What if I don't have a thermometer to measure 90°C?",
             "Can I add date syrup or vanilla for natural sweetness?",
-            "How long can I store this in the refrigerator?"
+            "How long does this keep fresh in the fridge?",
+            "What can I do with the leftover bean fiber?"
         ]
     elif clean_role == "nutritionist":
         follow_ups = [
-            "What is the exact leucine threshold per cooked portion?",
-            "Can I substitute Bambara groundnut for Cowpea in this formula?",
-            "How does this affect daily glycemic response?"
+            "What is the exact protein per 100g serving?",
+            "Can I substitute Bambara groundnut in this formula?",
+            "How does this support muscle maintenance in older adults?"
         ]
     else:
         follow_ups = [
-            "What happens if CaCl2 concentration exceeds 0.4%?",
-            "Can we run this through a pilot twin-screw extruder?",
-            "What is the finished curd water-holding capacity?"
+            "What is the optimal pressing time for firmer curd?",
+            "Can this recipe scale to pilot factory production?",
+            "What is the expected water-holding capacity?"
         ]
 
-    # 6. Build contextual panel
     context_panel = {
         "crop_name": clean_crop.replace("_", " ").title(),
         "target_job": matched_app["name"],
-        "cost_per_kg_local": "1,800 NGN (Saves ~2,400 NGN vs imported soy)",
-        "protein_per_100g": "24.2g",
-        "solubility": "78.4% (Pretoria wet-lab verified)"
+        "cost_per_kg_local": "1,800 NGN / kg (Saves ~2,400 NGN vs imported soy)",
+        "protein_per_100g": "24.2g Protein / 100g",
+        "solubility": "78.4% Natural Solubility (Smooth texture)"
     }
 
     return ChatQueryResponse(

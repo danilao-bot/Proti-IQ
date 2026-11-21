@@ -102,14 +102,14 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
         <div className="border-b border-gray-200 pb-4 flex items-center justify-between">
           <div>
             <p className="text-xs font-black uppercase tracking-wider text-[#14532D]">
-              PROTI IQ ONBOARDING • STEP {step} OF 5
+              PROTI IQ • STEP {step} OF 5
             </p>
             <h1 className="text-2xl font-black text-gray-900 mt-1">
-              {step === 1 && 'Identity & Age Verification'}
-              {step === 2 && 'African Market Location'}
-              {step === 3 && 'Primary Protein Mission'}
-              {step === 4 && 'Operating Facility Scale'}
-              {step === 5 && 'Confirm & Lock Workspace Profile'}
+              {step === 1 && 'Tell us about yourself'}
+              {step === 2 && 'Where are you based?'}
+              {step === 3 && 'What brings you to Proti IQ?'}
+              {step === 4 && 'How do you work with food?'}
+              {step === 5 && 'Review and confirm your profile'}
             </h1>
           </div>
           {onCancel && (
@@ -143,7 +143,7 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
                 placeholder="e.g., Ameh Anthony"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:outline-none focus:border-[#14532D]"
               />
-              <p className="text-xs text-gray-500 mt-1">Used to personalize your workspace header and technical data exports.</p>
+              <p className="text-xs text-gray-500 mt-1">Your name personalizes your workspace and any reports you export.</p>
             </div>
 
             <div>
@@ -159,15 +159,8 @@ export default function OnboardingPage({ onOnboardingComplete, onCancel }) {
                 placeholder="e.g., 58"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:outline-none focus:border-[#14532D]"
               />
-              <p className="text-xs text-gray-500 mt-1">Must be at least 13 years old. Ages 50+ automatically activate Geriatric Nutritional Safety.</p>
+              <p className="text-xs text-gray-500 mt-1">You must be at least 13 years old to use Proti IQ.</p>
             </div>
-
-            {isOlderAdult && (
-              <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm space-y-1">
-                <p className="font-bold">Geriatric Sarcopenia Mode Activated</p>
-                <p className="text-xs">Your workspace will prioritize high-leucine muscle maintenance, soft swallow viscoelasticity, and enlarged readable text.</p>
-              </div>
-            )}
 
             <button
               type="button"
