@@ -6,11 +6,13 @@ import ProcessorFlow from '../components/flows/ProcessorFlow';
 export default function HubPage({ role, country, market, onOpenEvidence, onSwitchRole }) {
   const [resetKey, setResetKey] = useState(0);
 
+  const normalizedRole = (role || 'consumer').toLowerCase();
+
   return (
     <div className="space-y-6">
-      {role === 'caregiver' && (
+      {(normalizedRole === 'consumer' || normalizedRole === 'caregiver') && (
         <ConsumerFlow
-          key={`caregiver-${resetKey}`}
+          key={`consumer-${resetKey}`}
           country={country}
           market={market}
           onOpenEvidence={onOpenEvidence}
@@ -18,7 +20,7 @@ export default function HubPage({ role, country, market, onOpenEvidence, onSwitc
         />
       )}
 
-      {role === 'nutritionist' && (
+      {normalizedRole === 'nutritionist' && (
         <NutritionistFlow
           key={`nutritionist-${resetKey}`}
           country={country}
@@ -27,9 +29,18 @@ export default function HubPage({ role, country, market, onOpenEvidence, onSwitc
         />
       )}
 
-      {role === 'manufacturer' && (
+      {(normalizedRole === 'processor' || normalizedRole === 'manufacturer') && (
         <ProcessorFlow
-          key={`manufacturer-${resetKey}`}
+          key={`processor-${resetKey}`}
+          country={country}
+          market={market}
+          onOpenEvidence={onOpenEvidence}
+        />
+      )}
+
+      {normalizedRole === 'researcher' && (
+        <ProcessorFlow
+          key={`researcher-${resetKey}`}
           country={country}
           market={market}
           onOpenEvidence={onOpenEvidence}

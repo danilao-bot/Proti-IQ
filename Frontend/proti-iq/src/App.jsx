@@ -159,9 +159,9 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveSubView('workspace')}
-              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer transition"
             >
-              &lt; Return to Workspace
+              Return to Workspace
             </button>
           </header>
           <div className="max-w-7xl mx-auto p-6">
@@ -183,9 +183,9 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveSubView('workspace')}
-              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer transition"
             >
-              &lt; Return to Workspace
+              Return to Workspace
             </button>
           </header>
           <div className="max-w-7xl mx-auto p-6">
@@ -201,9 +201,9 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveSubView('workspace')}
-              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer transition"
             >
-              &lt; Return to Workspace
+              Return to Workspace
             </button>
           </header>
           <div className="max-w-7xl mx-auto p-6">
@@ -219,9 +219,9 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveSubView('workspace')}
-              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold cursor-pointer transition"
             >
-              &lt; Return to Workspace
+              Return to Workspace
             </button>
           </header>
           <div className="max-w-7xl mx-auto p-6">
