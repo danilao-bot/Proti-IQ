@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { sendChatQuery, getChatSuggestions, exportDocument } from '../services/chatClient';
-import { clearStoredToken } from '../services/authClient';
 
 export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNavigateView, activeSubView = 'hub' }) {
   const {
@@ -18,9 +17,15 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
   const [selectedJob, setSelectedJob] = useState('milk');
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [loadingStage, setLoadingStage] = useState(0);
   const [chatResponse, setChatResponse] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [downloading, setDownloading] = useState(false);
+
+  // Guided Walkthrough Stepper State
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [showAllSteps, setShowAllSteps] = useState(false);
+  const [showExaminedParams, setShowExaminedParams] = useState(false);
 
   // Load role-specific suggestions on mount
   useEffect(() => {
@@ -29,12 +34,25 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
     });
   }, [assigned_role]);
 
+  // Stage progression animation while loading
+  useEffect(() => {
+    let timer;
+    if (loading) {
+      setLoadingStage(0);
+      timer = setInterval(() => {
+        setLoadingStage((prev) => (prev < 2 ? prev + 1 : prev));
+      }, 900);
+    }
+    return () => clearInterval(timer);
+  }, [loading]);
+
   const handleSendQuery = async (queryText = null) => {
     const textToSend = (typeof queryText === 'string' ? queryText : inputQuery).trim();
     if (!textToSend) return;
 
     setLoading(true);
     setErrorMsg('');
+    setCurrentStepIndex(0);
     try {
       const res = await sendChatQuery({
         message: textToSend,
@@ -82,6 +100,8 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
 
   const isConsumer = assigned_role === 'consumer';
   const bodyTextClass = (isConsumer || geriatric_mode) ? 'text-lg' : 'text-base';
+  const steps = chatResponse?.steps || [];
+  const currentStep = steps[currentStepIndex];
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] text-gray-900 flex flex-col justify-between">
@@ -110,10 +130,10 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
         </div>
       </header>
 
-      {/* Main Layout: Sub-navigation & Workspace */}
+      {/* Main Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-6">
         
-        {/* Navigation Tabs (Filtered strictly by accessible routes) */}
+        {/* Navigation Tabs */}
         <nav className="flex items-center gap-2 border-b border-gray-200 pb-3 overflow-x-auto text-sm font-bold">
           <button
             type="button"
@@ -164,7 +184,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
           )}
         </nav>
 
-        {/* Personalized Welcome Card */}
+        {/* Personalized Welcome & Query Bar */}
         <section className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 pb-4">
             <div>
@@ -182,7 +202,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
             )}
           </div>
 
-          {/* Central AI Query Bar (Dominant Element) */}
+          {/* Central AI Query Input */}
           <div className="space-y-3">
             <label className="block text-sm font-bold text-gray-800">
               Ask Proti IQ (Target: {selectedJob.toUpperCase()} • Legume: {selectedCrop.replace('_', ' ').toUpperCase()})
@@ -194,7 +214,7 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
                 value={inputQuery}
                 onChange={(e) => setInputQuery(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSendQuery()}
-                placeholder="Ask about culinary de-flavoring, clinical dosage, or industrial extrusion parameters..."
+                placeholder="Ask e.g. 'How can I make plant based milk, guide me step by step'..."
                 className="flex-1 px-4 py-3.5 rounded-xl border border-gray-300 text-gray-900 bg-white focus:outline-none focus:border-[#14532D] text-base"
               />
               <button
@@ -227,8 +247,8 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
                 onChange={(e) => setSelectedJob(e.target.value)}
                 className="border border-gray-300 rounded-lg px-2.5 py-1.5 bg-white text-gray-800 font-medium"
               >
-                <option value="meat">Textured Suya Meat</option>
                 <option value="milk">Colloidal Milk Drink</option>
+                <option value="meat">Textured Suya Meat</option>
                 <option value="egg">Heat-Set Scrambled Egg</option>
                 <option value="gel">Coagulated Awara Curd</option>
                 <option value="mayo">Emulsified Salad Cream</option>
@@ -267,62 +287,210 @@ export default function WorkspacePage({ session, onLogOut, onOpenLegal, onNaviga
         {/* Dynamic Workspace Split-View */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
-          {/* Left 2 Columns: Chat Advisory Output */}
-          <section className="lg:col-span-2 bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
+          {/* Left 2 Columns: Step-by-Step Guided Walkthrough */}
+          <section className="lg:col-span-2 bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
+            
             <div className="border-b border-gray-200 pb-3 flex items-center justify-between">
               <h2 className="text-xl font-extrabold text-gray-900">
-                Scientific Advisory Output
+                Interactive Guided Advisory
               </h2>
-              {chatResponse && (
-                <span className="text-xs text-gray-500 font-medium">
-                  Engine: {chatResponse.provider}
-                </span>
+              {steps.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setShowAllSteps(!showAllSteps)}
+                  className="text-xs font-bold text-[#14532D] hover:underline cursor-pointer"
+                >
+                  {showAllSteps ? 'Show Step-by-Step Mode' : 'View All Steps at Once'}
+                </button>
               )}
             </div>
 
+            {/* Live Loading Stages */}
             {loading && (
-              <div className="py-12 text-center text-gray-500 space-y-2">
-                <p className="text-base font-semibold">Computing biophysical scores and querying advisory engine...</p>
-                <p className="text-xs">Applying Meta ESM-2 weights and Pretoria wet-lab constraints.</p>
+              <div className="py-10 space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-xs font-bold text-gray-600">
+                    <span>Executing Biophysical Pipeline</span>
+                    <span>Stage {loadingStage + 1} of 3</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="bg-[#14532D] h-2 rounded-full transition-all duration-500"
+                      style={{ width: `${((loadingStage + 1) / 3) * 100}%` }}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2 pt-2 text-sm text-gray-700">
+                  <p className={`flex items-center gap-2 ${loadingStage >= 0 ? 'font-bold text-gray-900' : 'text-gray-400'}`}>
+                    <span>{loadingStage > 0 ? '[Done]' : '[Active]'}</span>
+                    <span>Scanning {selectedCrop.replace('_', ' ').toUpperCase()} storage globulin profiles...</span>
+                  </p>
+                  <p className={`flex items-center gap-2 ${loadingStage >= 1 ? 'font-bold text-gray-900' : 'text-gray-400'}`}>
+                    <span>{loadingStage > 1 ? '[Done]' : loadingStage === 1 ? '[Active]' : '[Pending]'}</span>
+                    <span>Calibrating enzyme de-flavoring and temperature thresholds...</span>
+                  </p>
+                  <p className={`flex items-center gap-2 ${loadingStage >= 2 ? 'font-bold text-gray-900' : 'text-gray-400'}`}>
+                    <span>{loadingStage === 2 ? '[Active]' : '[Pending]'}</span>
+                    <span>Synthesizing step-by-step guided instructions...</span>
+                  </p>
+                </div>
               </div>
             )}
 
             {!loading && !chatResponse && (
               <div className="py-12 text-center text-gray-500 space-y-1">
                 <p className="text-base font-semibold">Ready for your query.</p>
-                <p className="text-xs">Select a suggestion above or enter any food formulation question.</p>
+                <p className="text-xs">Ask a question above to receive an interactive, step-by-step guided procedure.</p>
               </div>
             )}
 
+            {/* Interactive Guided Steps Display */}
             {!loading && chatResponse && (
-              <div className="space-y-4">
-                <div className={`${bodyTextClass} text-gray-800 whitespace-pre-line leading-relaxed`}>
-                  {chatResponse.advisory_text}
-                </div>
+              <div className="space-y-6">
+                
+                {/* Expandable Examined Parameters Drawer */}
+                {chatResponse.examined_parameters && chatResponse.examined_parameters.length > 0 && (
+                  <div className="border border-gray-200 rounded-xl overflow-hidden text-xs">
+                    <button
+                      type="button"
+                      onClick={() => setShowExaminedParams(!showExaminedParams)}
+                      className="w-full bg-gray-50 hover:bg-gray-100 p-3 flex items-center justify-between font-bold text-gray-800 cursor-pointer"
+                    >
+                      <span>Scientific Data Analyzed ({chatResponse.examined_parameters.length} parameters verified)</span>
+                      <span>{showExaminedParams ? '▲ Collapse' : '▼ View Data'}</span>
+                    </button>
+                    {showExaminedParams && (
+                      <div className="p-3 bg-white space-y-2 border-t border-gray-200">
+                        {chatResponse.examined_parameters.map((param, idx) => (
+                          <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1 border-b border-gray-100 last:border-b-0">
+                            <span className="font-bold text-gray-900">{param.name}:</span>
+                            <span className="font-semibold text-[#14532D]">{param.measured_value}</span>
+                            <span className="text-gray-500 text-[11px]">{param.scientific_significance}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
 
-                <div className="border-t border-gray-200 pt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-600">
-                  <span>Selected Legume: <strong>{chatResponse.referenced_crop.toUpperCase()}</strong></span>
-                  <span>Target Application: <strong>{chatResponse.target_job}</strong></span>
-                  <span>Biophysical Confidence: <strong>{chatResponse.confidence}</strong></span>
-                </div>
+                {/* MODE A: Step-by-Step Guided Stepper (One by One) */}
+                {!showAllSteps && currentStep && (
+                  <div className="space-y-4">
+                    {/* Stepper Progress Bar */}
+                    <div className="flex items-center justify-between text-xs font-bold text-gray-600">
+                      <span>STEP {currentStep.step_number} OF {steps.length}</span>
+                      <span>{currentStep.duration || 'Action Step'}</span>
+                    </div>
+
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-[#14532D] h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${(currentStep.step_number / steps.length) * 100}%` }}
+                      />
+                    </div>
+
+                    {/* Active Step Card */}
+                    <div className="border border-gray-200 rounded-2xl p-6 bg-white space-y-3">
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-full bg-[#14532D] text-white font-extrabold flex items-center justify-center text-lg shrink-0">
+                          {currentStep.step_number}
+                        </div>
+                        <div className="space-y-1 flex-1">
+                          <h3 className="text-xl font-bold text-gray-900">{currentStep.title}</h3>
+                          <p className={`${bodyTextClass} text-gray-800 leading-relaxed mt-2`}>
+                            {currentStep.instruction}
+                          </p>
+                        </div>
+                      </div>
+
+                      {currentStep.critical_tip && (
+                        <div className="mt-3 p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 text-xs text-amber-950 font-medium">
+                          <strong>Scientific Rationale:</strong> {currentStep.critical_tip}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Stepper Navigation Buttons */}
+                    <div className="flex items-center justify-between gap-3 pt-2">
+                      <button
+                        type="button"
+                        onClick={() => setCurrentStepIndex((prev) => Math.max(0, prev - 1))}
+                        disabled={currentStepIndex === 0}
+                        className="px-5 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 text-gray-800 font-bold text-sm cursor-pointer disabled:opacity-40"
+                      >
+                        &lt; Previous Step
+                      </button>
+
+                      {currentStepIndex < steps.length - 1 ? (
+                        <button
+                          type="button"
+                          onClick={() => setCurrentStepIndex((prev) => Math.min(steps.length - 1, prev + 1))}
+                          className="px-6 py-3 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-sm cursor-pointer transition"
+                        >
+                          Next Step: {steps[currentStepIndex + 1]?.title} &gt;
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={handleExport}
+                          disabled={downloading}
+                          className="px-6 py-3 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-sm cursor-pointer transition"
+                        >
+                          {downloading ? 'Downloading...' : 'Completed! Download Guide (.txt)'}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* MODE B: View All Steps at Once */}
+                {showAllSteps && (
+                  <div className="space-y-4">
+                    {steps.map((st, idx) => (
+                      <div key={idx} className="border border-gray-200 rounded-xl p-5 bg-white flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-[#14532D] text-white font-bold flex items-center justify-center text-sm shrink-0">
+                          {st.step_number}
+                        </div>
+                        <div className="space-y-1 flex-1">
+                          <div className="flex items-center justify-between">
+                            <h4 className="font-bold text-gray-900">{st.title}</h4>
+                            <span className="text-xs text-gray-500">{st.duration}</span>
+                          </div>
+                          <p className="text-sm text-gray-700">{st.instruction}</p>
+                          {st.critical_tip && (
+                            <p className="text-xs text-amber-900 mt-1">
+                              <strong>Note:</strong> {st.critical_tip}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Follow-up Prompts Section */}
+                {chatResponse.follow_up_suggestions && chatResponse.follow_up_suggestions.length > 0 && (
+                  <div className="pt-4 border-t border-gray-200 space-y-2">
+                    <p className="text-xs font-bold uppercase tracking-wider text-gray-500">
+                      Suggested Follow-Up Questions:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {chatResponse.follow_up_suggestions.map((q, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => handleSendQuery(q)}
+                          className="text-xs text-[#14532D] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg px-3 py-2 font-semibold cursor-pointer transition"
+                        >
+                          {q}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
-
-            {/* Actionable Export Button */}
-            <div className="pt-4 border-t border-gray-200">
-              <button
-                type="button"
-                onClick={handleExport}
-                disabled={downloading}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#14532D] hover:bg-emerald-900 text-white font-bold text-sm cursor-pointer transition disabled:opacity-50"
-              >
-                {downloading ? 'Preparing Document...' : (
-                  isConsumer ? 'Save Culinary Recipe Card (.txt)' :
-                  assigned_role === 'nutritionist' ? 'Export Clinical Dietary Advisory (.txt)' :
-                  'Download Technical Data Sheet TDS (.txt)'
-                )}
-              </button>
-            </div>
           </section>
 
           {/* Right Column: Contextual Data Panel */}
